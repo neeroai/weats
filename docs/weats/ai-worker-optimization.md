@@ -1,4 +1,4 @@
-# WPFOODS AI WORKER OPTIMIZATION
+# WEATS AI WORKER OPTIMIZATION
 ## AI-Powered Dispatch: 50-100% Higher Earnings Through Intelligence
 
 **Document Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods uses AI to transform the economics of delivery work. Through intelligent dispatch, route optimization, and earnings maximization algorithms, workers earn **$5,000-7,000 COP per delivery** (vs Rappi's $2,500), work more efficiently, and achieve true financial stability. Our AI ensures fair distribution, maximizes earnings potential, and provides predictive insights that help workers earn **4x more take-home pay**.
+Weats uses AI to transform the economics of delivery work. Through intelligent dispatch, route optimization, and earnings maximization algorithms, workers earn **$5,000-7,000 COP per delivery** (vs Rappi's $2,500), work more efficiently, and achieve true financial stability. Our AI ensures fair distribution, maximizes earnings potential, and provides predictive insights that help workers earn **4x more take-home pay**.
 
 **Key Differentiators:**
 - **Smart Dispatch**: AI matches orders optimally, not just nearest worker
@@ -1096,14 +1096,14 @@ worker_success_metrics = {
 
 ### Worker Testimonial (Projected)
 
-> "Con WPFoods gano el doble que en Rappi. El AI me dice
+> "Con Weats gano el doble que en Rappi. El AI me dice
 > exactamente dónde estar y cuándo. No pierdo tiempo
 > esperando pedidos. La gasolina me la reembolsan 30%.
 > Por primera vez puedo ahorrar y mantener a mi familia
 > dignamente. El AI es como tener un coach personal que
 > quiere que yo gane más. Es el futuro del trabajo."
 >
-> — Juan Carlos, Rapitendero WPFoods (3 meses)
+> — Juan Carlos, Rapitendero Weats (3 meses)
 > Earnings: $2.8M/month (vs $1.2M in Rappi)
 
 ---
@@ -1112,7 +1112,7 @@ worker_success_metrics = {
 
 ### The Revolutionary Impact
 
-WPFoods' AI doesn't replace workers - it **empowers them** to earn more, work smarter, and live better:
+Weats' AI doesn't replace workers - it **empowers them** to earn more, work smarter, and live better:
 
 1. **Economic Transformation**
    - 50-100% higher earnings per delivery
@@ -1154,6 +1154,6 @@ WPFoods' AI doesn't replace workers - it **empowers them** to earn more, work sm
 **Competitive Advantage:** Insurmountable
 
 **Next Documents:**
-- [AI Technical Architecture](/docs/wpfoods/ai-technical-architecture.md)
-- [AI Cost Optimization](/docs/wpfoods/ai-cost-optimization.md)
-- [AI Competitive Advantage](/docs/wpfoods/ai-competitive-advantage.md)
+- [AI Technical Architecture](/docs/weats/ai-technical-architecture.md)
+- [AI Cost Optimization](/docs/weats/ai-cost-optimization.md)
+- [AI Competitive Advantage](/docs/weats/ai-competitive-advantage.md)

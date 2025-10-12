@@ -1,4 +1,4 @@
-# WPFOODS: EXECUTIVE SUMMARY
+# WEATS: EXECUTIVE SUMMARY
 ## Disrupting Rappi Through Fair Economics and AI-Powered WhatsApp Delivery
 
 **Date:** October 11, 2025
@@ -18,9 +18,9 @@
 
 ---
 
-## THE SOLUTION: WPFOODS
+## THE SOLUTION: WEATS
 
-**WPFoods is a WhatsApp-based food delivery platform that uses AI automation to deliver 10x better economics:**
+**Weats is a WhatsApp-based food delivery platform that uses AI automation to deliver 10x better economics:**
 
 ### For Customers: $0 Fees (Save 35-40%)
 - Zero service fees (vs. Rappi's 15-20%)
@@ -40,7 +40,7 @@
 - Net after expenses: $82,000/day vs. Rappi $20,000/day
 - **Full-time monthly: $2.46M COP vs. Rappi $600K (4x higher)**
 
-### For WPFoods: Still Profitable
+### For Weats: Still Profitable
 - Revenue: $10.44K COP per order (8.4% take rate vs. Rappi 44%)
 - Profit: $3.55K COP per order (34% margin)
 - **Win-win-win model, not zero-sum exploitation**
@@ -51,7 +51,7 @@
 
 ### 1. Cost Structure: 91% Lower Operational Costs
 
-**WPFoods:** 9.5% of GMV
+**Weats:** 9.5% of GMV
 - WhatsApp API: 0.2%
 - AI-powered support: 0.1% (90% automated)
 - Delivery: 4.7%
@@ -115,7 +115,7 @@
 
 ### Capital Efficiency: 10x Better Than Rappi
 
-**WPFoods:** $13.33 GMV per dollar raised
+**Weats:** $13.33 GMV per dollar raised
 **Rappi:** $1.29 GMV per dollar raised
 **Advantage:** 10.3x more capital efficient
 
@@ -169,17 +169,17 @@
 - Organizational resistance: 12,600 employees can't pivot to 15-person model
 - **Result: Too slow, too expensive, too disruptive**
 
-**Option 3: Acquire WPFoods**
+**Option 3: Acquire Weats**
 - Year 3-4 valuation: $50-150M
-- **Most likely outcome if WPFoods successful**
+- **Most likely outcome if Weats successful**
 
 **Option 4: Do Nothing (Year 1)**
 - "Too small to matter" (0.5% market share)
-- **WPFoods uses this window to establish defensible position**
+- **Weats uses this window to establish defensible position**
 
 ### Defensibility: Network Effects at 10,000 Customers
 
-**Once WPFoods reaches 10,000 loyal customers:**
+**Once Weats reaches 10,000 loyal customers:**
 - Restaurant lock-in: 500 restaurants exclusive (12-month contracts)
 - Worker loyalty: 200 workers earning 2x Rappi (will recruit others)
 - Customer habits: 80% retention, 4 orders/month, LTV $93.84
@@ -310,7 +310,7 @@
 
 ## CONCLUSION
 
-**WPFoods is not just another delivery startup.** It's a paradigm shift in how food delivery economics should work - **fair for customers, restaurants, and workers** while still being profitable through AI automation and WhatsApp efficiency.
+**Weats is not just another delivery startup.** It's a paradigm shift in how food delivery economics should work - **fair for customers, restaurants, and workers** while still being profitable through AI automation and WhatsApp efficiency.
 
 **The opportunity:** $3.17B Colombian market dominated by exploitative incumbent
 **The solution:** 91% lower costs enable 3-5x cheaper service
@@ -324,10 +324,10 @@
 
 ## CONTACT
 
-**WPFoods**
-- Email: hello@wpfoods.co
+**Weats**
+- Email: hello@weats.co
 - WhatsApp: +57 XXX XXX XXXX
-- Website: wpfoods.co (coming soon)
+- Website: weats.co (coming soon)
 
 **For Investor Deck and Additional Materials:**
 - Full financial model (Excel)
@@ -344,4 +344,4 @@
 **Last Updated:** October 11, 2025
 **Version:** 1.0 (Investor-Ready)
 
-**Total Documentation:** 150+ pages across 9 comprehensive documents covering every aspect of the WPFoods business model, strategy, and financial projections.
+**Total Documentation:** 150+ pages across 9 comprehensive documents covering every aspect of the Weats business model, strategy, and financial projections.

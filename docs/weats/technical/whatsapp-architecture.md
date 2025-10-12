@@ -1,4 +1,4 @@
-# WPFOODS: WHATSAPP ARCHITECTURE
+# WEATS: WHATSAPP ARCHITECTURE
 ## Complete System Design for AI-Powered Food Delivery Platform
 
 **Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods is built entirely on WhatsApp Business API v23.0, leveraging migue.ai's existing infrastructure (Vercel Edge Functions, Supabase PostgreSQL, Multi-Provider AI). The platform serves three distinct user types through a single WhatsApp interface:
+Weats is built entirely on WhatsApp Business API v23.0, leveraging migue.ai's existing infrastructure (Vercel Edge Functions, Supabase PostgreSQL, Multi-Provider AI). The platform serves three distinct user types through a single WhatsApp interface:
 
 1. **Customers**: Conversational ordering, payment, tracking
 2. **Restaurants**: Menu management, order notifications, analytics dashboard
@@ -1223,7 +1223,7 @@ async function checkDatabase(): Promise<HealthCheck> {
 
 ```json
 {
-  "name": "wpfoods",
+  "name": "weats",
   "version": "1.0.0",
   "regions": ["gru1", "iad1"],
   "env": {
@@ -1260,7 +1260,7 @@ WHATSAPP_PHONE_ID=123456789012345
 WHATSAPP_BUSINESS_ACCOUNT_ID=123456789012345
 WHATSAPP_TOKEN=EAAxxxxxxxxxxxx
 WHATSAPP_APP_SECRET=xxxxxxxxxxxx
-WHATSAPP_VERIFY_TOKEN=wpfoods_webhook_2025
+WHATSAPP_VERIFY_TOKEN=weats_webhook_2025
 
 # Supabase
 SUPABASE_URL=https://xxx.supabase.co
@@ -1506,7 +1506,7 @@ export const COMPLIANCE = {
 
 ## CONCLUSION
 
-WPFoods' WhatsApp architecture delivers:
+Weats' WhatsApp architecture delivers:
 
 **Technical Excellence:**
 - Sub-second response times (<1s p50)
@@ -1537,12 +1537,12 @@ This architecture is **production-ready**, **scalable**, and **maintainable** fo
 ---
 
 **Related Documentation:**
-- [Customer Flows](/docs/wpfoods/technical/customer-flows.md)
-- [Restaurant Flows](/docs/wpfoods/technical/restaurant-flows.md)
-- [Rapitendero Flows](/docs/wpfoods/technical/rapitendero-flows.md)
-- [AI Integration](/docs/wpfoods/technical/ai-integration.md)
-- [WhatsApp Features](/docs/wpfoods/technical/whatsapp-features.md)
-- [Implementation Guide](/docs/wpfoods/technical/implementation-guide.md)
+- [Customer Flows](/docs/weats/technical/customer-flows.md)
+- [Restaurant Flows](/docs/weats/technical/restaurant-flows.md)
+- [Rapitendero Flows](/docs/weats/technical/rapitendero-flows.md)
+- [AI Integration](/docs/weats/technical/ai-integration.md)
+- [WhatsApp Features](/docs/weats/technical/whatsapp-features.md)
+- [Implementation Guide](/docs/weats/technical/implementation-guide.md)
 
 **Status:** ✅ Complete - Ready for backend-developer agent
 **Last Updated:** January 11, 2025

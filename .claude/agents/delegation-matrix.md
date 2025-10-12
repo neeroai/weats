@@ -1,6 +1,6 @@
 # Agent Delegation Matrix
 
-**Project**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
+**Project**: Weats - Disruptive WhatsApp AI Food Delivery Platform
 **Framework**: CLAUDE-MASTER v4.0
 **Last Updated**: 2025-01-11
 
@@ -170,7 +170,7 @@
 
 ## Task-Specific Delegation
 
-### WPFoods Feature Development
+### Weats Feature Development
 
 #### Customer Ordering Flow
 **Agent**: `whatsapp-api-expert` (Sonnet)
@@ -237,7 +237,7 @@
 
 **Delegation Command**:
 ```
-/task backend-developer "Implement Stripe payment integration for WPFoods: WhatsApp Flows checkout, payment confirmation webhooks, failed payment recovery, refund processing API. Edge Runtime compatible, <3s processing time target."
+/task backend-developer "Implement Stripe payment integration for Weats: WhatsApp Flows checkout, payment confirmation webhooks, failed payment recovery, refund processing API. Edge Runtime compatible, <3s processing time target."
 ```
 
 ---
@@ -254,7 +254,7 @@
 
 **Delegation Command**:
 ```
-/task gemini-expert "Implement WPFoods AI features with Gemini 2.5 Flash FREE tier: conversational ordering (Colombian Spanish), menu search, recommendations, customer support (90% automation), upselling. Stay within 1,400 req/day, implement tools: search_restaurants, get_menu, create_order, track_delivery, customer_support."
+/task gemini-expert "Implement Weats AI features with Gemini 2.5 Flash FREE tier: conversational ordering (Colombian Spanish), menu search, recommendations, customer support (90% automation), upselling. Stay within 1,400 req/day, implement tools: search_restaurants, get_menu, create_order, track_delivery, customer_support."
 ```
 
 ---
@@ -271,7 +271,7 @@
 
 **Delegation Command**:
 ```
-/task business-analyst "Validate WPFoods unit economics: track operational costs per order (WhatsApp, AI, delivery, infra), revenue per order (restaurant commission), profit margin. Ensure $0.86 profit/order target met. Identify cost optimization opportunities. Validate against Rappi competitive position."
+/task business-analyst "Validate Weats unit economics: track operational costs per order (WhatsApp, AI, delivery, infra), revenue per order (restaurant commission), profit margin. Ensure $0.86 profit/order target met. Identify cost optimization opportunities. Validate against Rappi competitive position."
 ```
 
 ---
@@ -305,7 +305,7 @@
 
 **Delegation Command**:
 ```
-/task supabase-expert "Design WPFoods database schema: 10 core tables with relationships, PostGIS for location queries (<10ms), pgvector for menu search, RLS policies for multi-tenant isolation, indexes for performance. Create migrations and seed data for testing."
+/task supabase-expert "Design Weats database schema: 10 core tables with relationships, PostGIS for location queries (<10ms), pgvector for menu search, RLS policies for multi-tenant isolation, indexes for performance. Create migrations and seed data for testing."
 ```
 
 ---
@@ -322,7 +322,7 @@
 
 **Delegation Command**:
 ```
-/task whatsapp-api-expert "Implement WhatsApp Flows v3 for WPFoods checkout: cart review, delivery address selection (saved addresses + new), payment method selection (saved cards + new), order summary, confirmation. Use data exchange endpoint for dynamic pricing, address validation."
+/task whatsapp-api-expert "Implement WhatsApp Flows v3 for Weats checkout: cart review, delivery address selection (saved addresses + new), payment method selection (saved cards + new), order summary, confirmation. Use data exchange endpoint for dynamic pricing, address validation."
 ```
 
 ---
@@ -360,7 +360,7 @@
 
 **Delegation Command**:
 ```
-/task code-reviewer "Review WPFoods MVP for production readiness: security vulnerabilities (especially payments), performance optimization, Edge Runtime compatibility, cost tracking accuracy ($0.89/order target). Validate unit economics maintained, identify risks."
+/task code-reviewer "Review Weats MVP for production readiness: security vulnerabilities (especially payments), performance optimization, Edge Runtime compatibility, cost tracking accuracy ($0.89/order target). Validate unit economics maintained, identify risks."
 ```
 
 ---
@@ -377,7 +377,7 @@
 
 **Delegation Command**:
 ```
-/task general-purpose "Write comprehensive unit tests for WPFoods MVP: order processing, dispatch algorithm, payment flows, WhatsApp webhooks, AI integration (Gemini). Use Jest + Edge Runtime test setup. Target >80% coverage."
+/task general-purpose "Write comprehensive unit tests for Weats MVP: order processing, dispatch algorithm, payment flows, WhatsApp webhooks, AI integration (Gemini). Use Jest + Edge Runtime test setup. Target >80% coverage."
 ```
 
 ---
@@ -396,9 +396,9 @@
 
 **Delegation Command**:
 ```
-/task business-analyst "Design WPFoods marketplace architecture: three-sided model (restaurants/customers/workers), unit economics enforcement ($0.86 profit/order), revenue stream implementation (commission, premium features, data insights), scalability plan. Validate against business model docs."
+/task business-analyst "Design Weats marketplace architecture: three-sided model (restaurants/customers/workers), unit economics enforcement ($0.86 profit/order), revenue stream implementation (commission, premium features, data insights), scalability plan. Validate against business model docs."
 
-/task typescript-pro "Design type-safe WPFoods architecture: marketplace abstractions (supply/demand/logistics), order lifecycle state machine, payment processing types, location types (PostGIS), AI integration interfaces. Enforce unit economics in type system."
+/task typescript-pro "Design type-safe Weats architecture: marketplace abstractions (supply/demand/logistics), order lifecycle state machine, payment processing types, location types (PostGIS), AI integration interfaces. Enforce unit economics in type system."
 ```
 
 ---
@@ -415,7 +415,7 @@
 
 **Delegation Command**:
 ```
-/task business-analyst "Develop WPFoods go-to-market strategy: Bogotá launch plan (Zona T + Chicó), restaurant acquisition tactics (50 initial), customer acquisition (viral growth, CAC $12), worker recruitment (20 → 200 → 1,000). 16-week roadmap with milestones."
+/task business-analyst "Develop Weats go-to-market strategy: Bogotá launch plan (Zona T + Chicó), restaurant acquisition tactics (50 initial), customer acquisition (viral growth, CAC $12), worker recruitment (20 → 200 → 1,000). 16-week roadmap with milestones."
 ```
 
 ---
@@ -425,7 +425,7 @@
 ### When to Run Agents in Parallel
 Use parallel execution when tasks are **independent** and can be completed simultaneously.
 
-**Example: WPFoods MVP Development**
+**Example: Weats MVP Development**
 ```
 # Run 3 agents in parallel (independent tasks)
 /task supabase-expert "Design database schema (10 tables, PostGIS, pgvector)"
@@ -586,7 +586,7 @@ graph TD
 - Rate limiting (250 msg/sec) and retry strategies
 - 24h messaging window optimization
 
-**Use For (WPFoods-specific)**:
+**Use For (Weats-specific)**:
 - Customer ordering flow (conversational, catalogs, buttons)
 - Restaurant management interface (menu mgmt, order notifications)
 - Worker dispatch interface (order assignment, confirmations)
@@ -605,12 +605,12 @@ graph TD
 **Expertise**:
 - Gemini 2.5 Flash FREE tier optimization (1,400 req/day)
 - Conversational AI (Colombian Spanish)
-- Function calling (5 tools for WPFoods)
+- Function calling (5 tools for Weats)
 - Context caching (75% cost savings)
 - Multi-modal (text, images, audio)
 - Edge Runtime integration
 
-**Use For (WPFoods-specific)**:
+**Use For (Weats-specific)**:
 - Conversational food ordering ("Quiero tacos picantes bajo $10")
 - Menu search and recommendations
 - Customer support automation (90% target)
@@ -634,7 +634,7 @@ graph TD
 - Custom functions and triggers
 - Edge Runtime compatibility
 
-**Use For (WPFoods-specific)**:
+**Use For (Weats-specific)**:
 - Database schema design (10 tables: customers, restaurants, menu_items, orders, order_items, deliveries, delivery_workers, payments, conversations, messages)
 - Location-based queries (find_nearby_restaurants, find_best_worker)
 - Menu search with pgvector
@@ -704,7 +704,7 @@ graph TD
 - Unit economics validation in code
 - Cost tracking accuracy
 
-**Use For (WPFoods-specific)**:
+**Use For (Weats-specific)**:
 - Payment flow security audit
 - Order processing review
 - Dispatch algorithm validation
@@ -766,17 +766,17 @@ graph TD
 When delegating to an agent, provide:
 
 1. **Clear Objective**: What needs to be done
-2. **WPFoods Context**: Reference to business model, unit economics
+2. **Weats Context**: Reference to business model, unit economics
 3. **Constraints**: Cost targets, performance requirements
 4. **Success Criteria**: Profit/order maintained, feature works
 5. **Files to Focus**: Specific file paths
 
-**Example Handoff (WPFoods)**:
+**Example Handoff (Weats)**:
 ```
 /task whatsapp-api-expert "
 Objective: Implement customer food ordering flow via WhatsApp
 
-WPFoods Context:
+Weats Context:
 - Target $0.03 WhatsApp cost per order (3% of $0.89 operational budget)
 - Use 24h messaging windows for 90%+ free messages
 - Colombian Spanish (Bogotá market)
@@ -821,7 +821,7 @@ Files:
 ❌ Use Opus for simple implementation (waste of budget)
 ❌ Skip unit economics validation (profitability critical)
 ❌ Delegate without cost targets (must maintain $0.89 operational cost)
-❌ Skip WPFoods context (agents need business model understanding)
+❌ Skip Weats context (agents need business model understanding)
 ❌ Delegate without clear success criteria
 ❌ Run dependent tasks in parallel
 ❌ Skip checkpoints on critical changes
@@ -835,7 +835,7 @@ Files:
 - Agent selection accuracy (right agent for task)
 - First-time success rate (no retries needed)
 - Cost per task (vs budget)
-- **Unit economics maintained** (critical for WPFoods)
+- **Unit economics maintained** (critical for Weats)
 - Time to completion
 - Code quality of output
 
@@ -851,6 +851,6 @@ Files:
 **Last Updated**: 2025-01-11
 **Next Review**: After each weekly approval gate
 **Owner**: claude-master
-**Project**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
+**Project**: Weats - Disruptive WhatsApp AI Food Delivery Platform
 **Economics**: $0.86 profit/order (34% margin), validate in every delegation
 **Phase 1 Status**: Ready for Week 1 execution (Database + Webhook)

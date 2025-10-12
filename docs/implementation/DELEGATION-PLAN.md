@@ -1,4 +1,4 @@
-# WPFoods Phase 1 - Agent Delegation Plan
+# Weats Phase 1 - Agent Delegation Plan
 
 **Version**: 1.0
 **Purpose**: Define which specialized agents to use for each phase of implementation

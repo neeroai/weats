@@ -1,7 +1,7 @@
 // Unit Economics and Key Metrics
 
 export const unitEconomics = {
-  wpfoods: {
+  weats: {
     revenue: 10440, // COP per order
     costs: 6890,
     profit: 3550,
@@ -18,14 +18,14 @@ export const unitEconomics = {
 };
 
 export const customerSavings = {
-  wpfoods: 127000, // Total customer pays (COP)
+  weats: 127000, // Total customer pays (COP)
   rappi: 163000,
   savings: 36000,
   savingsPercent: 0.22, // 22% cheaper
 };
 
 export const restaurantFees = {
-  wpfoods: {
+  weats: {
     commission: 0.06, // 6%
     totalFees: 0.06,
     keepPercentage: 0.927, // 92.7%
@@ -38,7 +38,7 @@ export const restaurantFees = {
 };
 
 export const workerEarnings = {
-  wpfoods: {
+  weats: {
     perDelivery: 3900, // COP
     netPerDay: 82000, // After expenses
     monthlyNet: 2460000, // Full-time
@@ -51,7 +51,7 @@ export const workerEarnings = {
 };
 
 export const costAdvantage = {
-  wpfoods: {
+  weats: {
     delivery: 0.047, // 4.7% of GMV
     technology: 0.005, // 0.5%
     support: 0.001, // 0.1%
@@ -79,25 +79,25 @@ export const keyMetrics = {
 export const competitiveAdvantages = [
   {
     title: 'Cost Structure',
-    wpfoods: '9.5% of GMV',
+    weats: '9.5% of GMV',
     rappi: '27% of GMV',
     advantage: '91% lower costs',
   },
   {
     title: 'Customer Fees',
-    wpfoods: '$0',
+    weats: '$0',
     rappi: '15-20%',
     advantage: '100% savings',
   },
   {
     title: 'Restaurant Commission',
-    wpfoods: '5-10%',
+    weats: '5-10%',
     rappi: '25-35%',
     advantage: '76% lower',
   },
   {
     title: 'Worker Pay',
-    wpfoods: '$3,900 COP',
+    weats: '$3,900 COP',
     rappi: '$2,500 COP',
     advantage: '56% higher',
   },

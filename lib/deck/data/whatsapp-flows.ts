@@ -1,7 +1,7 @@
 // WhatsApp conversation flows for mockups
 
 export interface Message {
-  sender: 'customer' | 'wpfoods';
+  sender: 'customer' | 'weats';
   message: string;
   timestamp: string;
   buttons?: { id: string; title: string }[];
@@ -16,8 +16,8 @@ export const onboardingFlow: Message[] = [
     timestamp: '6:15 PM',
   },
   {
-    sender: 'wpfoods',
-    message: `👋 ¡Hola! Bienvenido a WPFoods
+    sender: 'weats',
+    message: `👋 ¡Hola! Bienvenido a Weats
 
 $0 tarifas de servicio. Precios justos. Entrega rápida.
 
@@ -32,7 +32,7 @@ Para empezar, necesito algunos datos:
     timestamp: '6:16 PM',
   },
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `✅ Perfecto, Juan!
 
 Tu cuenta está lista:
@@ -55,7 +55,7 @@ export const orderingFlow: Message[] = [
     timestamp: '7:15 PM',
   },
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `🌮 Encontré 3 opciones cerca de ti:
 
 Todas abiertas ahora y a menos de 3 km.`,
@@ -84,7 +84,7 @@ Todas abiertas ahora y a menos de 3 km.`,
     timestamp: '7:16 PM',
   },
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `✅ Confirmando pedido de Taquería El Paisa
 
 2x Tacos al Pastor - $18.00
@@ -105,7 +105,7 @@ Total: $18.80
     timestamp: '7:16 PM',
   },
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `✅ Pedido confirmado!
 
 Pedido #1234
@@ -119,7 +119,7 @@ Track: Reply "TRACK" anytime`,
 
 export const menuBrowsingFlow: Message[] = [
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `🌮 Taquería El Paisa
 ⭐ 4.8 (230 reseñas)
 🕒 25-30 min
@@ -164,7 +164,7 @@ export const trackingFlow: Message[] = [
     timestamp: '7:30 PM',
   },
   {
-    sender: 'wpfoods',
+    sender: 'weats',
     message: `📦 Estado de tu Pedido
 
 Pedido #1234
@@ -192,12 +192,12 @@ Distancia: 1.2 km`,
 
 export const comparisonData = {
   timeToOrder: {
-    wpfoods: '30 seconds',
+    weats: '30 seconds',
     rappi: '5+ minutes',
     advantage: '10x faster',
   },
   onboarding: {
-    wpfoods: '30 seconds',
+    weats: '30 seconds',
     rappi: '5-10 minutes',
     advantage: '10-20x faster',
   },

@@ -1,4 +1,4 @@
-# WPFOODS DELIVERY WORKER MODEL
+# WEATS DELIVERY WORKER MODEL
 ## 50-100% Higher Pay + Expense Support
 
 **Document Version:** 1.0
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods workers earn **$3,500-$6,000 COP per delivery** (vs. Rappi's $1,800-$3,700) plus **expense support** that reduces their cost burden from 40-60% to 20-30%. Net take-home income is **2-3x higher than Rappi**. Workers join via WhatsApp in 30 seconds, receive weekly payments, and access gasoline reimbursement (30% of fuel costs), maintenance fund (pooled repairs), and benefits pool (insurance, emergency support).
+Weats workers earn **$3,500-$6,000 COP per delivery** (vs. Rappi's $1,800-$3,700) plus **expense support** that reduces their cost burden from 40-60% to 20-30%. Net take-home income is **2-3x higher than Rappi**. Workers join via WhatsApp in 30 seconds, receive weekly payments, and access gasoline reimbursement (30% of fuel costs), maintenance fund (pooled repairs), and benefits pool (insurance, emergency support).
 
 ---
 
@@ -27,7 +27,7 @@ WPFoods workers earn **$3,500-$6,000 COP per delivery** (vs. Rappi's $1,800-$3,7
 - Peak hour (lunch/dinner): +20%
 
 **Tips:**
-- 100% to worker (WPFoods takes $0)
+- 100% to worker (Weats takes $0)
 - Average: $1,500-$2,000 COP
 
 **Total Average: $5,000-$7,000 COP per delivery**
@@ -66,7 +66,7 @@ Net: $20,000/day ($600K/month)
 Below minimum wage: $1.3M
 ```
 
-**WPFoods Worker (Full-Time, Motorcycle):**
+**Weats Worker (Full-Time, Motorcycle):**
 ```
 Gross: $5,000 COP/delivery × 20 deliveries/day = $100,000/day
 Expense support:
@@ -90,12 +90,12 @@ ABOVE minimum wage: $1.3M
 
 **Step 1: WhatsApp Message**
 ```
-Worker → WPFoods: "I want to work"
+Worker → Weats: "I want to work"
 ```
 
 **Step 2: AI Registration**
 ```
-WPFoods AI: "Welcome! Share:
+Weats AI: "Welcome! Share:
 1. Full name
 2. ID number
 3. Vehicle (bicycle/motorcycle/car)
@@ -107,7 +107,7 @@ WPFoods AI: "Welcome! Share:
 
 **Step 3: Verification & Activation**
 ```
-WPFoods AI: "✓ Verified (ID check: Jumio)
+Weats AI: "✓ Verified (ID check: Jumio)
 ✓ Background cleared
 ✓ Active and ready to accept deliveries
 
@@ -133,7 +133,7 @@ Training: 2-min video sent via WhatsApp"
 
 **1. Order Offer (WhatsApp)**
 ```
-WPFoods: "🔔 Delivery Available
+Weats: "🔔 Delivery Available
 
 📍 Pickup: El Buen Sabor (Calle 45 #123)
 📍 Delivery: Carrera 7 #89 (1.5km)
@@ -147,7 +147,7 @@ Reply: YES or NO"
 ```
 Worker: "YES"
 
-WPFoods: "✓ Assigned to you!
+Weats: "✓ Assigned to you!
 🏍️ Go to: El Buen Sabor
 📞 Contact: +57 300 XXX XXXX
 ⏱️ Arrive by: 6:18pm (12 min)"
@@ -155,11 +155,11 @@ WPFoods: "✓ Assigned to you!
 
 **3. Pickup**
 ```
-WPFoods: "Arrived at restaurant?"
+Weats: "Arrived at restaurant?"
 
 Worker: "YES"
 
-WPFoods: "✓ Confirmed
+Weats: "✓ Confirmed
 Order #1234 ready in 5 min
 Items: 2x Bandeja Paisa, 1x Arepa
 🚀 Deliver to: Carrera 7 #89, Apt 402"
@@ -167,7 +167,7 @@ Items: 2x Bandeja Paisa, 1x Arepa
 
 **4. Delivery**
 ```
-WPFoods: "Customer notified - ETA 10 min
+Weats: "Customer notified - ETA 10 min
 🔔 Ring doorbell
 💬 Call if needed: +57 301 XXX XXXX"
 
@@ -175,7 +175,7 @@ WPFoods: "Customer notified - ETA 10 min
 
 Worker: "Delivered"
 
-WPFoods: "✓ Complete!
+Weats: "✓ Complete!
 Earnings: $4,000 base + $1,800 tip = $5,800
 ⭐ Rate customer? (optional)
 
@@ -186,7 +186,7 @@ Next delivery in 8 min..."
 
 **Payment Message (Every Monday):**
 ```
-WPFoods: "💰 Weekly Earnings
+Weats: "💰 Weekly Earnings
 
 Oct 1-7, 2025
 Deliveries: 120
@@ -281,11 +281,11 @@ Savings: $200,000 vs. $225,000 (89% covered)
 
 ## COMPARISON TO RAPPI
 
-| Metric | WPFoods | Rappi | Advantage |
+| Metric | Weats | Rappi | Advantage |
 |--------|---------|-------|-----------|
 | **Pay/Delivery** | $3,500-$6,000 | $1,800-$3,700 | **50-100% higher** |
 | **Tips** | 100% to worker | 100% to worker | Same |
-| **Expense Support** | Yes (30% gas, maintenance fund) | No | **WPFoods only** |
+| **Expense Support** | Yes (30% gas, maintenance fund) | No | **Weats only** |
 | **Net After Expenses** | 70-80% take-home | 40-60% take-home | **30-40 points more** |
 | **Full-Time Income** | $2.4M COP/month | $600K-1M COP | **2-3x higher** |
 | **Benefits** | Insurance, health support | Accident only | **Enhanced** |
@@ -296,14 +296,14 @@ Savings: $200,000 vs. $225,000 (89% covered)
 
 ## CONCLUSION
 
-WPFoods workers earn **2-3x more net income** than Rappi workers through:
+Weats workers earn **2-3x more net income** than Rappi workers through:
 1. **50-100% higher base pay** per delivery
 2. **30% gas reimbursement** (reduces biggest expense)
 3. **Maintenance fund** (spreads repair costs)
 4. **Benefits pool** (health, insurance, emergency loans)
 5. **Community support** (WhatsApp groups, peer help)
 
-**Join WPFoods:**
+**Join Weats:**
 - WhatsApp: +57 XXX XXX XXXX
 - Message: "I want to work"
 - Start earning in 30 seconds

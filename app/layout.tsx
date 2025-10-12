@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "WPFoods - AI-Powered WhatsApp Food Delivery",
+  title: "Weats - AI-Powered WhatsApp Food Delivery",
   description: "Disrumpiendo Rappi con economía justa. $0 tarifas cliente, 5-10% comisiones restaurante, pago 3x mejor para domiciliarios.",
 };
 

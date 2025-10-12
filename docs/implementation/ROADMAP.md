@@ -1,4 +1,4 @@
-# WPFoods Phase 1 MVP - Implementation Roadmap
+# Weats Phase 1 MVP - Implementation Roadmap
 
 **Version**: 1.0
 **Status**: Ready for Execution
@@ -834,9 +834,9 @@ Week 4 (Feb 1-8): Payments + Launch
 - [week-2-ordering-spec.md](./week-2-ordering-spec.md) - Ordering flow technical spec
 - [week-3-supply-spec.md](./week-3-supply-spec.md) - Supply side technical spec
 - [week-4-payments-spec.md](./week-4-payments-spec.md) - Payments + launch technical spec
-- [Business Model](../wpfoods/business-model-overview.md) - Disruptive model explanation
-- [Unit Economics](../wpfoods/unit-economics.md) - $0.86 profit/order breakdown
-- [AI Strategy](../wpfoods/ai-strategy-overview.md) - Gemini FREE tier optimization
+- [Business Model](../weats/business-model-overview.md) - Disruptive model explanation
+- [Unit Economics](../weats/unit-economics.md) - $0.86 profit/order breakdown
+- [AI Strategy](../weats/ai-strategy-overview.md) - Gemini FREE tier optimization
 - [Delegation Matrix](../../.claude/agents/delegation-matrix.md) - Agent routing rules
 
 ---

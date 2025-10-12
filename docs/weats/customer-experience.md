@@ -1,11 +1,11 @@
-# WPFOODS CUSTOMER EXPERIENCE
+# WEATS CUSTOMER EXPERIENCE
 ## $0 Fees, WhatsApp Native, AI-Powered
 
 **Last Updated:** October 11, 2025
 
 ## EXECUTIVE SUMMARY
 
-WPFoods customers save **35-40% per order** compared to Rappi through **$0 service fees**, **minimal delivery fees** (<$1,000 COP), and **no menu price markups**. Ordering takes **30 seconds** via conversational AI on WhatsApp - no app download, no account setup, no friction. Total cost for $30 order: **$31-32 USD** (vs. Rappi $42 USD with fees).
+Weats customers save **35-40% per order** compared to Rappi through **$0 service fees**, **minimal delivery fees** (<$1,000 COP), and **no menu price markups**. Ordering takes **30 seconds** via conversational AI on WhatsApp - no app download, no account setup, no friction. Total cost for $30 order: **$31-32 USD** (vs. Rappi $42 USD with fees).
 
 ---
 
@@ -13,7 +13,7 @@ WPFoods customers save **35-40% per order** compared to Rappi through **$0 servi
 
 **$30 USD Order (Typical):**
 
-| Cost Component | WPFoods | Rappi | Savings |
+| Cost Component | Weats | Rappi | Savings |
 |----------------|---------|-------|---------|
 | Food | $30 | $30 | $0 |
 | Service Fee | $0 (0%) | $5.40 (18%) | **$5.40** |
@@ -38,11 +38,11 @@ WPFoods customers save **35-40% per order** compared to Rappi through **$0 servi
 5. Checkout, enter address, pay (1 min)
 **Total: 5-10 minutes**
 
-**WPFoods WhatsApp (30 seconds):**
+**Weats WhatsApp (30 seconds):**
 ```
 Customer: "I want pizza for 2 people under $20"
 
-WPFoods AI: "🍕 Found 3 options nearby:
+Weats AI: "🍕 Found 3 options nearby:
 1. Pizzería Napoli - Margherita x2 ($18, ★4.8, 20min)
 2. Domino's - 2 Mediums ($17.50, ★4.5, 25min)
 3. Archie's - Pepperoni x2 ($19, ★4.9, 15min)
@@ -51,7 +51,7 @@ Reply: 1, 2, or 3"
 
 Customer: "1"
 
-WPFoods AI: "✓ Ordering from Pizzería Napoli
+Weats AI: "✓ Ordering from Pizzería Napoli
 2x Margherita Pizza - $18
 Delivery: <$1
 Total: $18.20
@@ -60,7 +60,7 @@ Confirm? YES or NO"
 
 Customer: "YES"
 
-WPFoods AI: "✓ Order confirmed!
+Weats AI: "✓ Order confirmed!
 Delivery to: [saved address]
 ETA: 6:35pm (20 min)
 Track: Reply TRACK anytime"
@@ -73,12 +73,12 @@ Track: Reply TRACK anytime"
 
 **Step 1: Send Message (10 sec)**
 ```
-Customer → WPFoods WhatsApp: "Hi"
+Customer → Weats WhatsApp: "Hi"
 ```
 
 **Step 2: AI Setup (20 sec)**
 ```
-WPFoods AI: "Welcome to WPFoods! 🎉
+Weats AI: "Welcome to Weats! 🎉
 Zero fees, fair prices, delivered fast.
 
 What's your:
@@ -88,7 +88,7 @@ What's your:
 
 Customer: [Provides info]
 
-WPFoods AI: "✓ All set! Ready to order.
+Weats AI: "✓ All set! Ready to order.
 What are you craving?"
 ```
 
@@ -110,7 +110,7 @@ What are you craving?"
 
 ### Real-Time Tracking
 ```
-WPFoods: "🚀 Order Status
+Weats: "🚀 Order Status
 
 ✓ Restaurant confirmed (6:15pm)
 ✓ Preparing (6:17pm)
@@ -124,7 +124,7 @@ Track live: [Location link]"
 ```
 Customer: "Where is my order?"
 
-WPFoods AI: "Your order #1234 is 5 min away!
+Weats AI: "Your order #1234 is 5 min away!
 Worker: Carlos M. (★4.9)
 Location: [Live map link]
 ETA: 6:35pm (updated)"
@@ -151,7 +151,7 @@ ETA: 6:35pm (updated)"
 
 ## CONCLUSION
 
-WPFoods customers enjoy:
+Weats customers enjoy:
 - **$0 service fees** (save $5-7/order)
 - **WhatsApp native** (no app download)
 - **30-second ordering** (10x faster)

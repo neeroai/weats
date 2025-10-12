@@ -1,4 +1,4 @@
-# WPFOODS BUSINESS DOCUMENTATION
+# WEATS BUSINESS DOCUMENTATION
 ## Complete Business Model, Strategy, and Financial Analysis
 
 **Last Updated:** October 11, 2025
@@ -7,16 +7,16 @@
 
 ## OVERVIEW
 
-WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 64% Colombian market share by offering **10x better value** to customers, restaurants, and delivery workers. The platform charges **$0 service fees** to customers, **5-10% commission** to restaurants (vs. Rappi's 25-35%), and pays workers **50-100% more per delivery** - while still achieving profitability through AI automation and adjacent revenue streams.
+Weats is a WhatsApp-based food delivery platform designed to disrupt Rappi's 64% Colombian market share by offering **10x better value** to customers, restaurants, and delivery workers. The platform charges **$0 service fees** to customers, **5-10% commission** to restaurants (vs. Rappi's 25-35%), and pays workers **50-100% more per delivery** - while still achieving profitability through AI automation and adjacent revenue streams.
 
 ---
 
 ## DOCUMENT STRUCTURE
 
 ### 1. Business Model Overview
-**File:** `/docs/wpfoods/business-model-overview.md`
+**File:** `/docs/weats/business-model-overview.md`
 
-**Summary:** Core value proposition, revenue model, competitive positioning, and strategic roadmap. WPFoods achieves 91% lower operational costs through AI automation and WhatsApp infrastructure, enabling 3-5x cheaper service while maintaining profitability.
+**Summary:** Core value proposition, revenue model, competitive positioning, and strategic roadmap. Weats achieves 91% lower operational costs through AI automation and WhatsApp infrastructure, enabling 3-5x cheaper service while maintaining profitability.
 
 **Key Metrics:**
 - Customer savings: 35-40% per order ($0 fees vs. Rappi's 15-20%)
@@ -27,9 +27,9 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 2. Unit Economics
-**File:** `/docs/wpfoods/unit-economics.md`
+**File:** `/docs/weats/unit-economics.md`
 
-**Summary:** Detailed financial model proving WPFoods can be profitable at low prices. Revenue per order: $10.44K COP, cost per order: $6.89K COP, net profit: $3.55K COP (34% margin). Break-even at 1,598 orders/day achieved in Year 2.
+**Summary:** Detailed financial model proving Weats can be profitable at low prices. Revenue per order: $10.44K COP, cost per order: $6.89K COP, net profit: $3.55K COP (34% margin). Break-even at 1,598 orders/day achieved in Year 2.
 
 **Key Metrics:**
 - Profit per order: $0.86 USD (34% margin)
@@ -40,7 +40,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 3. Restaurant Model
-**File:** `/docs/wpfoods/restaurant-model.md`
+**File:** `/docs/weats/restaurant-model.md`
 
 **Summary:** 5-10% total fees (all-in) vs. Rappi's 25-35%. Restaurants keep 92-95% of order value. Onboarding via WhatsApp in 30 seconds. Free AI-powered analytics. Weekly payments with full transparency.
 
@@ -53,7 +53,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 4. Worker (Rapitendero) Model
-**File:** `/docs/wpfoods/rapitendero-model.md`
+**File:** `/docs/weats/rapitendero-model.md`
 
 **Summary:** Workers earn $3,500-$6,000 COP per delivery (50-100% higher than Rappi) plus expense support reducing cost burden from 40-60% to 20-30%. Net take-home income 2-3x higher than Rappi.
 
@@ -67,7 +67,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 5. Customer Experience
-**File:** `/docs/wpfoods/customer-experience.md`
+**File:** `/docs/weats/customer-experience.md`
 
 **Summary:** $0 service fees, minimal delivery fees (<$1,000 COP), conversational AI ordering via WhatsApp. No app download required. 30-second onboarding. Order in 30 seconds vs. 5 minutes on traditional apps.
 
@@ -80,9 +80,9 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 6. Competitive Analysis
-**File:** `/docs/wpfoods/competitive-analysis.md`
+**File:** `/docs/weats/competitive-analysis.md`
 
-**Summary:** Head-to-head comparison showing WPFoods' structural advantages are **permanent and defensible**. Rappi cannot match without rebuilding entire platform (18-24 months + $100M investment). Cost advantage: 60-68% lower operational expenses.
+**Summary:** Head-to-head comparison showing Weats' structural advantages are **permanent and defensible**. Rappi cannot match without rebuilding entire platform (18-24 months + $100M investment). Cost advantage: 60-68% lower operational expenses.
 
 **Key Advantages:**
 - Economics: 91% lower operational costs (AI + WhatsApp)
@@ -93,7 +93,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 7. Go-to-Market Strategy
-**File:** `/docs/wpfoods/go-to-market-strategy.md`
+**File:** `/docs/weats/go-to-market-strategy.md`
 
 **Summary:** Launch in Bogotá Zona T + Chicó (2 neighborhoods), prove model, expand to 5 cities by Year 2, national coverage by Year 3. Viral word-of-mouth marketing reduces CAC to $12 (vs. $30-50 for traditional platforms).
 
@@ -105,7 +105,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ---
 
 ### 8. Financial Projections
-**File:** `/docs/wpfoods/financial-projections.md`
+**File:** `/docs/weats/financial-projections.md`
 
 **Summary:** 3-year path to $10M revenue and $1M profit. Year 1 loss: -$1M (investment), Year 2: -$500K (scale), Year 3: +$1M (profitable). Total funding needed: $7.5M over 3 years.
 
@@ -121,7 +121,7 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 ### The Unfair Advantage
 
 **1. Cost Structure: Unbridgeable Gap**
-- WPFoods: 9.5% of GMV operational costs
+- Weats: 9.5% of GMV operational costs
 - Rappi: 24-30% of GMV operational costs
 - **60-68% lower costs enable 3-5x cheaper service**
 
@@ -156,9 +156,9 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 - Organizational resistance (12,600 employees)
 - **Too slow, too expensive**
 
-**Option 3: Acquire WPFoods**
+**Option 3: Acquire Weats**
 - Year 3-4 valuation: $50-150M
-- **Likely scenario if WPFoods successful**
+- **Likely scenario if Weats successful**
 
 ---
 
@@ -231,9 +231,9 @@ WPFoods is a WhatsApp-based food delivery platform designed to disrupt Rappi's 6
 - Valuation: $2-3M pre-money
 
 **Contact:**
-- Email: hello@wpfoods.co
+- Email: hello@weats.co
 - WhatsApp: +57 XXX XXX XXXX
-- Website: wpfoods.co (coming soon)
+- Website: weats.co (coming soon)
 
 ---
 

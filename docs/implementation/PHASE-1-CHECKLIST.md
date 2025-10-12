@@ -1,4 +1,4 @@
-# WPFoods Phase 1 MVP - Implementation Checklist
+# Weats Phase 1 MVP - Implementation Checklist
 
 **Version**: 1.0
 **Status**: Ready for Execution
@@ -1069,7 +1069,7 @@ Each task includes:
 - **Estimated Hours**: 2h
 - **Dependencies**: 3.1.4 (admin approval)
 - **Success Criteria**:
-  - Restaurant receives WhatsApp: "You're live on WPFoods!"
+  - Restaurant receives WhatsApp: "You're live on Weats!"
   - Instructions: How to receive/accept orders
   - Test order: Send test order to verify setup
 - **Testing**:

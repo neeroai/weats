@@ -1,5 +1,5 @@
-# WPFOODS VS. RAPPI: COMPETITIVE ANALYSIS
-## Why WPFoods Wins on Economics, Experience, and Ethics
+# WEATS VS. RAPPI: COMPETITIVE ANALYSIS
+## Why Weats Wins on Economics, Experience, and Ethics
 
 **Document Version:** 1.0
 **Last Updated:** October 11, 2025
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods represents a **paradigm shift** in food delivery economics. While Rappi extracts 44% of every order, WPFoods takes only 8.4% while delivering **superior value to all stakeholders**. The competitive advantage is **structural and defensible**: 91% lower operational costs through AI automation and WhatsApp infrastructure enable WPFoods to charge 5-10x less and still profit. Rappi cannot match this without rebuilding their entire platform and abandoning their high-extraction business model.
+Weats represents a **paradigm shift** in food delivery economics. While Rappi extracts 44% of every order, Weats takes only 8.4% while delivering **superior value to all stakeholders**. The competitive advantage is **structural and defensible**: 91% lower operational costs through AI automation and WhatsApp infrastructure enable Weats to charge 5-10x less and still profit. Rappi cannot match this without rebuilding their entire platform and abandoning their high-extraction business model.
 
 ---
 
@@ -16,7 +16,7 @@ WPFoods represents a **paradigm shift** in food delivery economics. While Rappi 
 
 ### The Numbers That Matter
 
-| Metric | WPFoods | Rappi | Advantage |
+| Metric | Weats | Rappi | Advantage |
 |--------|---------|-------|-----------|
 | **CUSTOMER ECONOMICS** |
 | Service Fee | $0 (0%) | $5,400 COP (18%) | **100% savings** |
@@ -49,7 +49,7 @@ WPFoods represents a **paradigm shift** in food delivery economics. While Rappi 
 ```
 High Value
     │
-    │   WPFoods (★)          
+    │   Weats (★)          
     │   • Zero fees for customers
     │   • 5-10% for restaurants    Premium
     │   • 50-100% higher worker pay    Delivery
@@ -63,11 +63,11 @@ Cost│   Platforms        • 40% customer premium
 Low Value
 ```
 
-**Strategic Position:** WPFoods occupies the **"High Value, Low Cost"** quadrant - a blue ocean position that Rappi cannot easily attack.
+**Strategic Position:** Weats occupies the **"High Value, Low Cost"** quadrant - a blue ocean position that Rappi cannot easily attack.
 
 ---
 
-## WHY WPFOODS WINS
+## WHY WEATS WINS
 
 ### 1. Economics: The Unbridgeable Gap
 
@@ -79,7 +79,7 @@ Low Value
 - Engineering (12,600 employees): 8-10%
 - **Total: 24-30% of GMV**
 
-**WPFoods Cost Structure (% of GMV):**
+**Weats Cost Structure (% of GMV):**
 - WhatsApp API: 0.2%
 - Delivery operations: 4.7%
 - Customer support: 0.1% (AI)
@@ -97,7 +97,7 @@ This is **structurally insurmountable** for Rappi:
 
 ### 2. Distribution: WhatsApp Dominance
 
-**WPFoods:**
+**Weats:**
 - Platform: WhatsApp (50M Colombians already have)
 - Friction: Zero (send message = instant access)
 - Viral coefficient: 1.5-2.0 (easy forwarding)
@@ -113,7 +113,7 @@ This is **structurally insurmountable** for Rappi:
 
 ### 3. Technology: AI-First vs. Legacy
 
-**WPFoods Architecture:**
+**Weats Architecture:**
 - Built for AI from day 1
 - Conversational ordering (no menus)
 - 90% automated support
@@ -131,7 +131,7 @@ This is **structurally insurmountable** for Rappi:
 
 ### 4. Brand: Ethics as Competitive Moat
 
-**WPFoods Brand Promise:**
+**Weats Brand Promise:**
 - "Fair delivery for everyone"
 - "Zero fees, full transparency"
 - "Technology that serves people"
@@ -149,7 +149,7 @@ This is **structurally insurmountable** for Rappi:
 
 ## RAPPI'S RESPONSE OPTIONS (AND WHY THEY FAIL)
 
-### Option 1: Price War (Match WPFoods Prices)
+### Option 1: Price War (Match Weats Prices)
 
 **Rappi Action:** Drop service fees to $0, reduce commissions to 5-10%
 
@@ -164,7 +164,7 @@ New revenue: $268M-536M
 NET: -$304M to -$572M annual loss
 ```
 
-**Conclusion:** **Financial suicide.** Rappi loses $500M+ annually and still has 60-68% higher operational costs than WPFoods.
+**Conclusion:** **Financial suicide.** Rappi loses $500M+ annually and still has 60-68% higher operational costs than Weats.
 
 ### Option 2: Copy WhatsApp Strategy
 
@@ -180,21 +180,21 @@ NET: -$304M to -$572M annual loss
 **Cost:** $50-100M development + ongoing dual operations
 **Result:** **Marginal improvement, structural disadvantage remains**
 
-### Option 3: Acquire WPFoods
+### Option 3: Acquire Weats
 
-**Rappi Action:** Buy WPFoods before it scales
+**Rappi Action:** Buy Weats before it scales
 
 **Valuation:** $10-30M (Year 1-2)
-**Rappi's consideration:** Likely if WPFoods gains 5-10% market share
+**Rappi's consideration:** Likely if Weats gains 5-10% market share
 
-**WPFoods Strategy:** Reject acquisition, focus on mission (fair delivery)
+**Weats Strategy:** Reject acquisition, focus on mission (fair delivery)
 **Alternative:** Raise from mission-aligned investors (impact VCs, ethical funds)
 
 ### Option 4: Legal/Regulatory Warfare
 
 **Rappi Action:** Lobby to restrict WhatsApp commerce, create barriers
 
-**WPFoods Response:**
+**Weats Response:**
 - Public campaign (David vs. Goliath narrative)
 - Customer/restaurant testimonials (fairness narrative)
 - Government relations (economic benefits for SMEs)
@@ -204,9 +204,9 @@ NET: -$304M to -$572M annual loss
 
 ### Option 5: Do Nothing (Most Likely Year 1)
 
-**Rappi's Assessment:** "WPFoods is too small, ignore for now"
+**Rappi's Assessment:** "Weats is too small, ignore for now"
 
-**WPFoods Strategy:** **Use this window to establish defensible position**
+**Weats Strategy:** **Use this window to establish defensible position**
 1. Acquire 10,000 loyal customers (high switching costs)
 2. Sign 500 exclusive restaurants (contractual moat)
 3. Recruit 200 workers earning 2x Rappi (quality advantage)
@@ -218,7 +218,7 @@ NET: -$304M to -$572M annual loss
 
 ## DEFENSIVE STRATEGIES
 
-### How WPFoods Maintains Advantage
+### How Weats Maintains Advantage
 
 **1. Speed: Race to Critical Mass**
 - Target: 10,000 customers in 6 months (defensible)
@@ -226,7 +226,7 @@ NET: -$304M to -$572M annual loss
 - Once achieved: Network effects make displacement expensive
 
 **2. Exclusivity: Lock in Best Restaurants**
-- Offer: "Join WPFoods exclusive, earn extra 1% (4% commission)"
+- Offer: "Join Weats exclusive, earn extra 1% (4% commission)"
 - Benefit: Lower fees + exclusivity premium
 - Contract: 12-month exclusive (no Rappi during period)
 - Target: Top 100 restaurants in launch zones
@@ -238,7 +238,7 @@ NET: -$304M to -$572M annual loss
 - Result: Workers recruit others from Rappi (viral loop)
 
 **4. Brand: Own "Fair Delivery" Position**
-- Marketing: "WPFoods vs. Rappi" comparison tables
+- Marketing: "Weats vs. Rappi" comparison tables
 - PR: Worker stories ("I earn $5,000 per delivery now")
 - Media: Tech journalists love David vs. Goliath
 - Result: Rappi's price cuts look desperate, not ethical
@@ -270,7 +270,7 @@ NET: -$304M to -$572M annual loss
 - GMV: $30M/year
 - Market share: 3% Colombia (5% of Rappi's 64%)
 
-**Rappi Response:** Notice WPFoods, begin analysis
+**Rappi Response:** Notice Weats, begin analysis
 
 ### Year 3: National Presence (10% Market Share)
 
@@ -296,7 +296,7 @@ NET: -$304M to -$572M annual loss
 
 ## SUCCESS METRICS
 
-### WPFoods Winning Indicators
+### Weats Winning Indicators
 
 **Year 1:**
 - ✓ 10,000 customers acquired (retention >80%)
@@ -327,14 +327,14 @@ NET: -$304M to -$572M annual loss
 
 **1. Cost Structure: 60-68% Lower**
 - Rappi cannot match without rebuilding (18-24 months + $100M)
-- WPFoods maintains advantage throughout
+- Weats maintains advantage throughout
 
 **2. Distribution: WhatsApp = Zero Friction**
 - 90% penetration = 3x larger addressable market
 - Viral sharing = 3-5x lower CAC
 
 **3. Unit Economics: Profitable at Low Prices**
-- WPFoods profits at 8.4% take rate
+- Weats profits at 8.4% take rate
 - Rappi needs 35-40% to survive
 - **This gap is permanent**
 
@@ -348,7 +348,7 @@ NET: -$304M to -$572M annual loss
 
 ### The Inevitable Outcome
 
-**If WPFoods executes well:**
+**If Weats executes well:**
 - Year 1: Prove model (0.5% share)
 - Year 2: Scale (3% share)
 - Year 3: Challenge (10% share)
@@ -357,10 +357,10 @@ NET: -$304M to -$572M annual loss
 **Rappi's options:**
 - Cut prices (lose $500M/year)
 - Rebuild platform (18-24 months, $100M)
-- Acquire WPFoods ($50-200M)
+- Acquire Weats ($50-200M)
 - Cede market share (death by a thousand cuts)
 
-**Most likely:** Rappi acquires WPFoods in Year 3-4 for $50-150M, or WPFoods continues to 25-30% market share and IPOs at $300-500M valuation.
+**Most likely:** Rappi acquires Weats in Year 3-4 for $50-150M, or Weats continues to 25-30% market share and IPOs at $300-500M valuation.
 
 **Either way: Fair delivery wins.**
 

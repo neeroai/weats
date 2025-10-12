@@ -1,15 +1,15 @@
 # AI as Insurmountable Competitive Advantage
-## Why Rappi Cannot Respond: The Three Structural Barriers That Guarantee WPFoods' Dominance
+## Why Rappi Cannot Respond: The Three Structural Barriers That Guarantee Weats' Dominance
 
 ### Executive Summary
 
-WPFoods' AI-first architecture creates an insurmountable competitive moat that Rappi cannot cross. Three structural barriers—financial, technical, and cultural—ensure that Rappi needs 24-36 months minimum to even attempt a response, by which time WPFoods will have captured the market. This document proves mathematically and structurally why Rappi's collapse is inevitable when facing our AI-native platform.
+Weats' AI-first architecture creates an insurmountable competitive moat that Rappi cannot cross. Three structural barriers—financial, technical, and cultural—ensure that Rappi needs 24-36 months minimum to even attempt a response, by which time Weats will have captured the market. This document proves mathematically and structurally why Rappi's collapse is inevitable when facing our AI-native platform.
 
 The numbers are devastating for Rappi:
 - **Financial Trap**: $300M debt, 85% burn rate, cannot afford $50M AI investment
 - **Technical Debt**: 8-year monolithic codebase, 18-month rewrite minimum
 - **Cultural Inertia**: 5,000 employees, 7 decision layers, 6-month approval cycles
-- **Time to Respond**: 24-36 months (by then, WPFoods owns the market)
+- **Time to Respond**: 24-36 months (by then, Weats owns the market)
 - **Probability of Successful Response**: <5%
 
 ## Table of Contents
@@ -229,7 +229,7 @@ class RappiFinancialTrap {
    - Management team has no AI experience
 
 3. **Alternative Opportunities**
-   - WPFoods: AI-native, 91% better unit economics
+   - Weats: AI-native, 91% better unit economics
    - Other startups: Greenfield, no debt
    - Established players: Better fundamentals
 
@@ -362,7 +362,7 @@ class RappiTechnicalDebt {
       risk: 'Extreme'
     };
 
-    const wpfoods = {
+    const weats = {
       deployment: 'Edge-first (Vercel)',
       latency: 50, // ms average
       architecture: 'AI-native serverless',
@@ -374,11 +374,11 @@ class RappiTechnicalDebt {
 
     return {
       rappi,
-      wpfoods,
+      weats,
       advantages: {
-        latency: wpfoods.latency / rappi.latency, // 10x faster
-        ai_readiness: wpfoods.ai_readiness - rappi.ai_readiness, // 10 point advantage
-        time_to_market: rappi.modification_time - wpfoods.modification_time, // 18 months ahead
+        latency: weats.latency / rappi.latency, // 10x faster
+        ai_readiness: weats.ai_readiness - rappi.ai_readiness, // 10 point advantage
+        time_to_market: rappi.modification_time - weats.modification_time, // 18 months ahead
         risk_differential: 'Infinite' // No risk vs extreme risk
       }
     };
@@ -578,7 +578,7 @@ class RappiCulturalInertia {
 
 **Total Time**: 6 months for APPROVAL ONLY
 **Implementation**: Hasn't even started
-**Meanwhile**: WPFoods launches 50 AI features
+**Meanwhile**: Weats launches 50 AI features
 ```
 
 ## AI as Structural Moat
@@ -590,7 +590,7 @@ class AIStructuralMoat {
   calculateMoatDepth(): MoatAnalysis {
     const timeBasedAdvantages = {
       month_1: {
-        wpfoods_features: 10,
+        weats_features: 10,
         rappi_features: 0,
         data_collected: 50000, // interactions
         model_improvements: 5,
@@ -598,7 +598,7 @@ class AIStructuralMoat {
       },
 
       month_6: {
-        wpfoods_features: 60,
+        weats_features: 60,
         rappi_features: 0, // Still deciding
         data_collected: 1800000,
         model_improvements: 150,
@@ -606,7 +606,7 @@ class AIStructuralMoat {
       },
 
       month_12: {
-        wpfoods_features: 120,
+        weats_features: 120,
         rappi_features: 2, // Basic chatbot maybe
         data_collected: 7200000,
         model_improvements: 500,
@@ -614,7 +614,7 @@ class AIStructuralMoat {
       },
 
       month_24: {
-        wpfoods_features: 240,
+        weats_features: 240,
         rappi_features: 10, // If they're lucky
         data_collected: 28800000,
         model_improvements: 2000,
@@ -624,25 +624,25 @@ class AIStructuralMoat {
 
     const competitiveAdvantages = {
       cost_per_order: {
-        wpfoods: 0.0003,
+        weats: 0.0003,
         rappi_if_implements: 0.50,
         advantage_multiple: 1667 // times cheaper
       },
 
       response_time: {
-        wpfoods: 50, // ms
+        weats: 50, // ms
         rappi_current: 2000, // ms
         advantage_multiple: 40 // times faster
       },
 
       personalization_accuracy: {
-        wpfoods: 94, // percentage
+        weats: 94, // percentage
         rappi_current: 12, // basic recommendations
         advantage_multiple: 7.8
       },
 
       operational_efficiency: {
-        wpfoods_automation: 90, // percentage
+        weats_automation: 90, // percentage
         rappi_automation: 10,
         cost_savings: 15000000 // $15M/year
       }
@@ -716,10 +716,10 @@ class FirstMoverAdvantage {
       },
 
       brand_association: {
-        'ai_food_delivery': 'WPFoods',
-        'smart_ordering': 'WPFoods',
-        'instant_support': 'WPFoods',
-        'predictive_ordering': 'WPFoods',
+        'ai_food_delivery': 'Weats',
+        'smart_ordering': 'Weats',
+        'instant_support': 'Weats',
+        'predictive_ordering': 'Weats',
         mind_share: 85, // percentage
         switching_cost_created: 'High'
       },
@@ -895,7 +895,7 @@ class TalentAdvantage {
       prefer_startup: 73,
       avoid_legacy_migration: 97,
 
-      wpfoods_advantages: {
+      weats_advantages: {
         greenfield_ai_project: true,
         modern_tech_stack: true,
         high_impact_work: true,
@@ -916,33 +916,33 @@ class TalentAdvantage {
 
     const hiringAdvantage = {
       applicants_per_position: {
-        wpfoods: 250,
+        weats: 250,
         rappi: 30
       },
 
       acceptance_rate: {
-        wpfoods: 0.85, // 85% accept offers
+        weats: 0.85, // 85% accept offers
         rappi: 0.35 // 35% accept offers
       },
 
       salary_requirements: {
-        wpfoods_average: 150000, // Can pay less due to equity
+        weats_average: 150000, // Can pay less due to equity
         rappi_average: 220000 // Must pay premium
       },
 
       time_to_hire: {
-        wpfoods: 14, // days
+        weats: 14, // days
         rappi: 75 // days
       },
 
       retention_rate: {
-        wpfoods: 0.92, // 92% stay 2+ years
+        weats: 0.92, // 92% stay 2+ years
         rappi: 0.45 // 45% stay 2+ years
       }
     };
 
     const teamComposition = {
-      wpfoods_team: {
+      weats_team: {
         senior_ai_engineers: 15,
         ml_engineers: 20,
         data_scientists: 10,
@@ -967,7 +967,7 @@ class TalentAdvantage {
       engineerSurvey,
       hiringAdvantage,
       teamComposition,
-      innovation_velocity_multiple: 10, // WPFoods 10x faster
+      innovation_velocity_multiple: 10, // Weats 10x faster
       conclusion: 'TALENT_MONOPOLY'
     };
   }
@@ -981,7 +981,7 @@ class TalentAdvantage {
 ```typescript
 class InnovationSpeed {
   compareVelocity(): VelocityAnalysis {
-    const wpfoodsVelocity = {
+    const weatsVelocity = {
       feature_deployment: {
         idea_to_production: 3, // days
         features_per_week: 5,
@@ -1042,44 +1042,44 @@ class InnovationSpeed {
     };
 
     const velocityMultiples = {
-      feature_deployment: wpfoodsVelocity.feature_deployment.features_per_year /
+      feature_deployment: weatsVelocity.feature_deployment.features_per_year /
                           rappiVelocity.feature_deployment.features_per_year, // 20x
 
-      iteration_speed: wpfoodsVelocity.iteration_cycles.improvements_per_day /
+      iteration_speed: weatsVelocity.iteration_cycles.improvements_per_day /
                       rappiVelocity.iteration_cycles.improvements_per_day, // 100x
 
       decision_speed: rappiVelocity.decision_making.time_to_decision /
-                     wpfoodsVelocity.decision_making.time_to_decision, // 180x
+                     weatsVelocity.decision_making.time_to_decision, // 180x
 
       adoption_speed: rappiVelocity.technology_adoption.new_ai_model_integration /
-                     wpfoodsVelocity.technology_adoption.new_ai_model_integration, // 365x
+                     weatsVelocity.technology_adoption.new_ai_model_integration, // 365x
 
       overall_velocity_advantage: 191 // times faster (geometric mean)
     };
 
     return {
-      wpfoodsVelocity,
+      weatsVelocity,
       rappiVelocity,
       velocityMultiples,
-      implication: 'WPFoods innovates 191x faster than Rappi'
+      implication: 'Weats innovates 191x faster than Rappi'
     };
   }
 
   projectInnovationGap(): InnovationGap {
     const gap = [];
-    let wpfoodsFeatures = 0;
+    let weatsFeatures = 0;
     let rappiFeatures = 0;
 
     for (let month = 1; month <= 24; month++) {
-      wpfoodsFeatures += 20; // 20 features per month
+      weatsFeatures += 20; // 20 features per month
       rappiFeatures += month > 12 ? 1 : 0; // 1 feature per month after year 1
 
       gap.push({
         month,
-        wpfoods_total_features: wpfoodsFeatures,
+        weats_total_features: weatsFeatures,
         rappi_total_features: rappiFeatures,
-        feature_gap: wpfoodsFeatures - rappiFeatures,
-        gap_multiple: rappiFeatures > 0 ? wpfoodsFeatures / rappiFeatures : Infinity
+        feature_gap: weatsFeatures - rappiFeatures,
+        gap_multiple: rappiFeatures > 0 ? weatsFeatures / rappiFeatures : Infinity
       });
     }
 
@@ -1382,7 +1382,7 @@ class WorkerLoyalty {
     };
 
     const platformComparison = {
-      wpfoods: {
+      weats: {
         average_daily_earnings: 150, // USD
         average_hours_worked: 6,
         earnings_per_hour: 25, // USD
@@ -1512,9 +1512,9 @@ class IPStrategy {
 
 ```mermaid
 gantt
-    title Competitive Timeline: WPFoods vs Rappi
+    title Competitive Timeline: Weats vs Rappi
     dateFormat  YYYY-MM-DD
-    section WPFoods
+    section Weats
     Launch MVP           :done, wpf1, 2024-01-01, 30d
     Scale to 1000 users  :done, wpf2, after wpf1, 30d
     Add Voice AI         :active, wpf3, after wpf2, 30d
@@ -1538,7 +1538,7 @@ class CompetitiveTimeline {
   projectBattlefield(): BattlefieldAnalysis {
     const timeline = {
       month_1: {
-        wpfoods: {
+        weats: {
           users: 1000,
           features: 10,
           restaurants: 20,
@@ -1553,7 +1553,7 @@ class CompetitiveTimeline {
       },
 
       month_3: {
-        wpfoods: {
+        weats: {
           users: 10000,
           features: 30,
           restaurants: 100,
@@ -1568,7 +1568,7 @@ class CompetitiveTimeline {
       },
 
       month_6: {
-        wpfoods: {
+        weats: {
           users: 50000,
           features: 60,
           restaurants: 300,
@@ -1583,7 +1583,7 @@ class CompetitiveTimeline {
       },
 
       month_12: {
-        wpfoods: {
+        weats: {
           users: 250000,
           features: 120,
           restaurants: 1000,
@@ -1598,7 +1598,7 @@ class CompetitiveTimeline {
       },
 
       month_18: {
-        wpfoods: {
+        weats: {
           users: 750000,
           features: 180,
           restaurants: 2500,
@@ -1613,7 +1613,7 @@ class CompetitiveTimeline {
       },
 
       month_24: {
-        wpfoods: {
+        weats: {
           users: 1500000,
           features: 240,
           restaurants: 5000,
@@ -1714,7 +1714,7 @@ class MarketDomination {
 
     const endgame = {
       market_structure: {
-        wpfoods: 45,
+        weats: 45,
         rappi: 10,
         uber_eats: 15,
         others: 30
@@ -1726,7 +1726,7 @@ class MarketDomination {
         data_moat: 'Insurmountable'
       },
       valuation: {
-        wpfoods: 2000000000, // $2B
+        weats: 2000000000, // $2B
         rappi_colombia: 200000000, // $200M (down from $1B)
         market_cap_shift: 1800000000 // $1.8B value transfer
       }
@@ -1767,13 +1767,13 @@ class MarketDomination {
 
 ### Market Tips to Leader
 Month 1-6: Multiple players compete
-Month 7-12: Leader emerges (WPFoods)
+Month 7-12: Leader emerges (Weats)
 Month 13-18: Followers struggle
 Month 19-24: Market consolidation
 Month 24+: Winner-take-all achieved
 
 ### Final Market Structure
-- WPFoods: 45-50% (AI-powered leader)
+- Weats: 45-50% (AI-powered leader)
 - Traditional players: 30% combined (commodity service)
 - Niche players: 20% (specific segments)
 - Rappi: <10% (failed AI transformation)
@@ -1794,31 +1794,31 @@ class FinalAnalysis {
       },
 
       time_disadvantage: {
-        wpfoods_to_market: 0, // Already launched
+        weats_to_market: 0, // Already launched
         rappi_to_respond: 24, // months minimum
         market_captured_by_then: 45 // percentage
       },
 
       cost_disadvantage: {
-        wpfoods_ai_cost: 0.0003, // per order
+        weats_ai_cost: 0.0003, // per order
         rappi_ai_cost: 0.50, // per order if implemented
         sustainable: false // Rappi would lose money
       },
 
       talent_disadvantage: {
-        wpfoods_ai_engineers: 50,
+        weats_ai_engineers: 50,
         rappi_ai_engineers: 3,
-        ability_to_hire: 'Cannot compete with WPFoods'
+        ability_to_hire: 'Cannot compete with Weats'
       },
 
       innovation_speed: {
-        wpfoods: 20, // features per month
+        weats: 20, // features per month
         rappi: 0.25, // features per month
         gap_widening_rate: 'Exponential'
       },
 
       probability_outcomes: {
-        wpfoods_dominates: 85, // percentage
+        weats_dominates: 85, // percentage
         rappi_survives_diminished: 10, // percentage
         rappi_successful_response: 5 // percentage
       },
@@ -1842,15 +1842,15 @@ class FinalAnalysis {
 
 ### The Single Prediction
 
-**Within 24 months, WPFoods will force Rappi to either:**
+**Within 24 months, Weats will force Rappi to either:**
 1. Exit the Colombian market (40% probability)
 2. Become a diminished player (45% probability)
-3. Seek acquisition by WPFoods (15% probability)
+3. Seek acquisition by Weats (15% probability)
 
 ### The Strategic Imperative
 
 Execute with maximum speed and aggression. Every day of delay reduces our advantage. Every feature shipped widens the gap. Every user acquired increases the moat.
 
-The window is open for exactly 24 months. After that, the market structure solidifies with WPFoods as the dominant AI-powered platform and Rappi as a cautionary tale of innovation failure.
+The window is open for exactly 24 months. After that, the market structure solidifies with Weats as the dominant AI-powered platform and Rappi as a cautionary tale of innovation failure.
 
 **The race is not to the swift, but to the first with AI.**

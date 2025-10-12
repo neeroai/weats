@@ -1,4 +1,4 @@
-# WPFOODS AI STRATEGY OVERVIEW
+# WEATS AI STRATEGY OVERVIEW
 ## AI as the Structural Moat: 91% Cost Reduction, Infinite Scalability
 
 **Document Version:** 1.0
@@ -9,9 +9,9 @@
 
 ## EXECUTIVE SUMMARY
 
-**AI is not a feature - it's WPFoods' unfair competitive advantage.**
+**AI is not a feature - it's Weats' unfair competitive advantage.**
 
-While Rappi operates with 12,600 employees and 24-30% operational costs, WPFoods achieves superior service with 15 people and 9.5% operational costs through AI automation. This **91% cost reduction** enables us to charge customers $0 fees, restaurants 5-10% commission (vs Rappi's 25-35%), and pay workers 50-100% more - while still achieving 34% profit margins.
+While Rappi operates with 12,600 employees and 24-30% operational costs, Weats achieves superior service with 15 people and 9.5% operational costs through AI automation. This **91% cost reduction** enables us to charge customers $0 fees, restaurants 5-10% commission (vs Rappi's 25-35%), and pay workers 50-100% more - while still achieving 34% profit margins.
 
 **Key Strategic Points:**
 - **Cost Advantage**: $0.0005 AI cost per order vs $2-5 traditional support
@@ -34,14 +34,14 @@ Current Rappi Model:
 - Net margin: ~5% ($65M)
 - AI investment capacity: <$10M/year
 
-WPFoods AI Investment:
+Weats AI Investment:
 - Development: $0 (Gemini FREE tier)
 - Operations: $0.0005 per order
 - Annual AI cost: <$15/month at 1,000 orders/day
 - ROI: Infinite (zero marginal cost)
 ```
 
-**To match WPFoods' AI capabilities, Rappi would need to:**
+**To match Weats' AI capabilities, Rappi would need to:**
 1. Reduce fees to 8.4% take rate = **-$1B revenue loss**
 2. Fire 12,000+ employees = **Organizational suicide**
 3. Rebuild entire platform = **18-24 months + $100M**
@@ -49,20 +49,24 @@ WPFoods AI Investment:
 
 ### 2. Technical Complexity Barriers
 
-**WPFoods' AI Architecture (Built from Day 1):**
+**Weats' AI Architecture (Built from Day 1):**
 ```typescript
-// Native AI-first architecture
+// Native AI-first architecture (Gemini FREE tier ONLY)
 export const AI_STACK = {
-  foundation: 'WhatsApp Business API',     // 90% penetration
-  primary_ai: 'Gemini 2.5 Flash',         // FREE tier
-  fallback: 'GPT-4o-mini',                // $0.00005/msg
-  infrastructure: 'Vercel Edge Functions', // <100ms global
-  database: 'Supabase + pgvector',        // Semantic search
+  foundation: 'WhatsApp Business API + RCS',  // 90% penetration
+  ai_provider: 'Gemini 2.5 Flash FREE',       // ONLY provider
+  three_ai_agents: [
+    'Weats.Restaurant',  // Restaurant operations
+    'Weats.Runner',      // Worker logistics
+    'Weats.Client'       // Customer experience
+  ],
+  infrastructure: 'Vercel Edge Functions',    // <100ms global
+  database: 'Supabase + pgvector + PostGIS',  // Semantic search + location
 
   result: {
     response_time: '<2 seconds',
     automation_rate: '90%',
-    cost_per_interaction: '$0.0005',
+    cost_per_interaction: '$0',  // Truly free
     accuracy: '95%+'
   }
 };
@@ -77,7 +81,7 @@ export const AI_STACK = {
 
 ### 3. Cultural and Organizational Barriers
 
-**WPFoods: AI-First Culture**
+**Weats: AI-First Culture**
 - 15-person team, all AI-literate
 - Every decision validated by AI
 - Continuous model improvement
@@ -104,7 +108,7 @@ export const AI_STACK = {
 6. **Total time: 15-20 minutes**
 7. **Extra cost: 40% premium**
 
-**AI-Powered Ordering (WPFoods):**
+**AI-Powered Ordering (Weats):**
 1. WhatsApp message: "Quiero pizza para 2"
 2. AI responds with 3 options in 2 seconds
 3. Customer selects with one tap
@@ -125,7 +129,7 @@ export const AI_STACK = {
 - No predictive capabilities
 - Generic recommendations
 
-**AI-Powered Model (WPFoods):**
+**AI-Powered Model (Weats):**
 ```python
 # Daily AI-generated insights for restaurants
 insights = {
@@ -165,7 +169,7 @@ insights = {
 - Manual navigation
 - No predictive assistance
 
-**AI-Powered Dispatch (WPFoods):**
+**AI-Powered Dispatch (Weats):**
 ```python
 def ai_dispatch_optimization(order, available_workers):
     """
@@ -203,105 +207,95 @@ def ai_dispatch_optimization(order, available_workers):
 
 ---
 
-## MULTI-PROVIDER ARCHITECTURE: COST OPTIMIZATION AT SCALE
+## GEMINI FREE TIER: THE ECONOMICS OF ZERO COST AI
 
-### The Intelligent Provider Selection System
+### Single-Provider Architecture (Strategic Decision 2025-01-11)
+
+**Weats uses ONLY Gemini 2.5 Flash FREE tier** - no fallback providers, no paid AI costs.
 
 ```typescript
-// AI Provider Cascade (Cost-Optimized)
-export class AIProviderManager {
-  private providers = {
-    primary: {
-      name: 'Gemini 2.5 Flash',
-      cost: 0,  // FREE tier: 1,500 req/day
-      features: ['1M context', 'function calling', 'vision'],
-      use_cases: ['ordering', 'support', 'recommendations']
-    },
-    secondary: {
-      name: 'GPT-4o-mini',
-      cost: 0.00005,  // per message
-      features: ['128k context', 'structured output'],
-      use_cases: ['complex queries', 'fallback']
-    },
-    emergency: {
-      name: 'Claude 3.5 Sonnet',
-      cost: 0.0003,  // per message
-      features: ['200k context', 'superior reasoning'],
-      use_cases: ['critical issues', 'quality control']
-    }
-  };
+// Gemini-Only AI Architecture
+export const AI_PROVIDER = {
+  provider: 'Gemini 2.5 Flash',
+  tier: 'FREE',
+  daily_limit: 1400,  // requests/day
+  shared_across: ['Weats.Restaurant', 'Weats.Runner', 'Weats.Client'],
+  features: ['1M context', 'function calling', 'vision', 'context caching'],
+  cost: 0,  // $0 (FREE tier)
 
-  async selectProvider(context: RequestContext): Promise<AIProvider> {
-    // Check Gemini free tier availability
-    const geminiUsage = await this.getGeminiDailyUsage();
-    if (geminiUsage < 1400) {  // 100 request buffer
-      return this.providers.primary;
-    }
+  optimization: {
+    'context_caching': '75% cost savings on repeated contexts',
+    'request_pooling': 'Share limit across 3 AI agents',
+    'smart_throttling': 'Prioritize critical requests'
+  },
 
-    // Fallback to GPT for overflow
-    if (context.priority !== 'critical') {
-      return this.providers.secondary;
-    }
-
-    // Emergency: Use Claude for critical issues
-    return this.providers.emergency;
+  result: {
+    response_time: '<2 seconds',
+    automation_rate: '90%',
+    cost_per_interaction: '$0',  // Truly free
+    accuracy: '95%+'
   }
-}
+};
 ```
+
+**Why Only Gemini FREE Tier:**
+1. **Zero marginal cost** - Every interaction is $0
+2. **Sustainable unit economics** - $0.86 profit/order requires $0 AI cost
+3. **Sufficient capacity** - 1,400 req/day handles 1,000+ orders
+4. **Three-AI efficiency** - Shared limit across Restaurant, Runner, Client agents
+5. **Context caching** - 75% reduction in token usage for repeated conversations
 
 ### Cost Analysis: AI vs Traditional Support
 
-| Metric | Traditional (Human) | WPFoods (AI) | Savings |
+| Metric | Traditional (Human) | Weats (Gemini FREE) | Savings |
 |--------|-------------------|--------------|---------|
-| **Cost per interaction** | $2-5 | $0.0005 | **99.98%** |
+| **Cost per interaction** | $2-5 | **$0** | **100%** |
 | **Response time** | 2-5 minutes | <2 seconds | **98%** |
-| **Available 24/7** | $300K/year (3 shifts) | $0 | **100%** |
+| **Available 24/7** | $300K/year (3 shifts) | **$0** | **100%** |
 | **Languages** | 1-2 | Unlimited | **∞** |
 | **Consistency** | 60-70% | 95%+ | **+35%** |
 | **Scale capacity** | Linear with hiring | Infinite | **∞** |
 | **Learning curve** | Months per agent | Instant | **100%** |
-| **Monthly cost (1K orders/day)** | $150,000 | $15 | **99.99%** |
+| **Monthly cost (1K orders/day)** | $150,000 | **$0** | **100%** |
 
 ---
 
-## AI COST ANALYSIS: THE ECONOMICS OF FREE
+## AI COST ANALYSIS: THE TRUE ECONOMICS OF FREE
 
-### Daily AI Operations (1,000 Orders)
+### Daily AI Operations (1,000 Orders, Three-AI Ecosystem)
 
 ```python
 daily_ai_costs = {
-    # Gemini FREE Tier (1,400 requests used daily)
-    'gemini_free': {
-        'requests': 1400,
+    # Gemini FREE Tier (1,400 requests shared across 3 AIs)
+    'weats_restaurant': {
+        'requests': 500,  # Order confirmations, menu updates
         'cost': 0,  # $0
-        'handles': '93% of all interactions'
+        'handles': 'Restaurant-side operations'
     },
 
-    # GPT-4o-mini Overflow (100 requests)
-    'gpt_overflow': {
-        'requests': 100,
-        'cost': 100 * 0.00005,  # $0.005
-        'handles': '6% overflow from Gemini'
+    'weats_runner': {
+        'requests': 400,  # Dispatch, delivery coordination
+        'cost': 0,  # $0
+        'handles': 'Worker logistics'
     },
 
-    # Claude Emergency (10 requests)
-    'claude_critical': {
-        'requests': 10,
-        'cost': 10 * 0.0003,  # $0.003
-        'handles': '1% critical issues'
+    'weats_client': {
+        'requests': 500,  # Customer ordering, support, tracking
+        'cost': 0,  # $0
+        'handles': 'Customer experience'
     },
 
     # Total Daily Cost
     'total': {
-        'requests': 1510,
-        'cost': 0.008,  # $0.008 per day
-        'cost_per_order': 0.008 / 1000  # $0.000008
+        'requests': 1400,  # Within FREE tier limit
+        'cost': 0,  # $0 per day
+        'cost_per_order': 0  # $0 per order
     }
 }
 
-# Monthly: $0.24
-# Annual: $2.92
-# Cost per order: $0.000008 (essentially free)
+# Monthly: $0
+# Annual: $0
+# Cost per order: $0 (truly free)
 ```
 
 ### Comparison with Rappi's Support Costs
@@ -318,8 +312,37 @@ rappi_support_costs = {
     'cost_per_order': 200000 / 30000  # $6.67 per order
 }
 
-# WPFoods advantage: $6.67 - $0.000008 = $6.67 saved per order
-# At 1M orders/month: $6.67M in savings
+# Weats advantage: $6.67 - $0 = $6.67 saved per order
+# At 1M orders/month: $6.67M in savings (100% cost elimination)
+```
+
+### Daily Request Budget Management
+
+**Critical constraint**: 1,400 requests/day shared across 3 IAs
+
+```python
+# Smart request allocation
+request_budget = {
+    'total_daily_limit': 1400,
+    'buffer': 100,  # Safety margin
+    'usable': 1300,
+
+    'allocation': {
+        'weats_client': 500,    # 38% - Customer-facing (highest priority)
+        'weats_restaurant': 450, # 35% - Order processing
+        'weats_runner': 350,    # 27% - Dispatch & logistics
+    },
+
+    'overflow_handling': {
+        'strategy': 'Queue + cached responses',
+        'fallback': 'Template messages if quota exceeded',
+        'reset': 'Daily at midnight UTC'
+    }
+}
+
+# At 1,000 orders/day:
+# ~1.4 requests per order (well within limit)
+# Covers: ordering + confirmation + dispatch + tracking + support
 ```
 
 ---
@@ -364,7 +387,7 @@ const MVP_AI_FEATURES = {
 const OPTIMIZATION_FEATURES = {
   customer: {
     'personalization': 'Learn preferences, predict orders',
-    'voice_ordering': 'Groq Whisper transcription',
+    'voice_ordering': 'Gemini audio transcription',
     'group_orders': 'Multi-person coordination',
     'sentiment_analysis': 'Detect satisfaction, proactively help'
   },
@@ -555,7 +578,7 @@ class AIDataStrategy:
         return advantage
 
 # After 12 months:
-# - WPFoods: 18M data points
+# - Weats: 18M data points
 # - Competitor starting now: 0 data points
 # - Quality gap: 17.6%
 # - Years ahead: 1.0
@@ -563,57 +586,72 @@ class AIDataStrategy:
 
 ---
 
-## RISK MITIGATION: ENSURING AI RELIABILITY
+## RISK MITIGATION: ENSURING AI RELIABILITY (GEMINI-ONLY APPROACH)
 
-### Multi-Layer Redundancy
+### Reliability Strategy Without Multiple Providers
+
+**With a single AI provider (Gemini FREE tier), reliability comes from intelligent design:**
 
 ```typescript
-const AI_REDUNDANCY_SYSTEM = {
-  layer1: {
-    provider: 'Gemini 2.5 Flash',
+const GEMINI_RELIABILITY_SYSTEM = {
+  primary: {
+    provider: 'Gemini 2.5 Flash FREE',
     availability: '99.9%',
-    fallback_trigger: 'quota_exceeded || timeout > 3s'
+    daily_quota: 1400,
+    monitoring: 'Real-time usage tracking'
   },
 
-  layer2: {
-    provider: 'GPT-4o-mini',
-    availability: '99.95%',
-    fallback_trigger: 'api_error || timeout > 5s'
+  fallback_mechanisms: {
+    layer1: {
+      name: 'Context Caching',
+      coverage: '60% of requests',
+      benefit: 'Reduces API calls by 75%'
+    },
+
+    layer2: {
+      name: 'Template Responses',
+      coverage: 'Common queries (order status, menu info)',
+      benefit: 'Zero API calls for repeat questions'
+    },
+
+    layer3: {
+      name: 'Request Queue',
+      coverage: 'Quota exceeded scenarios',
+      benefit: 'Defer non-critical requests'
+    },
+
+    layer4: {
+      name: 'Human Escalation',
+      coverage: '<1% complex issues',
+      benefit: 'Quality backup for edge cases'
+    }
   },
 
-  layer3: {
-    provider: 'Claude 3.5 Sonnet',
-    availability: '99.9%',
-    fallback_trigger: 'critical_only'
+  quota_management: {
+    strategy: 'Prioritize customer-facing requests',
+    buffer: '100 requests/day safety margin',
+    reset: 'Daily at midnight UTC',
+    monitoring: 'Alert at 90% usage (1,260 requests)'
   },
 
-  layer4: {
-    provider: 'Cached Responses',
-    availability: '100%',
-    coverage: 'Common queries (60% of requests)'
-  },
-
-  layer5: {
-    provider: 'Human Escalation',
-    availability: '100%',
-    coverage: 'Complex issues (<1%)'
-  },
-
-  total_reliability: '99.999%'  // Five nines
+  total_reliability: '99.9%'  // Industry standard for MVP
 };
 ```
 
 ### Quality Assurance Framework
 
 ```python
-class AIQualityAssurance:
+class GeminiQualityAssurance:
     def __init__(self):
         self.accuracy_threshold = 0.95
         self.response_time_threshold = 2.0  # seconds
+        self.daily_quota = 1400
+        self.usage_buffer = 100
 
     def continuous_monitoring(self):
         return {
             'real_time': {
+                'quota_tracking': 'Live counter, alert at 90%',
                 'latency_monitoring': 'Every request tracked',
                 'accuracy_validation': 'Sample 5% for human review',
                 'sentiment_analysis': 'Detect frustrated customers',
@@ -624,15 +662,26 @@ class AIQualityAssurance:
                 'conversation_review': '100 random conversations',
                 'accuracy_measurement': 'Compare AI vs human',
                 'improvement_areas': 'Identify training needs',
+                'quota_analysis': 'Optimize request allocation',
                 'model_retraining': 'Update with new data'
             },
 
             'weekly_optimization': {
                 'prompt_engineering': 'Refine for better results',
-                'cost_optimization': 'Maximize free tier usage',
-                'provider_balancing': 'Optimize provider mix',
+                'cost_optimization': 'Maximize context caching',
+                'quota_balancing': 'Optimize three-AI allocation',
                 'performance_tuning': 'Reduce latency'
             }
+        }
+
+    def handle_quota_overflow(self):
+        """Graceful degradation when approaching daily limit"""
+        return {
+            '0-90% usage': 'Normal operation',
+            '90-95% usage': 'Defer non-critical requests',
+            '95-98% usage': 'Use cached/template responses',
+            '98-100% usage': 'Queue all requests, serve from cache',
+            'Quota exceeded': 'Human escalation for critical only'
         }
 ```
 
@@ -667,7 +716,7 @@ class AIQualityAssurance:
 
 **AI transforms the unit economics of food delivery:**
 
-| Metric | Industry Standard | WPFoods (AI-Powered) | Advantage |
+| Metric | Industry Standard | Weats (AI-Powered) | Advantage |
 |--------|------------------|---------------------|-----------|
 | Operational Cost | $10-15/order | $0.89/order | **91% lower** |
 | Support Cost | $2-5/order | $0.0005/order | **99.99% lower** |
@@ -680,7 +729,7 @@ class AIQualityAssurance:
 ---
 
 **Strategic Recommendation:**
-Protect and expand AI capabilities aggressively. Every day of AI improvement is another brick in an unassailable competitive wall. The future of food delivery is AI-powered, conversational, and fair to all stakeholders - and WPFoods will own that future.
+Protect and expand AI capabilities aggressively. Every day of AI improvement is another brick in an unassailable competitive wall. The future of food delivery is AI-powered, conversational, and fair to all stakeholders - and Weats will own that future.
 
 ---
 
@@ -690,7 +739,7 @@ Protect and expand AI capabilities aggressively. Every day of AI improvement is 
 **Expected ROI:** Infinite (zero marginal cost)
 
 **Related Documents:**
-- [AI Customer Experience](/docs/wpfoods/ai-customer-experience.md)
-- [AI Technical Architecture](/docs/wpfoods/ai-technical-architecture.md)
-- [AI Cost Optimization](/docs/wpfoods/ai-cost-optimization.md)
-- [AI Competitive Advantage](/docs/wpfoods/ai-competitive-advantage.md)
+- [AI Customer Experience](/docs/weats/ai-customer-experience.md)
+- [AI Technical Architecture](/docs/weats/ai-technical-architecture.md)
+- [AI Cost Optimization](/docs/weats/ai-cost-optimization.md)
+- [AI Competitive Advantage](/docs/weats/ai-competitive-advantage.md)

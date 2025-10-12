@@ -1,28 +1,28 @@
-# WPFoods - Documentation
+# Weats - Documentation
 
 WhatsApp AI Food Delivery Platform challenging Rappi with $0 customer fees, 5-10% restaurant fees, and 50-100% higher worker pay. Built with Next.js 15, Vercel Edge, Supabase, WhatsApp v23, and Multi-Provider AI (Gemini FREE, OpenAI, Claude, Groq).
 
 ## Quick Navigation
 
-### 🚀 New to WPFoods?
+### 🚀 New to Weats?
 1. [Getting Started Guide](./guides/getting-started.md) - Setup and local development
 2. [Architecture Overview](./architecture/README.md) - System design and patterns
 3. [Deployment Guide](./platforms/vercel/README.md) - Deploy to production
-4. [Business Model Overview](./wpfoods/business-model-overview.md) - Unit economics and competitive strategy
+4. [Business Model Overview](./weats/business-model-overview.md) - Unit economics and competitive strategy
 
-### 📦 WPFoods Business Documentation
-- [Executive Summary](./wpfoods/EXECUTIVE_SUMMARY.md) - Investor pitch (96.9x return potential)
-- [Business Model](./wpfoods/business-model-overview.md) - Disruptive model & value proposition
-- [Unit Economics](./wpfoods/unit-economics.md) - $0.86 profit/order (34% margin)
-- [Competitive Analysis](./wpfoods/competitive-analysis.md) - vs Rappi (91% cost advantage)
-- [Go-to-Market Strategy](./wpfoods/go-to-market-strategy.md) - Bogotá beachhead → National
-- [Financial Projections](./wpfoods/financial-projections.md) - 3-year path to $1M profit
+### 📦 Weats Business Documentation
+- [Executive Summary](./weats/EXECUTIVE_SUMMARY.md) - Investor pitch (96.9x return potential)
+- [Business Model](./weats/business-model-overview.md) - Disruptive model & value proposition
+- [Unit Economics](./weats/unit-economics.md) - $0.86 profit/order (34% margin)
+- [Competitive Analysis](./weats/competitive-analysis.md) - vs Rappi (91% cost advantage)
+- [Go-to-Market Strategy](./weats/go-to-market-strategy.md) - Bogotá beachhead → National
+- [Financial Projections](./weats/financial-projections.md) - 3-year path to $1M profit
 
 ### 🍕 Food Delivery Features
-- [Customer Experience](./wpfoods/customer-experience.md) - Conversational ordering, $0 fees
-- [Restaurant Model](./wpfoods/restaurant-model.md) - 5-10% fees, 30s onboarding
-- [Rapitendero Model](./wpfoods/rapitendero-model.md) - 50-100% higher pay, benefits
-- [Technical Architecture](./wpfoods/technical/whatsapp-architecture.md) - Complete system design
+- [Customer Experience](./weats/customer-experience.md) - Conversational ordering, $0 fees
+- [Restaurant Model](./weats/restaurant-model.md) - 5-10% fees, 30s onboarding
+- [Rapitendero Model](./weats/rapitendero-model.md) - 50-100% higher pay, benefits
+- [Technical Architecture](./weats/technical/whatsapp-architecture.md) - Complete system design
 
 ### 🛠️ Building Features?
 - [How-to Guides](./guides/README.md) - Tutorials and feature implementation
@@ -36,14 +36,14 @@ WhatsApp AI Food Delivery Platform challenging Rappi with $0 customer fees, 5-10
 - [AI Providers](./platforms/ai/README.md) - Gemini FREE (primary), OpenAI, Claude, Groq
 
 ### 🤖 AI Strategy Documentation
-- [AI Strategy Overview](./wpfoods/ai-strategy-overview.md) - Complete AI vision & implementation
-- [AI Customer Experience](./wpfoods/ai-customer-experience.md) - Conversational ordering & personalization
-- [AI Restaurant Optimization](./wpfoods/ai-restaurant-optimization.md) - Demand forecasting & menu optimization
-- [AI Worker Optimization](./wpfoods/ai-worker-optimization.md) - Route optimization & earnings maximization
-- [AI Technical Architecture](./wpfoods/ai-technical-architecture.md) - Multi-provider infrastructure & implementation
-- [AI Cost Optimization](./wpfoods/ai-cost-optimization.md) - 99.9% cost reduction strategies
-- [AI Competitive Advantage](./wpfoods/ai-competitive-advantage.md) - Why Rappi cannot respond
-- [AI Implementation Roadmap](./wpfoods/ai-roadmap.md) - MVP to market leadership in 52 weeks
+- [AI Strategy Overview](./weats/ai-strategy-overview.md) - Complete AI vision & implementation
+- [AI Customer Experience](./weats/ai-customer-experience.md) - Conversational ordering & personalization
+- [AI Restaurant Optimization](./weats/ai-restaurant-optimization.md) - Demand forecasting & menu optimization
+- [AI Worker Optimization](./weats/ai-worker-optimization.md) - Route optimization & earnings maximization
+- [AI Technical Architecture](./weats/ai-technical-architecture.md) - Multi-provider infrastructure & implementation
+- [AI Cost Optimization](./weats/ai-cost-optimization.md) - 99.9% cost reduction strategies
+- [AI Competitive Advantage](./weats/ai-competitive-advantage.md) - Why Rappi cannot respond
+- [AI Implementation Roadmap](./weats/ai-roadmap.md) - MVP to market leadership in 52 weeks
 
 ### 📊 Competitive Intelligence
 - [Rappi Business Model](./rappi-business-model-overview.md) - Complete analysis
@@ -248,7 +248,7 @@ git mv docs/old-guide.md docs/archive/research/old-guide.md
 
 ## Production Links
 
-- **Project**: WPFoods - Disruptive WhatsApp AI Food Delivery
+- **Project**: Weats - Disruptive WhatsApp AI Food Delivery
 - **CLAUDE.md**: [Project instructions](../CLAUDE.md)
 - **Main README**: [../README.md](../README.md)
 - **Supabase Dashboard**: TBD (database pending setup)
@@ -287,6 +287,6 @@ git mv docs/old-guide.md docs/archive/research/old-guide.md
 ---
 
 **Last Updated**: 2025-01-11
-**Version**: 4.0.0 (WPFoods - Complete transformation from AI assistant to food delivery platform)
-**Project**: WPFoods - Challenging Rappi's 64% Colombian market dominance
+**Version**: 4.0.0 (Weats - Complete transformation from AI assistant to food delivery platform)
+**Project**: Weats - Challenging Rappi's 64% Colombian market dominance
 **Economics**: $0.86 profit/order, $0 customer fees, 5-10% restaurant fees, 50-100% higher worker pay

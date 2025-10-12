@@ -127,7 +127,7 @@ export const goToMarketPhases = [
 ];
 
 export const capitalEfficiency = {
-  wpfoods: {
+  weats: {
     totalRaised: 7500000,
     year3GMV: 100000000,
     gmvPerDollar: 13.33,

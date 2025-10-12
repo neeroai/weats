@@ -1,20 +1,42 @@
-# CLAUDE.md - WPFoods Platform
-<!-- Mantener bajo 5000 tokens. Última actualización: 2025-01-11 -->
+# CLAUDE.md - Weats Platform
+<!-- Mantener bajo 5000 tokens. Última actualización: 2025-10-12 -->
+
+## 🚨 START HERE - Current Focus
+
+**📍 PHASE 1 WEEK 1** - Database & Three-AI Orchestration Layer
+- **Task**: Implement Supabase schema (10 tables) + PostGIS + pgvector + Three-AI base structure
+- **Files**: `supabase/migrations/`, `lib/ai/` (restaurant-agent.ts, runner-agent.ts, client-agent.ts, orchestration.ts)
+- **Agent Lead**: supabase-expert (60%) + gemini-expert (20%) + edge-functions-expert (20%)
+- **Reference**: [week-1-database-spec.md](./docs/implementation/week-1-database-spec.md)
+- **Gate**: Approval Gate 1 at end of Week 1 (Technical Lead required)
+
+**⚠️ CRITICAL CONSTRAINTS** (validate EVERY feature):
+- ✅ **Unit economics**: $0.86 profit/order (34% margin) - NEVER compromise
+- ✅ **AI provider**: Gemini 2.5 Flash FREE tier ONLY (1,400 req/day shared across 3 AIs)
+- ✅ **Messaging**: WhatsApp + RCS 24h window (90%+ free messages)
+- ✅ **Runtime**: Edge Functions only (no Node.js modules)
+- ✅ **Architecture**: Three-AI orchestration via lib/ai/orchestration.ts
+
+---
 
 ## 🎯 Contexto del Proyecto
-**Propósito**: Disrumpir el mercado de food delivery colombiano con plataforma WhatsApp-nativa impulsada por IA Gemini (FREE tier only)
-**Estado**: MVP Ready - Listo para implementación Phase 1 (Weeks 1-4)
-**Inicio**: 2025-01-11 | **Launch**: 2025-03-01 (Bogotá beachhead)
-
-**Diferenciador**: 91% lower costs vs Rappi → beneficia a TODOS los stakeholders
+**Propósito**: Disrumpir food delivery colombiano con **tres IAs conversacionales** (Weats.Restaurant, Weats.Runner, Weats.Client) sincronizadas vía Gemini FREE tier
+**Estado**: MVP Ready - Phase 1 implementation starting (Weeks 1-4)
+**Launch**: 2025-03-01 (Bogotá - Zona T + Chicó)
+**Diferenciador**: 91% lower costs vs Rappi → beneficia a TODOS
+**Posicionamiento**: "Liberar el delivery de los monopolios"
 
 ## 🛠 Stack Técnico
 ```yaml
 frontend: Next.js 15, React 19, TypeScript 5.9.2 (strict)
 backend: Vercel Edge Functions (<100ms TTFB)
 database: Supabase PostgreSQL 15.8 + PostGIS + pgvector
-messaging: WhatsApp Business API v23.0 (24h window optimization)
+messaging: WhatsApp Business API v23.0 + RCS (Google Business Messages)
 ai: Gemini 2.5 Flash FREE tier ONLY (1,400 req/day limit)
+  - Weats.Restaurant: AI asistente del restaurante (pedidos, reservas, inventario)
+  - Weats.Runner: AI coordinador de repartidores (logística, rutas)
+  - Weats.Client: AI asistente del cliente (pedidos conversacionales)
+orchestration: Vercel Edge Functions (sincronización de las 3 IAs)
 payments: Stripe
 testing: Jest, @testing-library/react
 ci/cd: GitHub Actions + Vercel
@@ -22,18 +44,24 @@ ci/cd: GitHub Actions + Vercel
 
 ## 📁 Estructura Crítica
 ```
-wpfoods/
+weats/
 ├── app/api/              # Edge Functions (webhook handlers)
 │   ├── whatsapp/webhook/ # Main WhatsApp entry (fire-and-forget)
+│   ├── rcs/webhook/      # RCS/Google Business Messages webhook
 │   ├── orders/           # Order processing
 │   ├── restaurants/      # Restaurant management
 │   ├── dispatch/         # Worker assignment (PostGIS)
 │   └── payments/         # Stripe integration
 ├── lib/                  # Core business logic
+│   ├── ai/               # Three-AI Ecosystem
+│   │   ├── restaurant-agent.ts  # Weats.Restaurant (orders, reservas, inventario, CRM)
+│   │   ├── runner-agent.ts      # Weats.Runner (dispatch, rutas, pagos)
+│   │   ├── client-agent.ts      # Weats.Client (ordering conversacional, tracking)
+│   │   └── orchestration.ts     # Sincronización entre las 3 IAs
 │   ├── gemini-client.ts  # Gemini FREE tier tracking (CRITICAL)
-│   ├── gemini-agents.ts  # Conversational AI (Colombian Spanish)
 │   ├── supabase.ts       # Edge-compatible client (port 6543)
 │   ├── whatsapp.ts       # WhatsApp API wrapper
+│   ├── rcs.ts            # RCS/Google Business Messages wrapper
 │   ├── messaging-windows.ts # 24h window enforcement
 │   ├── order-processing.ts  # Order lifecycle
 │   └── dispatch-system.ts   # Worker matching (PostGIS)
@@ -153,80 +181,55 @@ try {
 }
 ```
 
-## 🚧 Estado Actual del Desarrollo
+## 🧩 Arquitectura de Tres IAs (Weats.ai)
 
-### ✅ Completado
-- [x] Business documentation (wpfoods/ - 8 docs)
-- [x] AI strategy documentation (ai-*.md - 8 docs, ~315 pages)
-- [x] Competitive intelligence (rappi-*.md - 7 docs)
-- [x] Agent system (.claude/agents/ - 8 agents + delegation matrix)
-- [x] Technical architecture documentation (platforms/)
-- [x] Project structure (directories, package.json, configs)
-- [x] **Phase 1 Implementation Docs** (docs/implementation/ - 8 docs, ~4,900 lines)
-  - ROADMAP.md (master timeline, milestones, risk mitigation)
-  - PHASE-1-CHECKLIST.md (82 tasks across 4 weeks)
-  - week-1-database-spec.md (10 tables DDL, PostGIS, pgvector)
-  - week-2-ordering-spec.md (Gemini agent, WhatsApp templates)
-  - week-3-supply-spec.md (Restaurant/Worker onboarding, dispatch)
-  - week-4-payments-spec.md (Stripe, launch readiness)
-  - APPROVAL-GATES.md (4 manual approval gates)
-  - DELEGATION-PLAN.md (Agent mapping per phase)
-- [x] **Tailwind CSS Configuration** (2025-10-11)
-  - Created tailwind.config.ts (Tailwind v4.1.14 compatible)
-  - Created postcss.config.js (@tailwindcss/postcss)
-  - Fixed TypeScript errors in 7 slide components
-  - Production build passing (262 kB /deck bundle)
-  - Reference: [tailwind-css-fix-summary.md](./docs/implementation/tailwind-css-fix-summary.md)
+> **Ver detalles completos**: [AGENTS.md - Three-AI Ecosystem](./AGENTS.md#45-three-ai-ecosystem-architecture)
 
-### 🔄 En Progreso (FOCO ACTUAL)
-- [ ] **Phase 1 MVP (Weeks 1-4)**: Ready for implementation (plan approved)
-  - Target: 50 restaurants, 20 workers, 500 customers (Bogotá)
-  - Next action: Start Week 1 - Database schema implementation
-  - Archivo: `supabase/migrations/`
-  - Agent: supabase-expert (80% time) + edge-functions-expert (20% time)
-  - Reference: [week-1-database-spec.md](./docs/implementation/week-1-database-spec.md)
+**Concepto**: Tres IAs independientes conversando en WhatsApp/RCS, sincronizadas vía `lib/ai/orchestration.ts`
 
-### 📋 TODOs Prioritarios (Phase 1 - Next 4 Weeks)
+| AI | Función | Archivos |
+|----|---------|----------|
+| **Weats.Restaurant** | Pedidos, reservas, inventario, CRM | `lib/ai/restaurant-agent.ts` |
+| **Weats.Runner** | Dispatch (PostGIS), rutas, pagos transparentes | `lib/ai/runner-agent.ts` |
+| **Weats.Client** | Ordering conversacional, tracking, soporte | `lib/ai/client-agent.ts` |
+| **Orchestration** | Sincronización entre las 3 IAs | `lib/ai/orchestration.ts` |
 
-**WEEK 1: Database & WhatsApp Webhook**
-1. **URGENTE**: Supabase schema (10 tables + PostGIS + pgvector)
-   - Tables: customers, restaurants, menu_items, orders, order_items, deliveries, delivery_workers, payments, conversations, messages
-   - PostGIS functions: find_nearby_restaurants, find_best_worker
-   - pgvector setup: Menu embeddings for semantic search
-2. **Alta**: WhatsApp webhook handler (Edge Function)
-   - Signature validation (security)
-   - Fire-and-forget pattern (5s timeout compliance)
-   - Message routing logic
+**Flujo de Pedido**:
+1. Cliente → Weats.Client procesa solicitud
+2. Weats.Client → Weats.Restaurant valida stock/precio/pago
+3. Weats.Restaurant → Weats.Runner asigna delivery (PostGIS)
+4. Orchestration notifica a todos los stakeholders
+5. Todo ocurre conversacionalmente, sin apps
 
-**WEEK 2: Customer Ordering Flow**
-3. **Alta**: Gemini conversational ordering (Colombian Spanish)
-   - Tools: search_restaurants, get_menu, create_order, track_delivery
-   - Context caching (75% cost savings)
-   - FREE tier tracking (migrate to Supabase - P0 bug fix)
-4. **Alta**: Interactive WhatsApp messages
-   - Catalogs for restaurant browse
-   - Buttons for cart actions
-   - Order confirmation messages
+**Implementación** (lib/ai/orchestration.ts):
+```typescript
+export async function orchestrateOrder(clientMessage, clientPhone, restaurantId) {
+  const order = await clientAgent.processOrder(clientMessage, clientPhone);
+  await restaurantAgent.confirmOrder(order, restaurantId);
+  const runner = await runnerAgent.assignDelivery(order);
+  await notifyAllStakeholders(order, runner);
+  return { order, runner };
+}
+```
 
-**WEEK 3: Restaurant & Worker Features**
-5. **Media**: Restaurant management via WhatsApp
-   - 30-second onboarding flow
-   - Menu management (conversational AI)
-   - Order notifications (accept/reject buttons)
-6. **Media**: Worker dispatch system
-   - PostGIS-based matching (<10ms queries)
-   - Order assignment via WhatsApp
-   - Pickup/delivery confirmation (QR codes)
+**Impacto**: 0% comisión restaurantes, pagos justos workers, cero fricción clientes
 
-**WEEK 4: Payments & Launch**
-7. **Alta**: Stripe payment integration
-   - WhatsApp Flows checkout (v3)
-   - Payment confirmation webhooks
-   - Refund processing
-8. **Media**: Launch readiness
-   - Cost tracking dashboard
-   - Performance monitoring
-   - Launch 50 restaurants (Zona T + Chicó)
+## 🚧 Estado Actual
+
+> **Full history**: [AGENTS.md - Project Status](./AGENTS.md#2-contexto-del-negocio)
+
+**✅ Ready**: Documentation complete (business, AI strategy, competitive intel, implementation specs)
+**🔄 NOW**: Phase 1 Week 1 - Database + Three-AI orchestration (see START HERE section above)
+**🎯 Target**: 50 restaurants, 20 workers, 500 customers (Bogotá Zona T + Chicó)
+
+### 📋 TODOs (Next 4 Weeks)
+
+> **Full checklist**: [PHASE-1-CHECKLIST.md](./docs/implementation/PHASE-1-CHECKLIST.md) (82 tasks)
+
+**Week 1**: Database (10 tables + PostGIS + pgvector) + WhatsApp webhook + Three-AI base structure
+**Week 2**: Gemini ordering agent + Interactive WhatsApp (catalogs, buttons) + FREE tier tracking fix (P0)
+**Week 3**: Restaurant onboarding (30s flow) + Worker dispatch (PostGIS) + QR confirmations
+**Week 4**: Stripe integration + WhatsApp Flows checkout + Launch 50 restaurants (Bogotá)
 
 ## 🐛 Bugs Conocidos
 
@@ -279,34 +282,25 @@ BUG-P0-001:
 - **Restaurant retention**: >85%
 - **Worker earnings**: $82,000 COP/day (vs Rappi $20,000)
 
-## 🚀 Contexto de Sesión Actual
-**Última tarea**: Tailwind CSS configuration fixed (2025-10-11)
-  - Created tailwind.config.ts + postcss.config.js
-  - Fixed 7 TypeScript errors (unused imports)
-  - Production build passing (Next.js 15 + Tailwind v4.1.14)
-  - Investor deck now fully styled with WhatsApp gradients
-**Branch**: master
-**PRs pendientes**: None
-**Bloqueadores**: None - implementation plan approved, ready for Week 1 execution
-**Next session**: Start Week 1 - Database schema implementation
-  - Agent: supabase-expert (primary)
-  - Tasks: 20 tasks (database + PostGIS + pgvector)
-  - Reference: [week-1-database-spec.md](./docs/implementation/week-1-database-spec.md)
-  - Approval Gate: Gate 1 (End of Week 1) - Technical Lead approval required
+## 🚀 Session Info
+**Last Update**: 2025-10-12 (Three-AI documentation complete)
+**Branch**: main | **PRs**: None | **Blockers**: None
+**Next**: Week 1 implementation (see START HERE section above)
 
 ## 💡 Notas Rápidas para Claude
 
 ### SIEMPRE
 - ✅ Validar unit economics ($0.86 profit/order) antes de features
 - ✅ Usar SOLO Gemini 2.5 Flash FREE tier (NO otros providers)
-- ✅ Optimizar para WhatsApp 24h window (90%+ free messages)
+- ✅ Optimizar para WhatsApp + RCS 24h window (90%+ free messages)
+- ✅ Three-AI architecture: Restaurant, Runner, Client sincronizados vía orchestration.ts
 - ✅ Edge Runtime compatible (static imports, Web APIs only)
-- ✅ Track daily Gemini usage (1,400 req/day limit)
+- ✅ Track daily Gemini usage (1,400 req/day limit compartido entre 3 IAs)
 - ✅ Fire-and-forget pattern con `waitUntil` (5s timeout)
 - ✅ Supabase transaction pooling (port 6543, pool=1)
 - ✅ PostGIS para location queries (<10ms target)
 - ✅ Actualizar CLAUDE.md al completar tareas
-- ✅ Tests para features críticos (payments, orders, dispatch)
+- ✅ Tests para features críticos (payments, orders, dispatch, orchestration)
 
 ### NUNCA
 - ❌ Usar OpenAI, Claude, Groq o cualquier AI que no sea Gemini FREE
@@ -331,29 +325,29 @@ backend-developer: Payment processing, API logic
 code-reviewer: Security, production readiness
 ```
 
-## 🔗 Referencias Externas Críticas
+## 🔗 Referencias Críticas
+
+### Internal Docs
+- **[AGENTS.md](./AGENTS.md)** - Comprehensive agent guidance, research methodology, constraints
+- **[README.md](./README.md)** - Project overview
+- [Docs Hub](./docs/README.md) - Complete documentation index
 
 ### Business & Strategy
-- [Docs Hub](./docs/README.md) - Complete documentation index
-- [Business Model](./docs/wpfoods/business-model-overview.md) - Disruptive model explanation
-- [Unit Economics](./docs/wpfoods/unit-economics.md) - $0.86 profit/order breakdown
-- [AI Strategy](./docs/wpfoods/ai-strategy-overview.md) - AI as structural moat
+- [Business Model](./docs/weats/business-model-overview.md) - Disruptive model
+- [Unit Economics](./docs/weats/unit-economics.md) - $0.86 profit/order breakdown
+- [AI Strategy](./docs/weats/ai-strategy-overview.md) - AI as structural moat
 
-### Implementation (Phase 1 MVP)
-- [ROADMAP.md](./docs/implementation/ROADMAP.md) - 4-week timeline, milestones, risk mitigation
-- [PHASE-1-CHECKLIST.md](./docs/implementation/PHASE-1-CHECKLIST.md) - 82 tasks with acceptance criteria
-- [week-1-database-spec.md](./docs/implementation/week-1-database-spec.md) - Database + PostGIS + pgvector
-- [week-2-ordering-spec.md](./docs/implementation/week-2-ordering-spec.md) - Gemini agent + WhatsApp
-- [week-3-supply-spec.md](./docs/implementation/week-3-supply-spec.md) - Restaurant/Worker onboarding
-- [week-4-payments-spec.md](./docs/implementation/week-4-payments-spec.md) - Stripe + Launch
-- [APPROVAL-GATES.md](./docs/implementation/APPROVAL-GATES.md) - 4 manual approval gates (MANDATORY)
-- [DELEGATION-PLAN.md](./docs/implementation/DELEGATION-PLAN.md) - Agent allocation per phase
+### Implementation (Phase 1)
+- [ROADMAP.md](./docs/implementation/ROADMAP.md) - 4-week timeline
+- [PHASE-1-CHECKLIST.md](./docs/implementation/PHASE-1-CHECKLIST.md) - 82 tasks
+- [Week 1 Spec](./docs/implementation/week-1-database-spec.md) - Database + Three-AI orchestration
+- [APPROVAL-GATES.md](./docs/implementation/APPROVAL-GATES.md) - 4 mandatory gates
 
-### Agents & Technical
-- [Agent System](./.claude/agents/claude-master.md) - Orchestration (v4.0)
+### Agents & Platforms
+- [claude-master](./.claude/agents/claude-master.md) - Orchestration (v4.0)
 - [Delegation Matrix](./.claude/agents/delegation-matrix.md) - Task routing
-- [WhatsApp Docs](./docs/platforms/whatsapp/README.md) - API v23.0 reference
-- [Gemini Docs](./docs/platforms/ai/providers/gemini/README.md) - FREE tier optimization
+- [WhatsApp Docs](./docs/platforms/whatsapp/README.md) - API v23.0
+- [Gemini Docs](./docs/platforms/ai/providers/gemini/README.md) - FREE tier
 
 ---
 
@@ -366,9 +360,11 @@ PARA CLAUDE: Este es tu memoria persistente del proyecto.
 - CRÍTICO: Solo Gemini FREE tier (1,400 req/day) - NO otros providers
 -->
 
-**Versión**: 1.0
-**Última actualización**: 2025-01-11
-**Proyecto**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
+**Versión**: 2.0
+**Última actualización**: 2025-10-12
+**Proyecto**: Weats.ai - Three-AI Conversational Delivery Ecosystem
+**Arquitectura**: Weats.Restaurant + Weats.Runner + Weats.Client (sincronizados vía Edge Functions)
 **Target Market**: Colombia (Rappi 64% dominance)
 **Economics**: $0.86 profit/order, $0 customers, 5-10% restaurants, 50-100% higher worker pay
-**Status**: MVP ready for Phase 1 implementation (Weeks 1-4)
+**Posicionamiento**: "Liberar el delivery de los monopolios, devolviendo el poder a quienes cocinan, reparten y comen"
+**Status**: MVP ready for Phase 1 implementation (Weeks 1-4) - Three-AI architecture documented

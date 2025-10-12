@@ -1,4 +1,4 @@
-# WPFOODS AI RESTAURANT OPTIMIZATION
+# WEATS AI RESTAURANT OPTIMIZATION
 ## Intelligence as a Service: Free AI Tools That Increase Revenue 25%
 
 **Document Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods provides restaurants with **enterprise-grade AI analytics for free** that competitors charge $500-1,000/month for. Our AI helps restaurants increase revenue by 15-25%, reduce waste by 30%, and optimize operations - all through WhatsApp with zero learning curve. This creates an unbreakable loyalty where restaurants can't afford to leave our platform.
+Weats provides restaurants with **enterprise-grade AI analytics for free** that competitors charge $500-1,000/month for. Our AI helps restaurants increase revenue by 15-25%, reduce waste by 30%, and optimize operations - all through WhatsApp with zero learning curve. This creates an unbreakable loyalty where restaurants can't afford to leave our platform.
 
 **Key Value Propositions:**
 - **Demand Forecasting**: Predict orders with 85% accuracy, reduce waste 30%
@@ -614,7 +614,7 @@ Combos           | $35,000  | $38,000 | -8% ⬇️
 *ESTRATEGIA RECOMENDADA:*
 1. Mantener precios de hamburguesas (competitivos)
 2. Reducir precio bebidas 10% (sobrevaluadas)
-3. Lanzar "Combo WPFoods" a $30,000
+3. Lanzar "Combo Weats" a $30,000
 4. Programa de lealtad antes que llegue Smash
 
 Próxima actualización: Lunes 10 AM
@@ -1126,9 +1126,9 @@ AI: "🎯 Configurado:
 
 ## VALUE PROPOSITION SUMMARY
 
-### What Restaurants Get FREE with WPFoods
+### What Restaurants Get FREE with Weats
 
-| Feature | WPFoods (FREE) | Competitors | Monthly Value |
+| Feature | Weats (FREE) | Competitors | Monthly Value |
 |---------|---------------|-------------|---------------|
 | **Demand Forecasting** | ✅ Daily predictions | $299/month | $299 saved |
 | **Menu Optimization** | ✅ AI recommendations | $199/month | $199 saved |
@@ -1181,7 +1181,7 @@ restaurant_success_metrics = {
 
 ## CONCLUSION: THE UNBREAKABLE LOCK-IN
 
-### Why Restaurants Can Never Leave WPFoods
+### Why Restaurants Can Never Leave Weats
 
 1. **Economic Lock-In**
    - Save $21,516/year in AI tools
@@ -1196,7 +1196,7 @@ restaurant_success_metrics = {
    - **Reverting to manual = operational chaos**
 
 3. **Competitive Disadvantage**
-   - Competitors using WPFoods have AI advantage
+   - Competitors using Weats have AI advantage
    - Leaving means falling behind
    - No alternative offers same AI tools free
    - **Exit = competitive suicide**
@@ -1209,14 +1209,14 @@ restaurant_success_metrics = {
 
 ### Restaurant Owner Testimonial (Projected)
 
-> "WPFoods no es solo delivery, es mi socio tecnológico.
+> "Weats no es solo delivery, es mi socio tecnológico.
 > El AI me ahorra 5 horas diarias y aumentó mis ganancias 25%.
 > Los $21,000 mensuales que ahorro en herramientas los
 > reinvierto en crecer. Sería imposible volver a Rappi,
-> perdería toda la inteligencia artificial. WPFoods es
+> perdería toda la inteligencia artificial. Weats es
 > el futuro del negocio de restaurantes."
 >
-> — Carlos, Dueño de Pizzería (6 meses con WPFoods)
+> — Carlos, Dueño de Pizzería (6 meses con Weats)
 
 ---
 
@@ -1226,6 +1226,6 @@ restaurant_success_metrics = {
 **Competitive Moat:** Permanent
 
 **Next Documents:**
-- [AI Worker Optimization](/docs/wpfoods/ai-worker-optimization.md)
-- [AI Technical Architecture](/docs/wpfoods/ai-technical-architecture.md)
-- [AI Cost Optimization](/docs/wpfoods/ai-cost-optimization.md)
+- [AI Worker Optimization](/docs/weats/ai-worker-optimization.md)
+- [AI Technical Architecture](/docs/weats/ai-technical-architecture.md)
+- [AI Cost Optimization](/docs/weats/ai-cost-optimization.md)

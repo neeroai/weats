@@ -1,4 +1,4 @@
-# WPFOODS UNIT ECONOMICS
+# WEATS UNIT ECONOMICS
 ## Detailed Financial Model & Profitability Analysis
 
 **Document Version:** 1.0
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods achieves profitability through **91% lower operational costs** compared to traditional delivery platforms, enabled by AI automation and WhatsApp's zero-infrastructure model. Despite charging customers **$0 service fees** and restaurants **5-10% commission** (vs. Rappi's 15-20% and 20-25%), WPFoods generates **$0.65 USD profit per order** ($2.70 COP profit on $10.20 COP revenue = 26% margin). Break-even at 2,288 orders/day is achieved in Year 2, with full profitability in Year 3 at 3,000-5,000 orders/day.
+Weats achieves profitability through **91% lower operational costs** compared to traditional delivery platforms, enabled by AI automation and WhatsApp's zero-infrastructure model. Despite charging customers **$0 service fees** and restaurants **5-10% commission** (vs. Rappi's 15-20% and 20-25%), Weats generates **$0.65 USD profit per order** ($2.70 COP profit on $10.20 COP revenue = 26% margin). Break-even at 2,288 orders/day is achieved in Year 2, with full profitability in Year 3 at 3,000-5,000 orders/day.
 
 ---
 
@@ -18,7 +18,7 @@ WPFoods achieves profitability through **91% lower operational costs** compared 
 
 **Average Order Value: $30 USD = $124,000 COP**
 
-#### REVENUE TO WPFOODS
+#### REVENUE TO WEATS
 
 ```
 1. Restaurant Commission (6% average)
@@ -36,7 +36,7 @@ WPFoods achieves profitability through **91% lower operational costs** compared 
 TOTAL REVENUE PER ORDER: $10,440 COP ($2.53 USD)
 ```
 
-#### COSTS FOR WPFOODS
+#### COSTS FOR WEATS
 
 ```
 1. Delivery Worker Payment
@@ -95,11 +95,11 @@ Take Rate: 8.4% (revenue as % of GMV)
 
 ---
 
-## COMPARISON: WPFOODS VS. RAPPI
+## COMPARISON: WEATS VS. RAPPI
 
 ### Per-Order Economics Side-by-Side
 
-| Metric | WPFoods | Rappi | Difference |
+| Metric | Weats | Rappi | Difference |
 |--------|---------|-------|------------|
 | **Average Order Value** | $124,000 COP | $124,000 COP | Same |
 | **Customer Pays (Total)** | $127,000 COP | $163,000 COP | **22% cheaper** |
@@ -122,17 +122,17 @@ Take Rate: 8.4% (revenue as % of GMV)
 - Worker underpaid: $2,500 COP (40-60% goes to expenses)
 - **Rappi extracts: $54,820 COP (44% of order)**
 
-**WPFoods Model:**
+**Weats Model:**
 - Customer saves: $36,000 COP (pays only $127K vs. $163K)
 - Restaurant keeps: $28,080 COP more (93% vs. 70%)
 - Worker earns: $1,400 COP more (56% higher)
-- **WPFoods takes: $10,440 COP (8.4% of order)**
+- **Weats takes: $10,440 COP (8.4% of order)**
 
 **Who wins:**
 - ✓ Customer: 22% cheaper
 - ✓ Restaurant: 76% lower fees
 - ✓ Worker: 56% higher pay
-- ✓ WPFoods: Still profitable ($3,550 profit)
+- ✓ Weats: Still profitable ($3,550 profit)
 
 ---
 
@@ -160,7 +160,7 @@ Take Rate: 8.4% (revenue as % of GMV)
 
 ### Cost Efficiency vs. Rappi
 
-| Cost Category | WPFoods (% of GMV) | Rappi (% of GMV) | Advantage |
+| Cost Category | Weats (% of GMV) | Rappi (% of GMV) | Advantage |
 |---------------|-------------------|------------------|-----------|
 | **Delivery** | 4.7% | 10% | **53% lower** |
 | **Technology** | 0.5% | 2-3% | **75-83% lower** |
@@ -168,7 +168,7 @@ Take Rate: 8.4% (revenue as % of GMV)
 | **Marketing** | 1.0% | 3-5% | **67-80% lower** |
 | **TOTAL OPEX** | **9.5%** | **24-30%** | **60-68% lower** |
 
-**How WPFoods Achieves Lower Costs:**
+**How Weats Achieves Lower Costs:**
 1. **AI Automation:** 90% of support, routing, recommendations automated
 2. **WhatsApp Native:** Zero app development/maintenance costs
 3. **Lean Team:** 10-15 people vs. Rappi's 12,600+
@@ -302,7 +302,7 @@ LTV/CAC ratio: 6.8:1 (excellent, >3:1 is healthy)
 | **2025 Q2** | 100% | 88% | 83% | 72% | 4.0 | $92 |
 | **Rappi (est)** | 100% | 80% | 70% | 50% | 3.5 | $60 |
 
-**Key Insight:** WPFoods customers are more loyal and order more frequently due to:
+**Key Insight:** Weats customers are more loyal and order more frequently due to:
 1. Zero fees = no deterrent to ordering
 2. WhatsApp convenience = easier to reorder
 3. Fair model = feel good about using service
@@ -363,7 +363,7 @@ LTV/CAC ratio: 6.8:1 (excellent, >3:1 is healthy)
 **GMV per Dollar Raised:**
 - Year 3: $100M GMV / $7.5M = **$13.33 GMV per $1 raised**
 - Rappi: $3.17B GMV / $2.46B = **$1.29 GMV per $1 raised**
-- **WPFoods is 10x more capital efficient**
+- **Weats is 10x more capital efficient**
 
 ### Valuation Scenarios
 
@@ -406,7 +406,7 @@ Present value: $65M
 
 ## CONCLUSION: UNIT ECONOMICS VALIDATION
 
-### Why WPFoods Works Financially
+### Why Weats Works Financially
 
 **1. Lower Cost Structure (91% operational savings)**
 - AI automation replaces expensive human labor
@@ -417,7 +417,7 @@ Present value: $65M
 - Customers save 22% (vs. Rappi)
 - Restaurants save 76% on fees
 - Workers earn 56% more
-- **WPFoods still profits $0.86 per order**
+- **Weats still profits $0.86 per order**
 
 **3. Sustainable Revenue Model**
 - Data insights (B2B, not exploitation)
@@ -436,13 +436,13 @@ Present value: $65M
 - Viral word-of-mouth reduces marketing spend
 - WhatsApp distribution = zero marginal cost
 
-**Bottom Line:** WPFoods proves you can **build a profitable delivery platform** without exploiting stakeholders. The key is **operational efficiency through AI and WhatsApp**, not maximizing extraction. With 91% lower costs, WPFoods can charge 5-10x less and still generate healthy profits.
+**Bottom Line:** Weats proves you can **build a profitable delivery platform** without exploiting stakeholders. The key is **operational efficiency through AI and WhatsApp**, not maximizing extraction. With 91% lower costs, Weats can charge 5-10x less and still generate healthy profits.
 
 ---
 
 **Document Status:** Complete
 **Related Documents:**
-- `/docs/wpfoods/business-model-overview.md`
-- `/docs/wpfoods/financial-projections.md`
+- `/docs/weats/business-model-overview.md`
+- `/docs/weats/financial-projections.md`
 
 **Last Updated:** October 11, 2025

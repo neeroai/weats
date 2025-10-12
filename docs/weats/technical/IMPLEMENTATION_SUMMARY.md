@@ -1,4 +1,4 @@
-# WPFOODS: IMPLEMENTATION SUMMARY
+# WEATS: IMPLEMENTATION SUMMARY
 ## Quick Start Guide for Backend-Developer Agent
 
 **Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-Complete technical architecture for **WPFoods** - a WhatsApp-native food delivery platform that challenges Rappi through AI automation and zero-friction ordering.
+Complete technical architecture for **Weats** - a WhatsApp-native food delivery platform that challenges Rappi through AI automation and zero-friction ordering.
 
 **Documentation Created:**
 - ✅ **WhatsApp Architecture** (150+ pages) - Complete system design
@@ -253,8 +253,8 @@ Total:               $0.894
 
 ```bash
 # Clone repository
-git clone https://github.com/wpfoods/wpfoods.git
-cd wpfoods
+git clone https://github.com/weats/weats.git
+cd weats
 
 # Install dependencies
 npm install
@@ -273,7 +273,7 @@ WHATSAPP_PHONE_ID=123456789012345
 WHATSAPP_BUSINESS_ACCOUNT_ID=123456789012345
 WHATSAPP_TOKEN=EAAxxxxxxxxxxxx
 WHATSAPP_APP_SECRET=xxxxxxxxxxxx
-WHATSAPP_VERIFY_TOKEN=wpfoods_webhook_2025
+WHATSAPP_VERIFY_TOKEN=weats_webhook_2025
 
 # Supabase
 SUPABASE_URL=https://xxx.supabase.co
@@ -318,7 +318,7 @@ npm run db:verify
 # 2. Setup WhatsApp Business API
 # 3. Get Phone Number ID, Business Account ID, Access Token
 # 4. Configure webhook URL: https://your-domain.vercel.app/api/whatsapp/webhook
-# 5. Set verify token: wpfoods_webhook_2025
+# 5. Set verify token: weats_webhook_2025
 # 6. Subscribe to messages webhook
 
 # Test webhook
@@ -350,10 +350,10 @@ npm run build
 vercel deploy --prod
 
 # Update webhook URL in Meta Business Manager
-# https://wpfoods.vercel.app/api/whatsapp/webhook
+# https://weats.vercel.app/api/whatsapp/webhook
 
 # Verify deployment
-curl https://wpfoods.vercel.app/api/health
+curl https://weats.vercel.app/api/health
 ```
 
 ---
@@ -519,7 +519,7 @@ vercel logs --follow
 npm run db:health
 
 # Check API health
-curl https://wpfoods.vercel.app/api/health
+curl https://weats.vercel.app/api/health
 
 # View metrics
 npm run metrics
@@ -564,16 +564,16 @@ npm run analytics:export
 1. Check logs: `vercel logs --follow`
 2. Review health check: `/api/health`
 3. Check database: `npm run db:health`
-4. Escalate to: tech@wpfoods.co
+4. Escalate to: tech@weats.co
 
 ### Business Issues
 1. Check analytics: `npm run analytics`
 2. Review metrics: `npm run metrics`
-3. Escalate to: hello@wpfoods.co
+3. Escalate to: hello@weats.co
 
 ### Emergency Issues
 1. Call: +57 XXX XXX XXXX
-2. Alert: emergency@wpfoods.co
+2. Alert: emergency@weats.co
 3. Rollback: `vercel rollback`
 
 ---
@@ -581,9 +581,9 @@ npm run analytics:export
 ## ADDITIONAL RESOURCES
 
 ### Documentation
-- [WhatsApp Architecture](/docs/wpfoods/technical/whatsapp-architecture.md) - 150 pages
-- [Customer Flows](/docs/wpfoods/technical/customer-flows.md) - 200 pages
-- [Technical README](/docs/wpfoods/technical/README.md) - 100 pages
+- [WhatsApp Architecture](/docs/weats/technical/whatsapp-architecture.md) - 150 pages
+- [Customer Flows](/docs/weats/technical/customer-flows.md) - 200 pages
+- [Technical README](/docs/weats/technical/README.md) - 100 pages
 
 ### External Links
 - [WhatsApp Business API](https://developers.facebook.com/docs/whatsapp/cloud-api)
@@ -593,15 +593,15 @@ npm run analytics:export
 - [Stripe](https://stripe.com/docs)
 
 ### Community
-- GitHub: https://github.com/wpfoods/wpfoods
-- Discord: https://discord.gg/wpfoods
-- Twitter: @wpfoods
+- GitHub: https://github.com/weats/weats
+- Discord: https://discord.gg/weats
+- Twitter: @weats
 
 ---
 
 ## CONCLUSION
 
-This implementation summary provides everything needed to build WPFoods from scratch:
+This implementation summary provides everything needed to build Weats from scratch:
 
 **✅ Complete Architecture** - System design, database schema, API specs
 **✅ Detailed Flows** - Customer, restaurant, worker workflows
@@ -623,4 +623,4 @@ Start with Phase 1 (MVP Core) and follow the 16-week roadmap to launch.
 
 **Next Step:** Implement MVP (Weeks 1-4)
 
-**Let's build WPFoods! 🚀**
+**Let's build Weats! 🚀**

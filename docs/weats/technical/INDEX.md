@@ -1,4 +1,4 @@
-# WPFOODS TECHNICAL DOCUMENTATION INDEX
+# WEATS TECHNICAL DOCUMENTATION INDEX
 ## Complete Navigation Guide
 
 **Version:** 1.0
@@ -11,7 +11,7 @@
 
 ### TECHNICAL DOCUMENTATION (This Folder)
 
-#### 1. [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) ⭐ **START HERE**
+#### 1. [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) ⭐ **START HERE**
 **626 lines | 15 KB | Essential Reading**
 
 **Quick Start Guide for Implementation**
@@ -29,7 +29,7 @@
 
 ---
 
-#### 2. [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md)
+#### 2. [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md)
 **1,549 lines | 50 KB | Complete System Design**
 
 **Comprehensive Technical Architecture**
@@ -61,7 +61,7 @@
 
 ---
 
-#### 3. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md)
+#### 3. [customer-flows.md](/docs/weats/technical/customer-flows.md)
 **2,125 lines | 48 KB | Customer Experience**
 
 **Complete Conversational Ordering Workflows**
@@ -114,7 +114,7 @@
 
 ---
 
-#### 4. [README.md](/docs/wpfoods/technical/README.md)
+#### 4. [README.md](/docs/weats/technical/README.md)
 **744 lines | 19 KB | Technical Overview**
 
 **Master Technical Documentation Hub**
@@ -148,14 +148,14 @@
 
 ### Essential Business Context
 
-#### [README.md](/docs/wpfoods/README.md)
+#### [README.md](/docs/weats/README.md)
 **Business Overview & Structure**
 - Complete business model overview
 - Document navigation guide
 - Success metrics
 - Timeline & milestones
 
-#### [EXECUTIVE_SUMMARY.md](/docs/wpfoods/EXECUTIVE_SUMMARY.md)
+#### [EXECUTIVE_SUMMARY.md](/docs/weats/EXECUTIVE_SUMMARY.md)
 **Investor-Ready Summary**
 - Market opportunity ($3.17B Colombia)
 - Value proposition (10x better economics)
@@ -163,7 +163,7 @@
 - Competitive advantages
 - Funding request ($500K seed)
 
-#### [unit-economics.md](/docs/wpfoods/unit-economics.md)
+#### [unit-economics.md](/docs/weats/unit-economics.md)
 **Financial Model**
 - Revenue per order: $2.53
 - Cost per order: $1.67
@@ -171,21 +171,21 @@
 - Break-even analysis (1,598 orders/day)
 - LTV/CAC: 6.8:1
 
-#### [customer-experience.md](/docs/wpfoods/customer-experience.md)
+#### [customer-experience.md](/docs/weats/customer-experience.md)
 **Customer Value Proposition**
 - $0 service fees (save 35-40%)
 - 30-second ordering
 - WhatsApp native (no app)
 - AI-powered experience
 
-#### [restaurant-model.md](/docs/wpfoods/restaurant-model.md)
+#### [restaurant-model.md](/docs/weats/restaurant-model.md)
 **Restaurant Economics**
 - 5-10% fees (vs. Rappi 25-35%)
 - Keep 92-95% of revenue
 - Free analytics
 - 30-second onboarding
 
-#### [rapitendero-model.md](/docs/wpfoods/rapitendero-model.md)
+#### [rapitendero-model.md](/docs/weats/rapitendero-model.md)
 **Worker Economics**
 - Earn $3,500-$6,000 per delivery (50-100% higher)
 - Gas reimbursement (30%)
@@ -199,9 +199,9 @@
 ### For Backend Developers
 
 **Start Here:**
-1. [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) - Quick start guide
-2. [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md) - System design
-3. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - Feature implementation
+1. [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) - Quick start guide
+2. [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md) - System design
+3. [customer-flows.md](/docs/weats/technical/customer-flows.md) - Feature implementation
 
 **Key Sections:**
 - Database schema (whatsapp-architecture.md, lines 400-550)
@@ -212,8 +212,8 @@
 ### For Frontend/WhatsApp Developers
 
 **Start Here:**
-1. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - Message templates
-2. [README.md](/docs/wpfoods/technical/README.md) - WhatsApp features
+1. [customer-flows.md](/docs/weats/technical/customer-flows.md) - Message templates
+2. [README.md](/docs/weats/technical/README.md) - WhatsApp features
 
 **Key Sections:**
 - Interactive messages (README.md, lines 400-500)
@@ -223,8 +223,8 @@
 ### For AI/ML Engineers
 
 **Start Here:**
-1. [README.md](/docs/wpfoods/technical/README.md) - AI integration section
-2. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - AI use cases
+1. [README.md](/docs/weats/technical/README.md) - AI integration section
+2. [customer-flows.md](/docs/weats/technical/customer-flows.md) - AI use cases
 
 **Key Sections:**
 - Multi-provider cascade (README.md, lines 300-400)
@@ -234,9 +234,9 @@
 ### For Product Managers
 
 **Start Here:**
-1. [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) - Roadmap
-2. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - User experience
-3. [/docs/wpfoods/README.md](/docs/wpfoods/README.md) - Business context
+1. [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) - Roadmap
+2. [customer-flows.md](/docs/weats/technical/customer-flows.md) - User experience
+3. [/docs/weats/README.md](/docs/weats/README.md) - Business context
 
 **Key Sections:**
 - Implementation roadmap (IMPLEMENTATION_SUMMARY.md, lines 300-400)
@@ -246,8 +246,8 @@
 ### For DevOps/Infrastructure
 
 **Start Here:**
-1. [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md) - Infrastructure
-2. [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) - Deployment
+1. [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md) - Infrastructure
+2. [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) - Deployment
 
 **Key Sections:**
 - Scalability (whatsapp-architecture.md, lines 900-1100)
@@ -258,7 +258,7 @@
 ### For Security Engineers
 
 **Start Here:**
-1. [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md) - Security section
+1. [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md) - Security section
 
 **Key Sections:**
 - Signature validation (whatsapp-architecture.md, lines 1100-1150)
@@ -272,9 +272,9 @@
 
 ### Phase 1: MVP Core (Weeks 1-4)
 **Primary Docs:**
-- [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) - Quick start
-- [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md) - Database schema
-- [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - Basic ordering
+- [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) - Quick start
+- [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md) - Database schema
+- [customer-flows.md](/docs/weats/technical/customer-flows.md) - Basic ordering
 
 **Deliverables:**
 - Webhook handler
@@ -285,8 +285,8 @@
 
 ### Phase 2: Beta Launch (Weeks 5-8)
 **Primary Docs:**
-- [customer-flows.md](/docs/wpfoods/technical/customer-flows.md) - Advanced features
-- [README.md](/docs/wpfoods/technical/README.md) - Restaurant/worker flows
+- [customer-flows.md](/docs/weats/technical/customer-flows.md) - Advanced features
+- [README.md](/docs/weats/technical/README.md) - Restaurant/worker flows
 
 **Deliverables:**
 - WhatsApp Flows
@@ -297,8 +297,8 @@
 
 ### Phase 3: Scale (Weeks 9-16)
 **Primary Docs:**
-- [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md) - Performance
-- [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) - Monitoring
+- [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md) - Performance
+- [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) - Monitoring
 
 **Deliverables:**
 - Load testing
@@ -365,14 +365,14 @@
 ## 🔗 QUICK LINKS
 
 **Essential Reading (Start Here):**
-1. [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md) ⭐
-2. [whatsapp-architecture.md](/docs/wpfoods/technical/whatsapp-architecture.md)
-3. [customer-flows.md](/docs/wpfoods/technical/customer-flows.md)
+1. [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md) ⭐
+2. [whatsapp-architecture.md](/docs/weats/technical/whatsapp-architecture.md)
+3. [customer-flows.md](/docs/weats/technical/customer-flows.md)
 
 **Business Context:**
-- [/docs/wpfoods/README.md](/docs/wpfoods/README.md) - Business overview
-- [/docs/wpfoods/unit-economics.md](/docs/wpfoods/unit-economics.md) - Financial model
-- [/docs/wpfoods/EXECUTIVE_SUMMARY.md](/docs/wpfoods/EXECUTIVE_SUMMARY.md) - Investor summary
+- [/docs/weats/README.md](/docs/weats/README.md) - Business overview
+- [/docs/weats/unit-economics.md](/docs/weats/unit-economics.md) - Financial model
+- [/docs/weats/EXECUTIVE_SUMMARY.md](/docs/weats/EXECUTIVE_SUMMARY.md) - Investor summary
 
 **Platform Documentation:**
 - [/docs/platforms/whatsapp/api-v23-guide.md](/docs/platforms/whatsapp/api-v23-guide.md)
@@ -392,7 +392,7 @@
 - [ ] Run first webhook test
 
 ### For Product Managers
-- [ ] Read business documentation (/docs/wpfoods/)
+- [ ] Read business documentation (/docs/weats/)
 - [ ] Review customer-flows.md (user experience)
 - [ ] Understand success criteria
 - [ ] Review 16-week roadmap
@@ -411,9 +411,9 @@
 ## 🎓 LEARNING PATH
 
 **Day 1: Business Context**
-1. Read: /docs/wpfoods/README.md (30 min)
-2. Read: /docs/wpfoods/EXECUTIVE_SUMMARY.md (45 min)
-3. Read: /docs/wpfoods/unit-economics.md (30 min)
+1. Read: /docs/weats/README.md (30 min)
+2. Read: /docs/weats/EXECUTIVE_SUMMARY.md (45 min)
+3. Read: /docs/weats/unit-economics.md (30 min)
 
 **Day 2: Technical Architecture**
 1. Read: IMPLEMENTATION_SUMMARY.md (1 hour)
@@ -440,22 +440,22 @@
 ## 📧 SUPPORT
 
 **Technical Questions:**
-- Email: tech@wpfoods.co
+- Email: tech@weats.co
 - Review: whatsapp-architecture.md, customer-flows.md
 
 **Business Questions:**
-- Email: hello@wpfoods.co
-- Review: /docs/wpfoods/ business documentation
+- Email: hello@weats.co
+- Review: /docs/weats/ business documentation
 
 **Emergency:**
 - Phone: +57 XXX XXX XXXX
-- Email: emergency@wpfoods.co
+- Email: emergency@weats.co
 
 ---
 
 ## 🏆 NEXT STEPS
 
-1. **Read** [IMPLEMENTATION_SUMMARY.md](/docs/wpfoods/technical/IMPLEMENTATION_SUMMARY.md)
+1. **Read** [IMPLEMENTATION_SUMMARY.md](/docs/weats/technical/IMPLEMENTATION_SUMMARY.md)
 2. **Setup** development environment
 3. **Implement** MVP (4 weeks)
 4. **Launch** beta (500 users)
@@ -468,4 +468,4 @@
 **Last Updated:** January 11, 2025
 **Ready For:** Backend-Developer Agent
 
-**Let's build WPFoods! 🚀**
+**Let's build Weats! 🚀**

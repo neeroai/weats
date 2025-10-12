@@ -1,4 +1,4 @@
-# WPFOODS FINANCIAL PROJECTIONS
+# WEATS FINANCIAL PROJECTIONS
 ## 3-Year Path to Profitability and Beyond
 
 **Document Version:** 1.0
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods achieves profitability in **Year 3** with $1M net income on $10M revenue from $100M GMV. The business requires **$7.5M total funding** over 3 years ($500K seed, $2M Series A, $5M Series B), achieving **$13.33 GMV per dollar raised** - 10x more capital efficient than Rappi. Path to profitability is clear: grow from 100 orders/day (Year 1) → 1,500 orders/day (Year 2) → 5,000 orders/day (Year 3), crossing break-even at 1,598 orders/day in Year 2.
+Weats achieves profitability in **Year 3** with $1M net income on $10M revenue from $100M GMV. The business requires **$7.5M total funding** over 3 years ($500K seed, $2M Series A, $5M Series B), achieving **$13.33 GMV per dollar raised** - 10x more capital efficient than Rappi. Path to profitability is clear: grow from 100 orders/day (Year 1) → 1,500 orders/day (Year 2) → 5,000 orders/day (Year 3), crossing break-even at 1,598 orders/day in Year 2.
 
 ---
 
@@ -502,7 +502,7 @@ Status: Approaching/AT break-even
 
 | Company | GMV | Funding | GMV/$ Raised |
 |---------|-----|---------|--------------|
-| **WPFoods (Year 3)** | $100M | $7.5M | **$13.33** |
+| **Weats (Year 3)** | $100M | $7.5M | **$13.33** |
 | **Rappi (Current)** | $3.17B | $2.46B | $1.29 |
 | **Advantage** | - | - | **10.3x more efficient** |
 
@@ -521,14 +521,14 @@ Realistic: 2-3 years (with growth to $10M profit by Year 5)
 
 ## CONCLUSION
 
-WPFoods demonstrates a **clear path to profitability** with:
+Weats demonstrates a **clear path to profitability** with:
 
 1. **Efficient Capital Use:** $13.33 GMV per dollar (10x better than Rappi)
 2. **Scalable Unit Economics:** 34-39% contribution margin
 3. **Sustainable Growth:** -$1M (Y1) → -$500K (Y2) → +$1M (Y3)
 4. **Strong Returns:** Seed investors earn 97x at IPO
 
-**Investment Recommendation:** WPFoods represents a **high-return, mission-driven opportunity** to disrupt a $3B+ market through superior economics and technology, while delivering fair value to all stakeholders.
+**Investment Recommendation:** Weats represents a **high-return, mission-driven opportunity** to disrupt a $3B+ market through superior economics and technology, while delivering fair value to all stakeholders.
 
 ---
 

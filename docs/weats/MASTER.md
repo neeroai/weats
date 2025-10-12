@@ -1,4 +1,4 @@
-# WPFOODS MASTER DOCUMENTATION
+# WEATS MASTER DOCUMENTATION
 ## Complete Project Overview: Business + Technical Implementation Guide
 
 **Version:** 1.0
@@ -10,7 +10,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods is a WhatsApp-native food delivery platform designed to disrupt Rappi's 64% Colombian market share by offering **10x better value** through AI automation and zero-infrastructure costs. The platform charges **$0 service fees** to customers, **5-10% commission** to restaurants (vs. Rappi's 25-35%), and pays workers **50-100% more** - while achieving **34% profit margins** through operational efficiency.
+Weats is a WhatsApp-native food delivery platform designed to disrupt Rappi's 64% Colombian market share by offering **10x better value** through AI automation and zero-infrastructure costs. The platform charges **$0 service fees** to customers, **5-10% commission** to restaurants (vs. Rappi's 25-35%), and pays workers **50-100% more** - while achieving **34% profit margins** through operational efficiency.
 
 **Core Innovation:**
 - 100% WhatsApp-native (no app download)
@@ -94,16 +94,16 @@ WPFoods is a WhatsApp-native food delivery platform designed to disrupt Rappi's 
 - GMV target: **$100M** (10% of Rappi)
 
 **Competitive Gaps:**
-- **Cost:** Rappi charges 40% premium, WPFoods charges $0 service fees
+- **Cost:** Rappi charges 40% premium, Weats charges $0 service fees
 - **Distribution:** 90% WhatsApp penetration vs. 30-40% app downloads
-- **Economics:** Rappi loses money on most orders, WPFoods profitable from order 1
+- **Economics:** Rappi loses money on most orders, Weats profitable from order 1
 - **Brand:** Ethical alternative vs. exploitative incumbent
 
 ---
 
 ### Revenue Model
 
-**WPFoods does NOT extract value from core stakeholders.** Revenue comes from adjacent, high-margin services:
+**Weats does NOT extract value from core stakeholders.** Revenue comes from adjacent, high-margin services:
 
 **1. Restaurant Commissions (40% of revenue - $4M Year 3)**
 - Base rate: **6% average** (5-10% range)
@@ -159,12 +159,12 @@ Take Rate: 10% of GMV (vs. Rappi 41%)
 ```
 Order Value: $124,000 COP ($30 USD)
 
-REVENUE (WPFoods):
+REVENUE (Weats):
 ├─ Restaurant commission (6%): $7,440 COP
 ├─ Data/premium/fintech: $3,000 COP
 └─ Total Revenue: $10,440 COP ($2.53 USD)
 
-COSTS (WPFoods):
+COSTS (Weats):
 ├─ Delivery payment: $3,900 COP (56% higher than Rappi)
 ├─ Benefits pool: $300 COP
 ├─ WhatsApp API: $200 COP
@@ -183,7 +183,7 @@ Take Rate: 8.4% (of GMV)
 
 **Comparison to Rappi:**
 ```
-                WPFoods    Rappi      Difference
+                Weats    Rappi      Difference
 Customer Pays:  $127K      $163K      22% cheaper
 Restaurant Net: $115K      $87K       $28K more
 Worker Earns:   $3,900     $2,500     56% higher
@@ -339,7 +339,7 @@ Total Funding: $7.5M over 3 years
 ```
 GMV per $1 raised: $13.33 (Year 3)
 Rappi: $1.29 per $1 raised
-WPFoods is 10x more capital efficient
+Weats is 10x more capital efficient
 ```
 
 **Valuation Scenarios (Year 3):**
@@ -400,11 +400,11 @@ Investor Returns:
             └─────────┴──────────┘
                       │
          ┌────────────▼────────────┐
-         │      AI PROVIDERS       │
-         │  • Gemini 2.5 Flash     │
-         │  • GPT-4o-mini          │
-         │  • Claude Sonnet        │
-         │  • Groq Whisper         │
+         │    THREE-AI ECOSYSTEM   │
+         │  • Weats.Restaurant     │
+         │  • Weats.Runner         │
+         │  • Weats.Client         │
+         │  (Gemini FREE tier)     │
          └────────────┬────────────┘
                       │
          ┌────────────▼────────────┐
@@ -438,11 +438,12 @@ Investor Returns:
 - **PostGIS** extension (location queries)
 - **Supabase Storage** (media, documents)
 
-**AI Providers (Multi-Provider Cascade):**
-- **Primary:** Gemini 2.5 Flash (FREE, 1,500 req/day)
-- **Fallback:** GPT-4o-mini ($0.15/1M tokens)
-- **Emergency:** Claude Sonnet 4.5 ($3/1M tokens)
-- **Audio:** Groq Whisper ($0.111/hour, 93% cheaper)
+**AI Provider (Gemini FREE Tier ONLY - Strategic Decision 2025-01-11):**
+- **Single Provider:** Gemini 2.5 Flash FREE tier (1,400 req/day)
+- **Three-AI Agents:** Weats.Restaurant, Weats.Runner, Weats.Client
+- **Shared Quota:** 1,400 requests/day across all 3 agents
+- **Cost:** $0 (truly free - no fallback providers)
+- **Features:** 1M context, function calling, vision, context caching
 
 **Integrations:**
 - **WhatsApp Business API v23.0** (Meta Cloud)
@@ -637,7 +638,7 @@ ALTER TABLE restaurants ENABLE ROW LEVEL SECURITY;
 ALTER TABLE workers ENABLE ROW LEVEL SECURITY;
 ```
 
-**See:** `/docs/wpfoods/backend/database-schema.md` for complete schema with RLS policies
+**See:** `/docs/weats/backend/database-schema.md` for complete schema with RLS policies
 
 ---
 
@@ -697,7 +698,7 @@ GET /api/health
 GET /api/metrics
 ```
 
-**See:** `/docs/wpfoods/backend/api-reference.md` for complete API specification
+**See:** `/docs/weats/backend/api-reference.md` for complete API specification
 
 ---
 
@@ -727,71 +728,76 @@ Customer → WhatsApp Cloud API → Vercel Edge Webhook
 - Messages per order: ~5 messages
 - Cost: ~$0.022 per order
 
-**See:** `/docs/wpfoods/technical/whatsapp-architecture.md` for complete integration
+**See:** `/docs/weats/technical/whatsapp-architecture.md` for complete integration
 
 ---
 
 ### AI Integration
 
-**Multi-Provider Cascade (Cost Optimization):**
+**Gemini FREE Tier ONLY (Strategic Decision 2025-01-11):**
 
 ```typescript
-export const AI_PROVIDERS = {
-  // PRIMARY: Gemini 2.5 Flash (FREE)
-  primary: {
-    model: 'gemini-2.5-flash',
-    cost: 0,  // FREE tier
-    dailyLimit: 1500,
-    use: '93% of requests',
-    useCases: [
-      'Intent classification',
-      'Simple ordering',
-      'Customer support (90% automated)',
-      'Menu recommendations'
-    ]
+export const WEATS_AI_ECOSYSTEM = {
+  // SINGLE AI PROVIDER
+  provider: {
+    model: 'Gemini 2.5 Flash',
+    tier: 'FREE',
+    cost: 0,  // $0 (truly free)
+    daily_limit: 1400,  // requests/day
+    features: ['1M context', 'function calling', 'vision', 'context caching']
   },
 
-  // FALLBACK: GPT-4o-mini
-  secondary: {
-    model: 'gpt-4o-mini',
-    cost: 0.15,  // $0.15/1M tokens
-    use: '5% of requests',
-    useCases: [
-      'Complex queries',
-      'Context-heavy conversations',
-      'Ambiguity resolution'
-    ]
+  // THREE-AI AGENTS (sharing the same Gemini quota)
+  agents: {
+    restaurant: {
+      name: 'Weats.Restaurant',
+      allocation: 450,  // requests/day (35%)
+      responsibilities: [
+        'Order processing and confirmations',
+        'Menu management conversational AI',
+        'Inventory tracking',
+        'Restaurant CRM and analytics'
+      ]
+    },
+
+    runner: {
+      name: 'Weats.Runner',
+      allocation: 350,  // requests/day (27%)
+      responsibilities: [
+        'Worker dispatch and coordination',
+        'Route optimization suggestions',
+        'Payment calculations',
+        'Performance tracking'
+      ]
+    },
+
+    client: {
+      name: 'Weats.Client',
+      allocation: 500,  // requests/day (38%)
+      responsibilities: [
+        'Conversational ordering',
+        'Customer support (90% automated)',
+        'Order tracking and updates',
+        'Personalized recommendations'
+      ]
+    }
   },
 
-  // EMERGENCY: Claude Sonnet 4.5
-  tertiary: {
-    model: 'claude-sonnet-4',
-    cost: 3.00,  // $3/1M tokens
-    use: '2% of requests',
-    useCases: [
-      'High-stakes (payment issues)',
-      'VIP customers',
-      'Dispute resolution'
-    ]
-  },
-
-  // AUDIO: Groq Whisper
-  audio: {
-    model: 'whisper-large-v3',
-    cost: 0.111,  // $0.111/hour
-    speed: '400x faster than OpenAI',
-    useCases: ['Voice ordering transcription']
+  // SHARED QUOTA MANAGEMENT
+  quota_management: {
+    total_daily: 1400,
+    buffer: 100,  // Safety margin
+    monitoring: 'Real-time tracking with 90% alert',
+    overflow_strategy: 'Queue non-critical + cached responses'
   }
 };
 
 // Monthly cost (1,000 orders/day):
-// Gemini: $0
-// GPT-4o-mini: $11.25
-// Groq: $3.33
-// Total: $14.58/month = $0.0005 per order
+// Gemini FREE tier: $0
+// Total: $0/month = $0 per order (truly free)
 ```
 
-**See:** `/docs/wpfoods/technical/README.md` for AI integration guide
+**See:** `/docs/weats/technical/README.md` for AI integration guide
 
 ---
 
@@ -818,7 +824,7 @@ export const AI_PROVIDERS = {
 - [ ] AI customer support
 
 **Phase 3: Advanced Features (Weeks 9-12)**
-- [ ] Voice ordering (Groq Whisper)
+- [ ] Voice ordering (Gemini audio transcription)
 - [ ] Proactive recommendations
 - [ ] Analytics dashboard
 - [ ] Multi-city support
@@ -833,7 +839,7 @@ export const AI_PROVIDERS = {
 - [ ] Iteration based on feedback
 - [ ] Public launch preparation
 
-**See:** `/docs/wpfoods/backend/implementation-roadmap.md` for detailed week-by-week plan
+**See:** `/docs/weats/backend/implementation-roadmap.md` for detailed week-by-week plan
 
 ---
 
@@ -972,30 +978,30 @@ export const AI_PROVIDERS = {
 ### Related Documents
 
 **Business Documentation:**
-- [Business Model Overview](/docs/wpfoods/business-model-overview.md) - Value proposition, revenue model
-- [Unit Economics](/docs/wpfoods/unit-economics.md) - Detailed financial model
-- [Customer Experience](/docs/wpfoods/customer-experience.md) - $0 cost model
-- [Restaurant Model](/docs/wpfoods/restaurant-model.md) - 5-10% fee structure
-- [Rapitendero Model](/docs/wpfoods/rapitendero-model.md) - 50-100% higher pay
-- [Go-to-Market Strategy](/docs/wpfoods/go-to-market-strategy.md) - Launch plan
-- [Competitive Analysis](/docs/wpfoods/competitive-analysis.md) - WPFoods vs. Rappi
-- [Financial Projections](/docs/wpfoods/financial-projections.md) - 3-year forecast
+- [Business Model Overview](/docs/weats/business-model-overview.md) - Value proposition, revenue model
+- [Unit Economics](/docs/weats/unit-economics.md) - Detailed financial model
+- [Customer Experience](/docs/weats/customer-experience.md) - $0 cost model
+- [Restaurant Model](/docs/weats/restaurant-model.md) - 5-10% fee structure
+- [Rapitendero Model](/docs/weats/rapitendero-model.md) - 50-100% higher pay
+- [Go-to-Market Strategy](/docs/weats/go-to-market-strategy.md) - Launch plan
+- [Competitive Analysis](/docs/weats/competitive-analysis.md) - Weats vs. Rappi
+- [Financial Projections](/docs/weats/financial-projections.md) - 3-year forecast
 
 **Technical Documentation:**
-- [WhatsApp Architecture](/docs/wpfoods/technical/whatsapp-architecture.md) - Complete system design
-- [Customer Flows](/docs/wpfoods/technical/customer-flows.md) - Conversational ordering
-- [Technical Overview](/docs/wpfoods/technical/README.md) - Implementation guide
+- [WhatsApp Architecture](/docs/weats/technical/whatsapp-architecture.md) - Complete system design
+- [Customer Flows](/docs/weats/technical/customer-flows.md) - Conversational ordering
+- [Technical Overview](/docs/weats/technical/README.md) - Implementation guide
 
 **Backend Documentation (This Set):**
-- [Database Schema](/docs/wpfoods/backend/database-schema.md) - PostgreSQL design
-- [API Reference](/docs/wpfoods/backend/api-reference.md) - REST API spec
-- [Services Architecture](/docs/wpfoods/backend/services-architecture.md) - Backend services
-- [Integrations](/docs/wpfoods/backend/integrations.md) - External services
-- [Development Guide](/docs/wpfoods/backend/development-guide.md) - Local setup
-- [Deployment Guide](/docs/wpfoods/backend/deployment.md) - Production deployment
-- [Operations Guide](/docs/wpfoods/backend/operations.md) - Monitoring, scaling
-- [Troubleshooting](/docs/wpfoods/backend/troubleshooting.md) - Common issues
-- [Implementation Roadmap](/docs/wpfoods/backend/implementation-roadmap.md) - 16-week plan
+- [Database Schema](/docs/weats/backend/database-schema.md) - PostgreSQL design
+- [API Reference](/docs/weats/backend/api-reference.md) - REST API spec
+- [Services Architecture](/docs/weats/backend/services-architecture.md) - Backend services
+- [Integrations](/docs/weats/backend/integrations.md) - External services
+- [Development Guide](/docs/weats/backend/development-guide.md) - Local setup
+- [Deployment Guide](/docs/weats/backend/deployment.md) - Production deployment
+- [Operations Guide](/docs/weats/backend/operations.md) - Monitoring, scaling
+- [Troubleshooting](/docs/weats/backend/troubleshooting.md) - Common issues
+- [Implementation Roadmap](/docs/weats/backend/implementation-roadmap.md) - 16-week plan
 
 **Platform Documentation (migue.ai):**
 - [Platform Overview](/docs/README.md) - migue.ai architecture
@@ -1009,17 +1015,17 @@ export const AI_PROVIDERS = {
 ### Support & Resources
 
 **Development Support:**
-- Email: tech@wpfoods.co
-- Slack: #wpfoods-dev (internal)
-- Documentation: /docs/wpfoods/
+- Email: tech@weats.co
+- Slack: #weats-dev (internal)
+- Documentation: /docs/weats/
 
 **Business Questions:**
-- Email: hello@wpfoods.co
+- Email: hello@weats.co
 - WhatsApp: +57 XXX XXX XXXX
 
 **Emergency Escalation:**
-- Technical incidents: tech@wpfoods.co
-- Business critical: founder@wpfoods.co
+- Technical incidents: tech@weats.co
+- Business critical: founder@weats.co
 - Phone: +57 XXX XXX XXXX
 
 **External Resources:**
@@ -1033,7 +1039,7 @@ export const AI_PROVIDERS = {
 
 ## CONCLUSION
 
-WPFoods represents a **once-in-a-generation opportunity** to disrupt a $3.17B market through superior technology and aligned incentives. The platform is:
+Weats represents a **once-in-a-generation opportunity** to disrupt a $3.17B market through superior technology and aligned incentives. The platform is:
 
 **Technically Feasible:**
 - Built on proven migue.ai infrastructure (production-tested)
@@ -1071,7 +1077,7 @@ WPFoods represents a **once-in-a-generation opportunity** to disrupt a $3.17B ma
 8. **Year 2:** Multi-city expansion (Medellín, Cali)
 9. **Year 3:** National coverage, profitability ($1M net income)
 
-**This is the complete blueprint to build WPFoods. Let's execute.**
+**This is the complete blueprint to build Weats. Let's execute.**
 
 ---
 
@@ -1081,4 +1087,4 @@ WPFoods represents a **once-in-a-generation opportunity** to disrupt a $3.17B ma
 **Approved By:** Technical Lead, Product Manager
 **Ready For:** Implementation Team
 
-**Let's disrupt food delivery. Let's build WPFoods. 🚀**
+**Let's disrupt food delivery. Let's build Weats. 🚀**

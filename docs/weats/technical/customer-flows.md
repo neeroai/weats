@@ -1,4 +1,4 @@
-# WPFOODS: CUSTOMER FLOWS
+# WEATS: CUSTOMER FLOWS
 ## Complete Conversational Ordering Experience via WhatsApp
 
 **Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods customers order food through **natural conversation** on WhatsApp - no app download, no rigid menus, no friction. The AI understands requests like "I want tacos for 2 people under $20" and handles the entire journey from discovery to delivery tracking.
+Weats customers order food through **natural conversation** on WhatsApp - no app download, no rigid menus, no friction. The AI understands requests like "I want tacos for 2 people under $20" and handles the entire journey from discovery to delivery tracking.
 
 **Key Metrics:**
 - **Onboarding:** 30 seconds (vs. Rappi 5-10 minutes)
@@ -35,7 +35,7 @@ TOTAL TIME TO DELIVERY: 30-45 minutes
 ## FLOW 1: ONBOARDING (FIRST-TIME USER)
 
 ### Trigger
-Customer sends first message to WPFoods WhatsApp number
+Customer sends first message to Weats WhatsApp number
 
 ### Flow Diagram
 ```
@@ -57,12 +57,12 @@ User: "Hi" / "Hello" / "Hola"
 
 ### Message Exchange
 
-**Message 1: User → WPFoods**
+**Message 1: User → Weats**
 ```
 Customer: Hi
 ```
 
-**Message 2: WPFoods → User (Welcome)**
+**Message 2: Weats → User (Welcome)**
 ```typescript
 // AI-generated personalized greeting
 const welcomeMessage = {
@@ -70,7 +70,7 @@ const welcomeMessage = {
   to: phoneNumber,
   type: 'text',
   text: {
-    body: `👋 ¡Hola! Bienvenido a WPFoods
+    body: `👋 ¡Hola! Bienvenido a Weats
 
 $0 tarifas de servicio. Precios justos. Entrega rápida.
 
@@ -83,12 +83,12 @@ Después podrás ordenar comida en 30 segundos 🚀`
 };
 ```
 
-**Message 3: User → WPFoods (Provides info)**
+**Message 3: User → Weats (Provides info)**
 ```
 Customer: Soy Juan Pérez, Calle 85 #15-30, Bogotá
 ```
 
-**Message 4: WPFoods → User (Confirmation + First Order Prompt)**
+**Message 4: Weats → User (Confirmation + First Order Prompt)**
 ```typescript
 const confirmationMessage = {
   messaging_product: 'whatsapp',
@@ -174,7 +174,7 @@ export class OnboardingHandler {
     await this.sendMessage(phoneNumber, {
       type: 'text',
       text: {
-        body: `👋 ¡Hola! Bienvenido a WPFoods
+        body: `👋 ¡Hola! Bienvenido a Weats
 
 $0 tarifas de servicio. Precios justos. Entrega rápida.
 
@@ -271,12 +271,12 @@ User: "Quiero tacos"
 
 ### Message Exchange (Conversational)
 
-**Message 1: User → WPFoods**
+**Message 1: User → Weats**
 ```
 Customer: Quiero tacos para 2 personas bajo $20
 ```
 
-**Message 2: WPFoods → User (AI Understanding + Results)**
+**Message 2: Weats → User (AI Understanding + Results)**
 ```typescript
 // AI classifies intent and extracts parameters
 const intent = {
@@ -356,7 +356,7 @@ const catalogMessage = {
       text: 'Desliza para ver restaurantes y menús'
     },
     action: {
-      catalog_id: WPFOODS_CATALOG_ID,
+      catalog_id: WEATS_CATALOG_ID,
       sections: [
         {
           title: 'Top Taquerías',
@@ -522,7 +522,7 @@ User: [Selects "Taquería El Paisa"]
 Customer: [Clicks "Taquería El Paisa ⭐4.8"]
 ```
 
-**Message 2: WPFoods → User (Menu)**
+**Message 2: Weats → User (Menu)**
 ```typescript
 const menuMessage = {
   messaging_product: 'whatsapp',
@@ -598,7 +598,7 @@ const menuMessage = {
 Customer: [Clicks "Taco al Pastor"]
 ```
 
-**Message 4: WPFoods → User (Customization)**
+**Message 4: Weats → User (Customization)**
 ```typescript
 const customizationMessage = {
   messaging_product: 'whatsapp',
@@ -1640,7 +1640,7 @@ Total: $${order.total_cop.toLocaleString()}
 5. **Refund Request** - "I want a refund"
 6. **Missing Items** - "My order is incomplete"
 7. **Quality Issues** - "Food arrived cold"
-8. **General Help** - "How does WPFoods work?"
+8. **General Help** - "How does Weats work?"
 
 ### AI-Powered Support (90% Automated)
 
@@ -1841,7 +1841,7 @@ Tu satisfacción es importante para nosotros.`
     // Generate AI response
     const response = await this.generateAIResponse(query, {
       context: 'customer_support',
-      knowledge_base: WPFOODS_KB,
+      knowledge_base: WEATS_KB,
     });
 
     await this.sendMessage(userId, {
@@ -2089,7 +2089,7 @@ export const CUSTOMER_KPIS = {
 
 ## CONCLUSION
 
-WPFoods customer experience delivers:
+Weats customer experience delivers:
 
 **Speed:**
 - 30-second onboarding
@@ -2116,9 +2116,9 @@ This creates a **10x better ordering experience** than traditional app-based pla
 ---
 
 **Related Documentation:**
-- [WhatsApp Architecture](/docs/wpfoods/technical/whatsapp-architecture.md)
-- [Restaurant Flows](/docs/wpfoods/technical/restaurant-flows.md)
-- [AI Integration](/docs/wpfoods/technical/ai-integration.md)
+- [WhatsApp Architecture](/docs/weats/technical/whatsapp-architecture.md)
+- [Restaurant Flows](/docs/weats/technical/restaurant-flows.md)
+- [AI Integration](/docs/weats/technical/ai-integration.md)
 
 **Status:** ✅ Complete
 **Last Updated:** January 11, 2025

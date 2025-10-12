@@ -1,4 +1,4 @@
-# WPFOODS AI CUSTOMER EXPERIENCE
+# WEATS AI CUSTOMER EXPERIENCE
 ## Conversational Commerce: 30-Second Ordering in Colombian Spanish
 
 **Document Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods delivers a **revolutionary customer experience** through conversational AI that understands Colombian Spanish, cultural context, and individual preferences. Customers order food in 30 seconds via WhatsApp with zero app downloads, zero service fees, and personalized recommendations - all powered by AI that costs $0.0005 per interaction.
+Weats delivers a **revolutionary customer experience** through conversational AI that understands Colombian Spanish, cultural context, and individual preferences. Customers order food in 30 seconds via WhatsApp with zero app downloads, zero service fees, and personalized recommendations - all powered by AI that costs $0.0005 per interaction.
 
 **Key Differentiators:**
 - **30-second ordering** vs 15-minute app navigation
@@ -42,7 +42,7 @@ Cognitive load: High
 Frustration points: 10+
 ```
 
-**AI-Powered WhatsApp Ordering (WPFoods):**
+**AI-Powered WhatsApp Ordering (Weats):**
 ```
 Customer: "Quiero algo rico para almorzar"
           (I want something delicious for lunch)
@@ -733,28 +733,29 @@ Customer satisfaction: ⭐⭐⭐⭐⭐
 
 ## VOICE ORDERING: NATURAL SPEECH INTERFACE
 
-### Groq Whisper Integration
+### Gemini Audio API Integration (FREE Tier)
 
 ```python
 class VoiceOrderingSystem:
     def __init__(self):
-        self.whisper_client = GroqWhisperClient()
-        self.language_model = 'whisper-large-v3-turbo'
-        self.cost_per_hour = 0.05  # $0.05/hour (93% cheaper than OpenAI)
+        self.gemini_client = GeminiClient()
+        self.model = 'gemini-2.5-flash'  # FREE tier with audio support
+        self.cost_per_hour = 0  # $0 - completely FREE
+        self.client_agent = WeatsClientAgent()  # Three-AI ecosystem
 
     async def process_voice_message(self, audio_url: str, user_context: dict):
         """
-        Process WhatsApp voice messages for ordering
+        Process WhatsApp voice messages for ordering using Gemini Audio API
         """
         # Download audio from WhatsApp
         audio_file = await self.download_whatsapp_audio(audio_url)
 
-        # Transcribe with Groq Whisper (400x faster than OpenAI)
-        transcription = await self.whisper_client.transcribe(
+        # Transcribe with Gemini Audio API (FREE tier)
+        transcription = await self.gemini_client.transcribe_audio(
             audio_file,
             language='es',  # Spanish
-            task='transcribe',
-            response_format='verbose_json'
+            context='Colombian food ordering',
+            model='gemini-2.5-flash'
         )
 
         # Process Colombian Spanish specifics
@@ -1266,9 +1267,9 @@ Result: Late night order fulfilled
 
 ## AI FEATURES COMPARISON
 
-### WPFoods AI vs Rappi Features
+### Weats AI vs Rappi Features
 
-| Feature | WPFoods | Rappi | Advantage |
+| Feature | Weats | Rappi | Advantage |
 |---------|---------|-------|-----------|
 | **Conversational Ordering** | ✅ Natural language | ❌ Menu browsing | 30x faster |
 | **Language Support** | ✅ Colombian Spanish + slang | ⚠️ Standard Spanish | Cultural fit |
@@ -1357,7 +1358,7 @@ interface CustomerAIDashboard {
 
 ## CONCLUSION
 
-WPFoods' AI-powered customer experience represents a **paradigm shift** in food delivery:
+Weats' AI-powered customer experience represents a **paradigm shift** in food delivery:
 
 1. **Speed**: 30-second ordering vs 15-minute app navigation
 2. **Simplicity**: Natural conversation vs complex menus
@@ -1383,6 +1384,6 @@ WPFoods' AI-powered customer experience represents a **paradigm shift** in food 
 **Competitive Advantage:** Insurmountable
 
 **Next Documents:**
-- [AI Restaurant Optimization](/docs/wpfoods/ai-restaurant-optimization.md)
-- [AI Worker Optimization](/docs/wpfoods/ai-worker-optimization.md)
-- [AI Technical Architecture](/docs/wpfoods/ai-technical-architecture.md)
+- [AI Restaurant Optimization](/docs/weats/ai-restaurant-optimization.md)
+- [AI Worker Optimization](/docs/weats/ai-worker-optimization.md)
+- [AI Technical Architecture](/docs/weats/ai-technical-architecture.md)

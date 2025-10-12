@@ -3,7 +3,7 @@
 
 ### Executive Summary
 
-This roadmap details WPFoods' aggressive AI implementation strategy, progressing from basic conversational ordering to market-defining predictive intelligence in just 52 weeks. Each phase builds upon the previous, creating compound advantages that competitors cannot match. The roadmap prioritizes speed of execution, customer value delivery, and the creation of insurmountable competitive moats.
+This roadmap details Weats' aggressive AI implementation strategy, progressing from basic conversational ordering to market-defining predictive intelligence in just 52 weeks. Each phase builds upon the previous, creating compound advantages that competitors cannot match. The roadmap prioritizes speed of execution, customer value delivery, and the creation of insurmountable competitive moats.
 
 **Key Milestones:**
 - **Week 4**: MVP with 90% support automation
@@ -79,11 +79,11 @@ interface Week1Deliverables {
 - Configure WhatsApp Business API
 - Implement basic health checks
 
-## Day 3-4: AI Integration
-- Connect Gemini 2.5 Flash API
-- Implement basic prompt templates
-- Create fallback to GPT-4o-mini
-- Test conversation flows
+## Day 3-4: AI Integration & Three-AI Ecosystem
+- Connect Gemini 2.5 Flash FREE tier API
+- Implement three specialized AI agents (Restaurant, Runner, Client)
+- Create agent orchestration layer
+- Test conversation flows with quota management
 
 ## Day 5-6: Order Processing
 - Build order state machine
@@ -310,25 +310,32 @@ class Week4Deliverables {
 
 ## Phase 2: Growth Engine (Weeks 5-12)
 
-### Week 5-6: Voice Ordering
+### Week 5-6: Voice Ordering (Gemini Audio - FREE Tier)
 
 ```typescript
 class VoiceOrderingImplementation {
   architecture = {
     pipeline: [
       "Audio capture (WhatsApp/Web)",
-      "Groq Whisper transcription",
-      "Gemini processing",
+      "Gemini Audio API transcription (FREE)",
+      "Weats.Client agent processing",
       "Response generation",
-      "ElevenLabs TTS",
-      "Audio delivery"
+      "ElevenLabs TTS (optional - can skip for WhatsApp text)",
+      "Audio/text delivery"
     ],
 
     latency_targets: {
-      transcription: 500, // ms
-      processing: 1000, // ms
-      tts: 300, // ms
-      total: 1800 // ms
+      transcription: 500, // ms (Gemini audio)
+      processing: 800, // ms (Weats.Client agent)
+      tts: 300, // ms (optional)
+      total: 1600 // ms (or 1300ms text-only)
+    },
+
+    cost: {
+      transcription: 0, // FREE tier
+      processing: 0, // FREE tier
+      tts: 0.10, // Optional - only if voice response needed
+      total: 0 // Text response is FREE
     }
   };
 
@@ -337,39 +344,61 @@ class VoiceOrderingImplementation {
       async processVoiceOrder(audioBuffer: Buffer): Promise<AudioResponse> {
         const start = Date.now();
 
-        // Step 1: Transcribe with Groq (ultra-fast)
-        const transcription = await this.transcribe(audioBuffer);
-        console.log(\`Transcription: \${Date.now() - start}ms\`);
+        // Step 1: Transcribe with Gemini Audio API (FREE tier)
+        const transcription = await this.transcribeWithGemini(audioBuffer);
+        console.log(\`Gemini transcription: \${Date.now() - start}ms\`);
 
-        // Step 2: Process order with Gemini
-        const orderResponse = await this.processOrder(transcription.text);
-        console.log(\`Processing: \${Date.now() - start}ms\`);
+        // Step 2: Process order with Weats.Client agent (also Gemini FREE)
+        const orderResponse = await this.clientAgent.processOrderIntent(
+          transcription.text,
+          transcription.metadata
+        );
+        console.log(\`Client agent processing: \${Date.now() - start}ms\`);
 
-        // Step 3: Generate voice response
-        const audioResponse = await this.generateSpeech(orderResponse.message);
-        console.log(\`TTS: \${Date.now() - start}ms\`);
-
+        // Step 3: Return text response (no TTS needed for WhatsApp)
         return {
           transcription: transcription.text,
           order: orderResponse.order,
-          audio: audioResponse,
-          latency: Date.now() - start
+          response: orderResponse.message,
+          latency: Date.now() - start,
+          quotaUsed: 2 // 1 for transcription + 1 for client agent
         };
       }
 
-      private async transcribe(audio: Buffer): Promise<Transcription> {
-        const formData = new FormData();
-        formData.append('file', new Blob([audio]));
-        formData.append('model', 'whisper-large-v3');
-        formData.append('language', 'es');
-
-        const response = await fetch('https://api.groq.com/v1/audio/transcriptions', {
+      private async transcribeWithGemini(audio: Buffer): Promise<Transcription> {
+        const response = await fetch('https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent', {
           method: 'POST',
-          headers: { 'Authorization': \`Bearer \${GROQ_API_KEY}\` },
-          body: formData
+          headers: {
+            'x-goog-api-key': process.env.GEMINI_API_KEY,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            contents: [{
+              parts: [
+                {
+                  inlineData: {
+                    mimeType: 'audio/webm',
+                    data: audio.toString('base64')
+                  }
+                },
+                {
+                  text: 'Transcribe this Spanish audio of a customer ordering food.'
+                }
+              ]
+            }],
+            generationConfig: {
+              temperature: 0.1,
+              maxOutputTokens: 2048
+            }
+          })
         });
 
-        return response.json();
+        const result = await response.json();
+        return {
+          text: result.candidates[0].content.parts[0].text,
+          language: 'es',
+          confidence: 0.95
+        };
       }
     }
   `;
@@ -1140,11 +1169,10 @@ class InfrastructureBudget {
     },
 
     ai_providers: {
-      gemini: 0, // FREE tier
-      openai: 200, // Backup
-      groq: 150, // Voice
-      claude: 100, // Complex tasks
-      total: 450
+      gemini: 0, // FREE tier - ONLY provider (1,400 req/day)
+      quota_management: 0, // No backup providers needed
+      three_ai_ecosystem: 0, // Restaurant + Runner + Client agents
+      total: 0 // 100% FREE
     },
 
     third_party: {
@@ -1155,16 +1183,16 @@ class InfrastructureBudget {
       total: 650
     },
 
-    total_monthly: 1949,
-    total_annual: 23388
+    total_monthly: 1499, // $450 cheaper than multi-provider
+    total_annual: 17988  // $5,400 annual savings
   };
 
   scaling_projection = {
-    month_1: 1949,
-    month_3: 3500,
-    month_6: 7500,
-    month_12: 15000,
-    explanation: "Costs scale with usage but remain manageable"
+    month_1: 1499,
+    month_3: 3050,  // Cheaper due to $0 AI
+    month_6: 7050,  // Cheaper due to $0 AI
+    month_12: 14550, // Cheaper due to $0 AI
+    explanation: "Costs scale with usage but AI remains FREE (Gemini quota management)"
   };
 }
 ```
@@ -1288,16 +1316,16 @@ const phase3Metrics = {
 class TechnicalRiskMitigation {
   risks = [
     {
-      risk: "AI provider outage",
-      probability: "Medium",
-      impact: "High",
+      risk: "Gemini API quota exceeded",
+      probability: "Low",
+      impact: "Medium",
       mitigation: [
-        "Multi-provider fallback system",
-        "Local model backup",
-        "Graceful degradation",
-        "Manual override capability"
+        "Intelligent quota management (1,400 req/day allocation)",
+        "Aggressive caching (75% reduction in requests)",
+        "Request queuing for non-critical operations",
+        "Manual override capability for critical orders"
       ],
-      contingency: "Switch to backup provider in <100ms"
+      contingency: "Queue requests and notify customers of 5-minute delay"
     },
     {
       risk: "Data breach",
@@ -1460,9 +1488,10 @@ const architectureChoices = {
   },
 
   ai_orchestration: {
-    approach: "Multi-provider with fallback",
-    reason: "Cost optimization, reliability",
-    implementation: "Custom orchestration layer"
+    approach: "Three-AI specialized agents (Gemini FREE tier only)",
+    reason: "$0 cost, simplicity, 1,400 req/day shared quota",
+    agents: ["Weats.Restaurant", "Weats.Runner", "Weats.Client"],
+    implementation: "Quota-managed orchestration layer"
   },
 
   messaging: {
@@ -1512,7 +1541,7 @@ jobs:
 
 ## Conclusion
 
-This comprehensive roadmap provides a clear path from MVP to market leadership in 52 weeks. By focusing on rapid iteration, customer value, and building competitive moats through AI, WPFoods will establish itself as the dominant player in the Colombian food delivery market.
+This comprehensive roadmap provides a clear path from MVP to market leadership in 52 weeks. By focusing on rapid iteration, customer value, and building competitive moats through AI, Weats will establish itself as the dominant player in the Colombian food delivery market.
 
 ### Key Success Factors
 

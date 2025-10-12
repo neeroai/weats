@@ -1,4 +1,4 @@
-# WPFOODS BUSINESS MODEL OVERVIEW
+# WEATS BUSINESS MODEL OVERVIEW
 ## WhatsApp-Based Food Delivery Platform to Disrupt Rappi
 
 **Document Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods is a WhatsApp-only food delivery platform designed to challenge Rappi's dominance by solving the fundamental economic pain points for all three stakeholders: customers pay **$0 service fees** and minimal delivery costs, restaurants pay **5-10% total fees** (vs. Rappi's 25-35%), and delivery workers earn **50-100% more per delivery** with expense support. The platform achieves profitability through **AI automation**, **data monetization** (B2B insights), **optional premium features**, and **financial services** - never by exploiting stakeholders.
+Weats is a WhatsApp-only food delivery platform designed to challenge Rappi's dominance by solving the fundamental economic pain points for all three stakeholders: customers pay **$0 service fees** and minimal delivery costs, restaurants pay **5-10% total fees** (vs. Rappi's 25-35%), and delivery workers earn **50-100% more per delivery** with expense support. The platform achieves profitability through **AI automation**, **data monetization** (B2B insights), **optional premium features**, and **financial services** - never by exploiting stakeholders.
 
 ### Core Innovation: The Anti-Rappi Model
 
@@ -18,14 +18,14 @@ WPFoods is a WhatsApp-only food delivery platform designed to challenge Rappi's 
 - Restaurants: 25-35% total costs destroy margins
 - Workers: 48% pay decline, 40-60% expense burden, below minimum wage
 
-**Solution:** WPFoods redistributes value fairly through technology
+**Solution:** Weats redistributes value fairly through technology
 - **Customers:** $0 service fees, <$1,000 COP delivery (<$0.25 USD)
 - **Restaurants:** 5-10% total fees (5-7x cheaper than Rappi)
 - **Workers:** 50-100% higher pay, expense support, benefits pool
 
 ### Key Metrics (Target Year 3)
 
-| Metric | WPFoods | Rappi | Advantage |
+| Metric | Weats | Rappi | Advantage |
 |--------|---------|-------|-----------|
 | **Customer Cost** | $0 fees + minimal delivery | 15-20% service + $2-10K delivery | 5-10x cheaper |
 | **Restaurant Fees** | 5-10% all-in | 25-35% all-in | 3-5x cheaper |
@@ -154,7 +154,7 @@ WPFoods is a WhatsApp-only food delivery platform designed to challenge Rappi's 
 - Customers pay: 0% (zero fees)
 - Restaurants pay: 5-10% (vs. Rappi 20-30%)
 - Workers receive: 100% of delivery fee + tip
-- WPFoods revenue: From data, premium, fintech (not exploitation)
+- Weats revenue: From data, premium, fintech (not exploitation)
 
 ---
 
@@ -214,37 +214,37 @@ WPFoods is a WhatsApp-only food delivery platform designed to challenge Rappi's 
 - Customers: $0 fees
 - Restaurants: 5-10% commission (vs. 25-35%)
 - Workers: 50-100% higher pay
-- WPFoods: 3-5% of GMV (vs. Rappi's 10%)
+- Weats: 3-5% of GMV (vs. Rappi's 10%)
 
 ---
 
 ## COMPETITIVE POSITIONING
 
-### WPFoods vs. Rappi
+### Weats vs. Rappi
 
-| Factor | WPFoods | Rappi | Winner |
+| Factor | Weats | Rappi | Winner |
 |--------|---------|-------|--------|
-| **Customer Service Fee** | $0 | 15-20% | 🏆 **WPFoods** |
-| **Customer Delivery Fee** | <$1,000 COP | $2,000-$10,000 COP | 🏆 **WPFoods** |
-| **Customer Total Premium** | 5-10% | 40% | 🏆 **WPFoods (4-8x cheaper)** |
-| **Restaurant Commission** | 5-10% | 20-25% | 🏆 **WPFoods (2-5x cheaper)** |
-| **Restaurant Total Fees** | 5-10% | 25-35% | 🏆 **WPFoods (3-5x cheaper)** |
-| **Worker Pay/Delivery** | $3,500-$6,000 COP | $1,800-$3,700 COP | 🏆 **WPFoods (50-100% higher)** |
-| **Worker Expenses** | 20-30% (support) | 40-60% | 🏆 **WPFoods** |
-| **Worker Net Income** | 2-3x Rappi | Below min wage | 🏆 **WPFoods** |
-| **Platform Interface** | WhatsApp (native) | App (download) | 🏆 **WPFoods (no friction)** |
-| **Onboarding** | 30 seconds | 5-10 minutes | 🏆 **WPFoods** |
-| **AI Features** | Advanced | Basic | 🏆 **WPFoods** |
-| **Brand Positioning** | Fair, ethical | Exploitative | 🏆 **WPFoods** |
+| **Customer Service Fee** | $0 | 15-20% | 🏆 **Weats** |
+| **Customer Delivery Fee** | <$1,000 COP | $2,000-$10,000 COP | 🏆 **Weats** |
+| **Customer Total Premium** | 5-10% | 40% | 🏆 **Weats (4-8x cheaper)** |
+| **Restaurant Commission** | 5-10% | 20-25% | 🏆 **Weats (2-5x cheaper)** |
+| **Restaurant Total Fees** | 5-10% | 25-35% | 🏆 **Weats (3-5x cheaper)** |
+| **Worker Pay/Delivery** | $3,500-$6,000 COP | $1,800-$3,700 COP | 🏆 **Weats (50-100% higher)** |
+| **Worker Expenses** | 20-30% (support) | 40-60% | 🏆 **Weats** |
+| **Worker Net Income** | 2-3x Rappi | Below min wage | 🏆 **Weats** |
+| **Platform Interface** | WhatsApp (native) | App (download) | 🏆 **Weats (no friction)** |
+| **Onboarding** | 30 seconds | 5-10 minutes | 🏆 **Weats** |
+| **AI Features** | Advanced | Basic | 🏆 **Weats** |
+| **Brand Positioning** | Fair, ethical | Exploitative | 🏆 **Weats** |
 
 ### The 10x Better Promise
 
-**For at least ONE stakeholder (customers), WPFoods is 10x better:**
+**For at least ONE stakeholder (customers), Weats is 10x better:**
 - **10x cheaper:** $0 service fees vs. 15-20%
 - **10x faster onboarding:** 30 seconds vs. 5-10 minutes
 - **10x easier:** WhatsApp vs. separate app
 
-**For ALL stakeholders, WPFoods is 2x better:**
+**For ALL stakeholders, Weats is 2x better:**
 - **Customers:** 35-40% savings per order
 - **Restaurants:** 15-25 percentage points lower fees
 - **Workers:** 50-100% higher net income
@@ -394,13 +394,13 @@ WPFoods is a WhatsApp-only food delivery platform designed to challenge Rappi's 
 ```
 Average Order Value: $30 USD = $120,000 COP
 
-REVENUE (WPFoods):
+REVENUE (Weats):
 - Restaurant commission (6% avg): $7,200 COP
 - Data/premium/fintech (allocated): $3,000 COP
 ─────────────────────────────────
 Total revenue per order: $10,200 COP ($2.50 USD)
 
-COSTS (WPFoods):
+COSTS (Weats):
 - Worker payment: $4,500 COP (higher than Rappi)
 - WhatsApp API: $200 COP ($0.01-0.05 per message x 4-6 messages)
 - AI/infrastructure: $300 COP
@@ -418,10 +418,10 @@ Profit margin: 26% (on revenue per order)
 
 **Comparison to Rappi:**
 - Rappi profit: ~$7 USD per order (41% take rate)
-- WPFoods profit: ~$0.65 USD per order (8.5% take rate)
-- **Rappi extracts 10x more** than WPFoods
+- Weats profit: ~$0.65 USD per order (8.5% take rate)
+- **Rappi extracts 10x more** than Weats
 
-**But WPFoods still profitable because:**
+**But Weats still profitable because:**
 - 90% lower operational costs (AI automation)
 - 100% lower app development/maintenance costs (WhatsApp)
 - Higher order frequency (better unit economics, loyal customers)
@@ -585,15 +585,16 @@ Profit margin: 26% (on revenue per order)
 **Impact:** High
 
 **Mitigation:**
-- **Redundancy:** Multiple AI providers (Gemini, OpenAI, Claude)
+- **Redundancy:** Gemini 2.5 Flash FREE tier (1,400 req/day quota management across three-AI ecosystem)
+- **Quota fallback:** Aggressive caching + batch processing + buffer quota (100 req) if approaching limit
 - **Infrastructure:** Vercel Edge Functions (99.99% uptime)
 - **Testing:** Extensive QA, beta testing, gradual rollout
 - **Support:** Human backup for AI failures (escalation path)
-- **Monitoring:** Real-time alerts, rapid incident response
+- **Monitoring:** Real-time quota tracking, alerts at 80% usage
 
 ---
 
-## CONCLUSION: WHY WPFOODS WILL WIN
+## CONCLUSION: WHY WEATS WILL WIN
 
 ### The Unfair Advantages
 
@@ -616,7 +617,7 @@ Profit margin: 26% (on revenue per order)
 
 **Mission:** Make food delivery fair for everyone - customers, restaurants, and workers. Challenge Rappi's 64% market share not by competing on their terms, but by building a better, fairer, more sustainable platform that benefits all stakeholders.
 
-**Tagline:** "WPFoods: Delivery without the fees. Powered by WhatsApp, driven by fairness."
+**Tagline:** "Weats: Delivery without the fees. Powered by WhatsApp, driven by fairness."
 
 ---
 
@@ -630,12 +631,12 @@ Profit margin: 26% (on revenue per order)
 6. Scale strategically
 
 **Related Documents:**
-- `/docs/wpfoods/unit-economics.md` (detailed financial model)
-- `/docs/wpfoods/restaurant-model.md` (5-10% fee structure)
-- `/docs/wpfoods/rapitendero-model.md` (50-100% higher pay)
-- `/docs/wpfoods/customer-experience.md` ($0 cost model)
-- `/docs/wpfoods/go-to-market-strategy.md` (launch plan)
-- `/docs/wpfoods/competitive-analysis.md` (WPFoods vs. Rappi)
-- `/docs/wpfoods/financial-projections.md` (3-year forecast)
+- `/docs/weats/unit-economics.md` (detailed financial model)
+- `/docs/weats/restaurant-model.md` (5-10% fee structure)
+- `/docs/weats/rapitendero-model.md` (50-100% higher pay)
+- `/docs/weats/customer-experience.md` ($0 cost model)
+- `/docs/weats/go-to-market-strategy.md` (launch plan)
+- `/docs/weats/competitive-analysis.md` (Weats vs. Rappi)
+- `/docs/weats/financial-projections.md` (3-year forecast)
 
 **Last Updated:** October 11, 2025

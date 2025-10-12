@@ -1,9 +1,9 @@
-# AGENTS.md - WPFoods Platform
+# AGENTS.md - Weats.ai Platform
 
 > **Documentación de Investigación y Orquestación de Agentes**
-> **Versión**: 1.0
-> **Última actualización**: 2025-01-11
-> **Proyecto**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
+> **Versión**: 2.0
+> **Última actualización**: 2025-10-12
+> **Proyecto**: Weats.ai - Three-AI Conversational Delivery Ecosystem
 
 ---
 
@@ -22,13 +22,14 @@
 ## 1. Descripción del Proyecto
 
 ### Objetivo Principal
-Disrumpir el mercado colombiano de entrega de alimentos (dominado por Rappi 64%) con una plataforma WhatsApp-nativa, impulsada por IA, que beneficia a todos los stakeholders: clientes, restaurantes y trabajadores (rapitenderos).
+Disrumpir el mercado colombiano de entrega de alimentos (dominado por Rappi 64%) con un **ecosistema de tres IAs conversacionales** (Weats.Restaurant, Weats.Runner, Weats.Client) sincronizadas, que operan sin apps ni monopolios, devolviendo el poder a quienes cocinan, reparten y comen.
 
 ### Alcance
 - **Mercado objetivo**: Colombia (inicio Bogotá - Zona T + Chicó)
 - **Expansión**: Multi-ciudad → Nacional (16 semanas)
-- **Modelo**: Marketplace de tres lados (clientes, restaurantes, workers)
-- **Diferenciador**: 91% menor costo operacional vs Rappi mediante IA y WhatsApp
+- **Modelo**: Three-AI ecosystem conectando directamente clientes, restaurantes y workers
+- **Diferenciador**: 91% menor costo operacional vs Rappi mediante IA Gemini FREE tier, WhatsApp + RCS
+- **Arquitectura**: Tres IAs independientes que conversan en sus propios canales pero se sincronizan automáticamente
 
 ### Audiencia Objetivo
 1. **Técnica**: Desarrolladores implementando features (Edge Functions, AI, WhatsApp, Database)
@@ -38,16 +39,64 @@ Disrumpir el mercado colombiano de entrega de alimentos (dominado por Rappi 64%)
 
 ---
 
-## 2. Contexto del Negocio
+## 2. Current Focus - Phase 1 Week 1
 
-### 2.1 Modelo Disruptivo
+> **Quick Reference**: [CLAUDE.md - START HERE](./CLAUDE.md#-start-here---current-focus)
 
-| Stakeholder | WPFoods | Rappi | Ventaja WPFoods |
-|-------------|---------|-------|-----------------|
-| **Clientes** | $0 fees | 15-20% fees | **Ahorro 35-40%** ($9/order) |
-| **Restaurantes** | 5-10% commission | 25-35% commission | **+$8.53 revenue/order** |
-| **Workers** | $5,000-7,000 COP/delivery + benefits | $2,500 COP/delivery | **4x higher earnings** |
-| **Plataforma** | $0.86 profit/order (34% margin) | Recently profitable (2023) | **Profitable & ethical** |
+### 🎯 Immediate Priority (Week 1 of 4)
+
+**Objetivo**: Database schema + Three-AI orchestration layer implementation
+
+**Tasks**:
+1. **Supabase Schema** (10 tables + PostGIS + pgvector)
+   - Core tables: customers, restaurants, menu_items, orders, order_items, deliveries, delivery_workers, payments, conversations, messages
+   - PostGIS functions: find_nearby_restaurants, find_best_worker (< 10ms target)
+   - pgvector setup: Menu semantic search embeddings
+
+2. **Three-AI Base Structure** (lib/ai/)
+   - restaurant-agent.ts (pedidos, reservas, inventario, CRM)
+   - runner-agent.ts (dispatch, rutas, pagos)
+   - client-agent.ts (ordering, tracking, soporte)
+   - orchestration.ts (sincronización entre las 3 IAs)
+
+3. **WhatsApp Webhook Handler** (app/api/whatsapp/webhook/)
+   - Signature validation (security)
+   - Fire-and-forget pattern (5s timeout compliance)
+   - Message routing to appropriate AI agent
+
+**Agent Allocation**:
+- supabase-expert: 60% (database, PostGIS, pgvector)
+- gemini-expert: 20% (Three-AI structure, Gemini client)
+- edge-functions-expert: 20% (webhook handler, orchestration)
+
+**Success Criteria**:
+- ✅ All 10 tables created with proper constraints
+- ✅ PostGIS functions operational (< 10ms queries)
+- ✅ pgvector embeddings setup complete
+- ✅ Three-AI base agents responding to messages
+- ✅ Orchestration routing messages correctly
+- ✅ WhatsApp webhook handling 100+ msg/sec
+- ✅ **Approval Gate 1**: Technical Lead sign-off required
+
+**Reference Docs**:
+- [week-1-database-spec.md](./docs/implementation/week-1-database-spec.md) - Full technical specification
+- [APPROVAL-GATES.md](./docs/implementation/APPROVAL-GATES.md) - Gate 1 checklist
+- [PHASE-1-CHECKLIST.md](./docs/implementation/PHASE-1-CHECKLIST.md) - Task 1-22 of 82
+
+---
+
+## 3. Contexto del Negocio
+
+### 3.1 Modelo Disruptivo
+
+| Stakeholder | Weats.ai (Three-AI) | Rappi | Ventaja Weats |
+|-------------|---------------------|-------|-----------------|
+| **Clientes** (via Weats.Client) | $0 fees, ordering conversacional WhatsApp/RCS | 15-20% fees, app requerida | **Ahorro 35-40%** ($9/order) + cero fricción |
+| **Restaurantes** (via Weats.Restaurant) | 5-10% commission, AI automation (90% labor savings) | 25-35% commission, manual operations | **+$8.53 revenue/order** + CRM conversacional |
+| **Workers** (via Weats.Runner) | $5,000-7,000 COP/delivery + autonomía total | $2,500 COP/delivery, algoritmo opaco | **4x higher earnings** + transparencia |
+| **Plataforma** | $0.86 profit/order (34% margin), 3 IAs sincronizadas | Recently profitable (2023), monolith app | **Profitable, ethical & AI-first** |
+
+**Diferenciador Clave**: Tres IAs conversacionales eliminan la necesidad de apps, reduciendo costos 91% mientras empoderan a cada stakeholder con su propia inteligencia artificial.
 
 ### 2.2 Situación Actual del Mercado
 - **Mercado total**: $3.17B food delivery Colombia (2025)
@@ -122,7 +171,7 @@ Profit per order:   $0.86 (34% margin)
 
 ### 4.1 Organización General
 ```
-wpfoods/
+weats/
 ├── AGENTS.md                    # Este archivo - contexto para agentes
 ├── CLAUDE.md                    # Contexto de sesión (<5000 tokens)
 ├── README.md                    # Overview del proyecto
@@ -143,7 +192,7 @@ wpfoods/
 ├── docs/
 │   ├── README.md                # Hub de documentación
 │   │
-│   ├── wpfoods/                 # Documentación de negocio
+│   ├── weats/                 # Documentación de negocio
 │   │   ├── EXECUTIVE_SUMMARY.md
 │   │   ├── business-model-overview.md
 │   │   ├── unit-economics.md
@@ -171,7 +220,7 @@ wpfoods/
 
 ### 4.2 Secciones Requeridas por Documento
 
-#### Documentos de Negocio (docs/wpfoods/)
+#### Documentos de Negocio (docs/weats/)
 - Executive Summary (1-2 páginas)
 - Problema identificado
 - Solución propuesta
@@ -205,19 +254,86 @@ wpfoods/
 | API Reference | Comprehensive | 20-30 páginas | Developers |
 | Guides (How-to) | Step-by-step | 5-10 páginas | Developers |
 
+### 4.5 Three-AI Ecosystem Architecture
+
+**Nueva Estructura de Documentación** para soportar el ecosistema de tres IAs:
+
+```
+lib/ai/                          # Three-AI Ecosystem
+├── restaurant-agent.ts          # Weats.Restaurant
+│   ├── Pedidos conversacionales
+│   ├── Gestión de reservas
+│   ├── Control de inventario
+│   ├── CRM conversacional
+│   └── Notificaciones a runners
+├── runner-agent.ts              # Weats.Runner
+│   ├── Asignación de pedidos (PostGIS)
+│   ├── Optimización de rutas
+│   ├── Gestión de entregas
+│   ├── División transparente de pagos
+│   └── Comunicación con clientes/restaurantes
+├── client-agent.ts              # Weats.Client
+│   ├── Ordering conversacional
+│   ├── Recomendaciones personalizadas
+│   ├── Tracking en tiempo real
+│   ├── Soporte al cliente
+│   └── Gestión de preferencias
+└── orchestration.ts             # Synchronization Layer
+    ├── Order lifecycle coordination
+    ├── Multi-AI message routing
+    ├── State management across AIs
+    └── Error handling & fallbacks
+```
+
+**Documentación Requerida por AI**:
+
+#### Weats.Restaurant (docs/ai/restaurant/)
+- `capabilities.md` - Qué puede hacer esta IA
+- `conversation-flows.md` - Flujos conversacionales (pedidos, reservas, inventario)
+- `crm-automation.md` - Gestión automática de clientes
+- `integration-points.md` - Cómo se conecta con Weats.Runner y Weats.Client
+- `cost-optimization.md` - Uso eficiente de Gemini FREE tier
+
+#### Weats.Runner (docs/ai/runner/)
+- `capabilities.md` - Qué puede hacer esta IA
+- `dispatch-algorithm.md` - Lógica de asignación (PostGIS, optimización)
+- `route-optimization.md` - Algoritmos de rutas inteligentes
+- `payment-distribution.md` - División transparente de ingresos
+- `integration-points.md` - Cómo se conecta con Weats.Restaurant y Weats.Client
+
+#### Weats.Client (docs/ai/client/)
+- `capabilities.md` - Qué puede hacer esta IA
+- `conversation-flows.md` - Flujos de ordering, tracking, soporte
+- `personalization.md` - Recomendaciones basadas en historial
+- `multi-channel.md` - Soporte WhatsApp + RCS
+- `integration-points.md` - Cómo se conecta con Weats.Restaurant y Weats.Runner
+
+#### Orchestration (docs/ai/orchestration/)
+- `architecture.md` - Cómo las 3 IAs se sincronizan
+- `message-routing.md` - Lógica de routing entre IAs
+- `state-management.md` - Gestión de estado distribuido
+- `error-handling.md` - Fallbacks y resilience
+- `performance.md` - Optimización de latencia (<100ms)
+
 ---
 
 ## 5. Instrucciones para Agentes
 
 ### 5.1 Principios Generales
 
+> **Quick Reference**: [CLAUDE.md - Notas Rápidas](./CLAUDE.md#-notas-rápidas-para-claude)
+
 1. **Unit Economics First**: TODAS las decisiones técnicas deben validarse contra el target de $0.86 profit/order
-2. **Gemini FREE Only**: Usar SOLO Gemini 2.5 Flash en free tier (1,400 req/day), NO OpenAI, NO Claude
-3. **WhatsApp Window Optimization**: Maximizar mensajes gratuitos (24h window), target 90%+ free
-4. **Edge Runtime Only**: Toda lógica backend debe ser compatible con Vercel Edge Runtime
-5. **Cost Awareness**: Cada feature debe documentar costo operacional incremental
+2. **Three-AI Architecture**: Cada feature debe considerar cómo interactúa con Restaurant, Runner y Client AIs
+3. **Gemini FREE Only**: Usar SOLO Gemini 2.5 Flash en free tier (1,400 req/day compartido entre 3 IAs), NO OpenAI, NO Claude
+4. **WhatsApp + RCS Optimization**: Maximizar mensajes gratuitos (24h window), target 90%+ free, multi-canal
+5. **Edge Runtime Only**: Toda lógica backend debe ser compatible con Vercel Edge Runtime
+6. **Orchestration Awareness**: Toda comunicación entre IAs debe pasar por orchestration.ts
+7. **Cost Awareness**: Cada feature debe documentar costo operacional incremental por AI involucrada
 
 ### 5.2 Tareas Específicas por Tipo
+
+> **Code Patterns**: [CLAUDE.md - Patrones de Diseño](./CLAUDE.md#-patrones-de-diseño-actuales)
 
 #### Investigación de Mercado (research-analyst)
 ```yaml
@@ -248,17 +364,19 @@ Entregables:
 #### Desarrollo de Features (specialized agents)
 ```yaml
 Pre-implementation:
-  1. Read business context (docs/wpfoods/)
+  1. Read business context (docs/weats/)
   2. Review technical constraints (.claude/agents/claude-master.md)
   3. Validate against unit economics
   4. Check delegation matrix (.claude/agents/delegation-matrix.md)
 
 Durante implementación:
-  1. Edge Runtime compliance (no Node.js modules)
-  2. Gemini FREE tier only (track daily usage)
-  3. WhatsApp 24h window optimization
-  4. Cost tracking (log operational costs)
-  5. Performance targets (<100ms TTFB, <50ms DB queries)
+  1. Three-AI coordination (identify which AIs are involved)
+  2. Orchestration.ts routing (ensure proper message flow between AIs)
+  3. Edge Runtime compliance (no Node.js modules)
+  4. Gemini FREE tier only (track daily usage, shared 1,400 req/day)
+  5. WhatsApp + RCS 24h window optimization (multi-channel)
+  6. Cost tracking (log operational costs per AI)
+  7. Performance targets (<100ms TTFB, <50ms DB queries, <2s end-to-end)
 
 Post-implementation:
   1. Update CLAUDE.md session context
@@ -269,24 +387,38 @@ Post-implementation:
 
 ### 5.3 Limitaciones y Restricciones
 
-#### NUNCA (Prohibido)
-- ❌ Usar OpenAI, Claude, o cualquier AI provider que no sea Gemini FREE
-- ❌ Exceder 1,400 Gemini requests/day (hard limit)
-- ❌ Enviar WhatsApp messages fuera de 24h window sin validación (costo $0.0125-0.0667)
-- ❌ Usar Node.js modules en Edge Functions (compatibility error)
-- ❌ Implementar features sin validar unit economics primero
-- ❌ Comprometer profitability por features (profitability > features)
-- ❌ Skip testing (production bugs costosos en marketplace)
+> ⚠️ **CRITICAL CONSTRAINTS** - These are non-negotiable. Violation will break unit economics or cause system failures.
 
-#### SIEMPRE (Required)
-- ✅ Validar unit economics antes de implementar features
-- ✅ Usar Gemini 2.5 Flash FREE tier exclusivamente
-- ✅ Optimizar para WhatsApp 24h window (90%+ free)
-- ✅ Edge Runtime compatible (static imports, Web APIs only)
-- ✅ Track costs (WhatsApp, AI, infra) por feature
-- ✅ Update CLAUDE.md session context al terminar
-- ✅ Add tests para features críticos (payments, orders, dispatch)
-- ✅ Monitor performance (<100ms webhooks, <50ms DB)
+#### ❌ NUNCA (Prohibido - NEVER DO THIS)
+
+```
+🚫 VIOLATIONS WILL BREAK UNIT ECONOMICS OR SYSTEM STABILITY
+```
+
+- ❌ **AI Provider**: Usar OpenAI, Claude, o cualquier AI provider que no sea Gemini FREE
+- ❌ **API Limits**: Exceder 1,400 Gemini requests/day (hard limit, shared across 3 AIs)
+- ❌ **WhatsApp Cost**: Enviar messages fuera de 24h window sin validación (costo $0.0125-0.0667)
+- ❌ **Runtime**: Usar Node.js modules en Edge Functions (compatibility error, deployment will fail)
+- ❌ **Economics**: Implementar features sin validar unit economics primero
+- ❌ **Profitability**: Comprometer profitability por features (profitability > features ALWAYS)
+- ❌ **Quality**: Skip testing (production bugs costosos en marketplace)
+
+#### ✅ SIEMPRE (Required - ALWAYS DO THIS)
+
+```
+✅ EVERY FEATURE MUST MEET THESE REQUIREMENTS
+```
+
+- ✅ **Unit Economics**: Validar $0.86 profit/order antes de implementar features
+- ✅ **Three-AI Awareness**: Identificar qué IAs están involucradas (Restaurant, Runner, Client)
+- ✅ **Orchestration**: Usar orchestration.ts para comunicación entre IAs
+- ✅ **AI Provider**: Usar Gemini 2.5 Flash FREE tier exclusivamente (1,400 req/day compartido)
+- ✅ **Messaging**: Optimizar para WhatsApp + RCS 24h window (90%+ free, multi-canal)
+- ✅ **Runtime**: Edge Runtime compatible (static imports, Web APIs only)
+- ✅ **Cost Tracking**: Track costs (WhatsApp, AI, infra) por feature y por AI
+- ✅ **Documentation**: Update CLAUDE.md session context al terminar
+- ✅ **Testing**: Add tests para features críticos (payments, orders, dispatch, orchestration)
+- ✅ **Performance**: Monitor performance (<100ms webhooks, <50ms DB, <2s end-to-end)
 
 ### 5.4 Criterios de Calidad
 
@@ -318,14 +450,14 @@ Post-implementation:
 ### 6.1 Documentación Interna (Alta Prioridad)
 
 #### Business Context (Leer PRIMERO)
-- [docs/wpfoods/business-model-overview.md](./docs/wpfoods/business-model-overview.md) - Disruptive model
-- [docs/wpfoods/unit-economics.md](./docs/wpfoods/unit-economics.md) - $0.86 profit/order breakdown
-- [docs/wpfoods/competitive-analysis.md](./docs/wpfoods/competitive-analysis.md) - 91% cost advantage vs Rappi
+- [docs/weats/business-model-overview.md](./docs/weats/business-model-overview.md) - Disruptive model
+- [docs/weats/unit-economics.md](./docs/weats/unit-economics.md) - $0.86 profit/order breakdown
+- [docs/weats/competitive-analysis.md](./docs/weats/competitive-analysis.md) - 91% cost advantage vs Rappi
 
 #### AI Strategy (CRITICAL - Lean FREE Gemini Only)
-- [docs/wpfoods/ai-strategy-overview.md](./docs/wpfoods/ai-strategy-overview.md) - AI as structural moat
-- [docs/wpfoods/ai-cost-optimization.md](./docs/wpfoods/ai-cost-optimization.md) - Gemini FREE tier optimization
-- [docs/wpfoods/ai-technical-architecture.md](./docs/wpfoods/ai-technical-architecture.md) - Gemini-only implementation
+- [docs/weats/ai-strategy-overview.md](./docs/weats/ai-strategy-overview.md) - AI as structural moat
+- [docs/weats/ai-cost-optimization.md](./docs/weats/ai-cost-optimization.md) - Gemini FREE tier optimization
+- [docs/weats/ai-technical-architecture.md](./docs/weats/ai-technical-architecture.md) - Gemini-only implementation
 
 #### Technical Architecture
 - [.claude/agents/claude-master.md](./.claude/agents/claude-master.md) - Platform expertise (v4.0)
@@ -369,6 +501,8 @@ Post-implementation:
 
 ### 6.4 Herramientas Disponibles
 
+> **Full Stack Details**: [CLAUDE.md - Stack Técnico](./CLAUDE.md#-stack-técnico)
+
 #### Development
 - Node.js 20+ (required for Next.js 15)
 - pnpm (package manager)
@@ -382,7 +516,7 @@ Post-implementation:
 
 #### AI & Integration
 - Gemini 2.5 Flash (ONLY AI provider - FREE tier)
-- WhatsApp Cloud API (Business API v23.0)
+- WhatsApp Cloud API (Business API v23.0) + RCS
 
 ---
 
@@ -485,8 +619,10 @@ Si ALGUNA es NO → ESCALATE o REDISEÑAR
 
 ---
 
-**Última actualización**: 2025-01-11
-**Versión**: 1.0
+**Última actualización**: 2025-10-12
+**Versión**: 2.0
 **Mantenido por**: Claude-Master v4.0
-**Proyecto**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
+**Proyecto**: Weats.ai - Three-AI Conversational Delivery Ecosystem
+**Arquitectura**: Weats.Restaurant + Weats.Runner + Weats.Client (sincronizados vía orchestration.ts)
 **Economics**: $0.86 profit/order, validate in every task
+**Posicionamiento**: "Liberar el delivery de los monopolios, devolviendo el poder a quienes cocinan, reparten y comen"

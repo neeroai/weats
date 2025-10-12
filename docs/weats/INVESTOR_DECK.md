@@ -1,4 +1,4 @@
-# 🚀 WPFoods Pitch Deck
+# 🚀 Weats Pitch Deck
 
 **La Plataforma de Domicilios por WhatsApp con IA que Está Revolucionando Latinoamérica**
 
@@ -6,7 +6,7 @@
 
 ## 📊 Resumen Ejecutivo
 
-WPFoods está reimaginando los domicilios de comida con **100% de automatización por IA en WhatsApp**, haciendo que el delivery sea **40% más económico para clientes**, **5x más rentable para restaurantes** y **3x mejor pagado para domiciliarios**.
+Weats está reimaginando los domicilios de comida con **100% de automatización por IA en WhatsApp**, haciendo que el delivery sea **40% más económico para clientes**, **5x más rentable para restaurantes** y **3x mejor pagado para domiciliarios**.
 
 **La Oportunidad:** Mercado de domicilios de $3.17B en Colombia donde Rappi extrae 44% por pedido mientras los 3 actores sufren.
 
@@ -39,11 +39,11 @@ Pedido $30K → Rappi se Lleva $13.20K (44%)
 └─ Resultado: TODOS INFELICES
 ```
 
-> **💡 Insight Clave:** Los costos operacionales de Rappi son 24-30% del GMV. Estructuralmente no pueden hacer felices a todos. WPFoods opera al 9.5% - nosotros sí podemos.
+> **💡 Insight Clave:** Los costos operacionales de Rappi son 24-30% del GMV. Estructuralmente no pueden hacer felices a todos. Weats opera al 9.5% - nosotros sí podemos.
 
 ---
 
-## ✨ La Solución: WPFoods
+## ✨ La Solución: Weats
 
 **WhatsApp-First × IA Nativa × Alineación de Stakeholders**
 
@@ -124,7 +124,7 @@ Flujo de Experiencia del Usuario:
 
 ### La Propuesta de Valor
 
-| Característica | WPFoods | Rappi | Ahorro |
+| Característica | Weats | Rappi | Ahorro |
 |---------|---------|-------|---------|
 | Tarifa de Servicio | $0 (0%) | $4.5-6K (15-20%) | 15-20% |
 | Costo de Envío | <$1,000 | $2,000-$10,000 | $1,000-$9,000 |
@@ -134,7 +134,7 @@ Flujo de Experiencia del Usuario:
 
 ⚡ **10x Más Rápido para Pedir**
 ```
-WPFoods: 30 segundos
+Weats: 30 segundos
 ─────────────────────
 "Quiero pizza mediana
 pepperoni bajo $20" → Listo
@@ -175,9 +175,9 @@ Comparación de Distribución de Ingresos:
 ─────────────────────────────────────────
 Orden de $30,000
 
-Rappi:                    WPFoods:
+Rappi:                    Weats:
 ├─ Restaurante: $19.5K-22.5K   ├─ Restaurante: $27-28.5K
-├─ Rappi: $7.5K-10.5K          ├─ WPFoods: $1.5-3K
+├─ Rappi: $7.5K-10.5K          ├─ Weats: $1.5-3K
 └─ Delta: 65-75% neto          └─ Delta: 90-95% neto
 
 Restaurante se queda con 18-27 puntos MÁS de margen
@@ -210,7 +210,7 @@ Restaurante se queda con 18-27 puntos MÁS de margen
 - Apunta a clientes inactivos automáticamente
 - "¿Enviar promo 15% off a 247 clientes que no han pedido en 30 días?"
 
-> **💡 Economía del Restaurante:** Un restaurante facturando $100M/mes con Rappi paga $25-35M en comisiones. Con WPFoods: $5-10M. Eso es **$15-25M/mes de vuelta en su bolsillo** (180-300M/año).
+> **💡 Economía del Restaurante:** Un restaurante facturando $100M/mes con Rappi paga $25-35M en comisiones. Con Weats: $5-10M. Eso es **$15-25M/mes de vuelta en su bolsillo** (180-300M/año).
 
 **[PLACEHOLDER: Screenshot Dashboard Restaurante - mostrando insights del optimizador de menú]**
 
@@ -220,7 +220,7 @@ Restaurante se queda con 18-27 puntos MÁS de margen
 
 ### Triple el Ingreso, Mitad del Estrés
 
-| Métrica | WPFoods | Rappi | Mejora |
+| Métrica | Weats | Rappi | Mejora |
 |--------|---------|-------|-------------|
 | **Pago por Entrega** | $3,500-$6,000 | $1,800-$3,700 | +50-100% |
 | **Reembolso Gasolina** | 30% + fondo mantenimiento | 0% | Beneficio nuevo |
@@ -232,7 +232,7 @@ Restaurante se queda con 18-27 puntos MÁS de margen
 ### Las Matemáticas Que Cambian Vidas
 
 ```
-Ingreso Mensual Domiciliario WPFoods:
+Ingreso Mensual Domiciliario Weats:
 ─────────────────────────────────────────
 800 entregas × $4,500 prom = $3,600K bruto
 - Gasolina (30% reembolso): -$600K
@@ -274,11 +274,11 @@ NETO: $2,650K/mes vs $600K en Rappi
 
 **Las plataformas de delivery tradicionales son operaciones con humanos y un frontend de app.**
 
-**WPFoods es arquitectura IA-first con supervisión humana.**
+**Weats es arquitectura IA-first con supervisión humana.**
 
 ### La Revolución de Costos
 
-| Función | Rappi (Con Humanos) | WPFoods (Con IA) | Reducción Costo |
+| Función | Rappi (Con Humanos) | Weats (Con IA) | Reducción Costo |
 |----------|----------------------|---------------------|----------------|
 | Soporte al Cliente | $0.25-0.50/pedido | $0.0003/pedido | 99.94% |
 | Procesamiento Pedidos | Ruteo manual | Ruteo inteligente IA | 30-50% más rápido |
@@ -289,7 +289,7 @@ NETO: $2,650K/mes vs $600K en Rappi
 ### Arquitectura Técnica
 
 ```
-Stack de IA WPFoods:
+Stack de IA Weats:
 ─────────────────────────────────────────
 Capa 1: Gemini 2.5 Flash (tier GRATIS)
 ├─ Pedidos conversacionales
@@ -327,7 +327,7 @@ Capa 4: API WhatsApp Business
 
 **Desventaja Estructural:**
 - Costo IA Rappi: $0.50/pedido (tier pago, sin optimización caching)
-- Costo IA WPFoods: $0.0003/pedido (166x más barato)
+- Costo IA Weats: $0.0003/pedido (166x más barato)
 - Rappi no puede bajar tarifas sin destruir modelo de negocio
 - Somos rentables mientras trasladamos ahorros a stakeholders
 
@@ -505,7 +505,7 @@ Utilidad: $920K/mes (34% margen) ✅
 
 ### Comparación con Rappi
 
-| Métrica | WPFoods | Rappi | Ventaja |
+| Métrica | Weats | Rappi | Ventaja |
 |--------|---------|-------|-----------|
 | **Take Rate** | 8.4-13.7% | 44% | 3.2-5.2x menor |
 | **Costos Operacionales** | 9.5% del GMV | 24-30% del GMV | 2.5-3.2x menor |
@@ -555,10 +555,10 @@ Año 5: Líder de Mercado
 
 | Compañía | Capital Levantado | GMV | Ratio Eficiencia |
 |---------|---------------|-----|------------------|
-| **WPFoods** (proyectado) | $500K | $20M (3 años acumulado) | **40x** |
+| **Weats** (proyectado) | $500K | $20M (3 años acumulado) | **40x** |
 | Rappi | $3.5B | $4.5B | 1.29x |
 | DoorDash | $2.5B | $17B | 6.8x |
-| **Ventaja WPFoods** | - | - | **5.9-31x mejor** |
+| **Ventaja Weats** | - | - | **5.9-31x mejor** |
 
 > **💡 Ventaja Inversionista:** Entregamos eficiencia de capital 10-40x mejor que incumbentes. Tu dólar va más lejos con arquitectura nativa IA.
 
@@ -767,11 +767,11 @@ Flywheel de Crecimiento:
    ↓
 2. Le cuenta a 3 amigos sobre ahorros
    ↓
-3. Amigos prueban WPFoods (bono referido)
+3. Amigos prueban Weats (bono referido)
    ↓
 4. Restaurante ve incremento volumen
    ↓
-5. Restaurante promociona WPFoods a clientes
+5. Restaurante promociona Weats a clientes
    ↓
 6. Más clientes, más pedidos
    ↓
@@ -1042,9 +1042,9 @@ Uso de Fondos:
 
 ### Construyamos Juntos el Futuro del Delivery
 
-**Compañía:** WPFoods
-**Website:** [www.wpfoods.co] (próximamente)
-**Email:** founders@wpfoods.co
+**Compañía:** Weats
+**Website:** [www.weats.co] (próximamente)
+**Email:** founders@weats.co
 **WhatsApp:** +57 [NÚMERO TELÉFONO]
 
 **Investor Deck Preparado:** Octubre 2025
@@ -1123,7 +1123,7 @@ Uso de Fondos:
 
 ## 🎯 La Línea Final
 
-**WPFoods no es solo otra app de delivery.**
+**Weats no es solo otra app de delivery.**
 
 Estamos usando **IA y WhatsApp** para reestructurar fundamentalmente la economía del delivery de comida, creando un modelo donde:
 
@@ -1142,7 +1142,7 @@ En un mercado de $3.17B dominado por un jugador que hace infelices a todos.
 
 ### Hablemos.
 
-**Email:** founders@wpfoods.co
+**Email:** founders@weats.co
 **WhatsApp:** +57 [TELÉFONO]
 **Calendario:** [Link Calendly]
 
@@ -1150,4 +1150,4 @@ En un mercado de $3.17B dominado por un jugador que hace infelices a todos.
 
 *Este deck es confidencial e intencionado solo para inversionistas prospectivos. Por favor no distribuir sin permiso.*
 
-**© 2025 WPFoods. Todos los derechos reservados.**
+**© 2025 Weats. Todos los derechos reservados.**

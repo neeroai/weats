@@ -1,4 +1,4 @@
-# WPFOODS TECHNICAL DOCUMENTATION
+# WEATS TECHNICAL DOCUMENTATION
 ## Complete WhatsApp-Based Food Delivery Platform
 
 **Version:** 1.0
@@ -9,7 +9,7 @@
 
 ## OVERVIEW
 
-WPFoods is a **100% WhatsApp-native** food delivery platform built on the migue.ai infrastructure. This documentation provides complete technical specifications for implementing a scalable, AI-powered delivery platform that serves customers, restaurants, and delivery workers through a single WhatsApp interface.
+Weats is a **100% WhatsApp-native** food delivery platform built on the migue.ai infrastructure. This documentation provides complete technical specifications for implementing a scalable, AI-powered delivery platform that serves customers, restaurants, and delivery workers through a single WhatsApp interface.
 
 **Key Characteristics:**
 - **Zero App Friction**: No mobile app download required
@@ -24,7 +24,7 @@ WPFoods is a **100% WhatsApp-native** food delivery platform built on the migue.
 
 ### Core Architecture Documents
 
-#### 1. [WhatsApp Architecture](/docs/wpfoods/technical/whatsapp-architecture.md) ✅ COMPLETE
+#### 1. [WhatsApp Architecture](/docs/weats/technical/whatsapp-architecture.md) ✅ COMPLETE
 **150+ pages** - Complete system design
 
 **Contents:**
@@ -51,7 +51,7 @@ WPFoods is a **100% WhatsApp-native** food delivery platform built on the migue.
 
 ---
 
-#### 2. [Customer Flows](/docs/wpfoods/technical/customer-flows.md) ✅ COMPLETE
+#### 2. [Customer Flows](/docs/weats/technical/customer-flows.md) ✅ COMPLETE
 **200+ pages** - Conversational ordering experience
 
 **Contents:**
@@ -359,8 +359,8 @@ export async function sendWorkerLocation(
 
 ```bash
 # Setup
-npm create next-app@latest wpfoods --typescript --app --use-npm
-cd wpfoods
+npm create next-app@latest weats --typescript --app --use-npm
+cd weats
 npm install @supabase/supabase-js @google/generative-ai openai zod
 
 # Environment variables
@@ -698,15 +698,15 @@ vercel rollback
 - [Supabase Docs](https://supabase.com/docs)
 
 ### Support Channels
-- Technical Support: tech@wpfoods.co
-- Business Questions: hello@wpfoods.co
+- Technical Support: tech@weats.co
+- Business Questions: hello@weats.co
 - Emergency Hotline: +57 XXX XXX XXXX
 
 ---
 
 ## CONCLUSION
 
-This technical documentation provides a **complete blueprint** for building WPFoods - a WhatsApp-native food delivery platform that delivers:
+This technical documentation provides a **complete blueprint** for building Weats - a WhatsApp-native food delivery platform that delivers:
 
 **Technical Excellence:**
 - Sub-second response times
@@ -739,6 +739,6 @@ This technical documentation provides a **complete blueprint** for building WPFo
 **Status:** ✅ Production-Ready
 **Version:** 1.0
 **Last Updated:** January 11, 2025
-**Maintainer:** WPFoods Technical Team
+**Maintainer:** Weats Technical Team
 
 **Ready for implementation by backend-developer agent.**

@@ -1,4 +1,4 @@
-# WPFoods Phase 1 - Approval Gates
+# Weats Phase 1 - Approval Gates
 
 **Version**: 1.0
 **Purpose**: Define approval criteria between each week to ensure quality and prevent progression with critical issues

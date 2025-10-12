@@ -1,4 +1,4 @@
-# WPFOODS GO-TO-MARKET STRATEGY
+# WEATS GO-TO-MARKET STRATEGY
 ## Hyper-Local Launch → Multi-City → National
 
 **Last Updated:** October 11, 2025
@@ -56,12 +56,12 @@
 
 **Worker Recruitment:**
 - Target Rappi/Uber Eats workers directly
-- Message: "Earn 50-100% more, join WPFoods"
+- Message: "Earn 50-100% more, join Weats"
 - Channels: WhatsApp groups, Facebook groups, referrals
 
 **Success Metrics:**
 - 50,000 customers (5x growth)
-- 30% of restaurants exclusive to WPFoods
+- 30% of restaurants exclusive to Weats
 - 500 orders/day sustained
 - Approaching break-even (1,598 orders/day target)
 
@@ -125,7 +125,7 @@
 - Restaurants recruit competitors (better fees message)
 
 ### Social Proof
-- "10,000 Colombians already saving with WPFoods"
+- "10,000 Colombians already saving with Weats"
 - "Restaurants keep 93% vs. Rappi's 65%"
 - "Workers earn 2x more than Rappi"
 
@@ -133,7 +133,7 @@
 - **Launch story:** "Colombian startup challenges Rappi with WhatsApp-only platform"
 - **David vs. Goliath:** "Fair delivery vs. corporate greed"
 - **Worker stories:** "I earn $5,000 per delivery now"
-- **Restaurant stories:** "We're profitable again thanks to WPFoods"
+- **Restaurant stories:** "We're profitable again thanks to Weats"
 
 ---
 
@@ -144,7 +144,7 @@
 - App store optimization: $5-10
 - Conversion: 5-10% (download → order)
 
-**WPFoods:** $12
+**Weats:** $12
 - Referral incentives: $5 (50% of customers)
 - Paid ads: $3 (30% of customers)
 - Organic/viral: $0 (20% of customers)
@@ -164,7 +164,7 @@
 **Year 2:** Rappi concerned (50,000+ customers, 3% share)
 **Year 3:** Rappi aggressive response (200K customers, 10% share)
 
-**WPFoods Strategy:**
+**Weats Strategy:**
 - **Move fast:** Establish 10K loyal customers before Rappi reacts
 - **Lock in:** Exclusive restaurant contracts (12-month)
 - **Brand:** Own "fair delivery" position (hard for Rappi to copy)

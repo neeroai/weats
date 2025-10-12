@@ -1,4 +1,4 @@
-# WPFOODS RESTAURANT PARTNER MODEL
+# WEATS RESTAURANT PARTNER MODEL
 ## 5-10% Total Fees vs. Rappi's 25-35%
 
 **Document Version:** 1.0
@@ -8,7 +8,7 @@
 
 ## EXECUTIVE SUMMARY
 
-WPFoods offers restaurants the **lowest commission structure** in Colombian food delivery: **5-10% total fees** (all-in) compared to Rappi's **25-35%**. This 15-25 percentage point savings transforms delivery from a margin-killer into a profitable channel. Restaurants keep **92-95% of order value** vs. Rappi's **65-75%**, receive **weekly payments**, and access **free AI-powered analytics**. Onboarding takes **30 seconds via WhatsApp** (send menu, start receiving orders).
+Weats offers restaurants the **lowest commission structure** in Colombian food delivery: **5-10% total fees** (all-in) compared to Rappi's **25-35%**. This 15-25 percentage point savings transforms delivery from a margin-killer into a profitable channel. Restaurants keep **92-95% of order value** vs. Rappi's **65-75%**, receive **weekly payments**, and access **free AI-powered analytics**. Onboarding takes **30 seconds via WhatsApp** (send menu, start receiving orders).
 
 ---
 
@@ -34,7 +34,7 @@ WPFoods offers restaurants the **lowest commission structure** in Colombian food
 
 **$50,000 COP Order Example:**
 
-| Fee Type | WPFoods (Growth) | Rappi | Savings |
+| Fee Type | Weats (Growth) | Rappi | Savings |
 |----------|------------------|-------|---------|
 | Commission | $3,000 (6%) | $12,500 (25%) | $9,500 |
 | Payment Processing | $500 (1%) | $1,250 (2.5%) | $750 |
@@ -43,7 +43,7 @@ WPFoods offers restaurants the **lowest commission structure** in Colombian food
 | **TOTAL** | **$3,500 (7%)** | **$16,250-$18,250 (32.5-36.5%)** | **$12,750-$14,750** |
 | **Net to Restaurant** | **$46,500 (93%)** | **$31,750-$33,750 (63.5-67.5%)** | **+$12,750-$14,750** |
 
-**Restaurant keeps 25.5 percentage points more** with WPFoods.
+**Restaurant keeps 25.5 percentage points more** with Weats.
 
 ---
 
@@ -53,13 +53,13 @@ WPFoods offers restaurants the **lowest commission structure** in Colombian food
 
 **Step 1: Send Message (10 seconds)**
 ```
-Restaurant → WPFoods WhatsApp
-"Hello, I want to join WPFoods"
+Restaurant → Weats WhatsApp
+"Hello, I want to join Weats"
 ```
 
 **Step 2: AI Registration (10 seconds)**
 ```
-WPFoods AI: "Welcome! Please share:
+Weats AI: "Welcome! Please share:
 1. Restaurant name
 2. Address
 3. Menu (photo or PDF)
@@ -70,7 +70,7 @@ Restaurant: [Sends info]
 
 **Step 3: Instant Activation (10 seconds)**
 ```
-WPFoods AI: "✓ Registered!
+Weats AI: "✓ Registered!
 ✓ Menu uploaded
 ✓ You're live and accepting orders
 
@@ -108,7 +108,7 @@ Questions? Reply anytime."
 
 **1. Order Received (WhatsApp Message)**
 ```
-WPFoods: "🔔 New Order #1234
+Weats: "🔔 New Order #1234
 
 Customer: Juan P.
 Items: 2x Bandeja Paisa, 1x Arepa
@@ -122,7 +122,7 @@ Accept? Reply YES or NO (90 sec)"
 ```
 Restaurant: "YES"
 
-WPFoods: "✓ Accepted
+Weats: "✓ Accepted
 Prep time: 20 min
 Worker: Carlos M. (★4.9)
 Will arrive in: 18 min"
@@ -132,18 +132,18 @@ Will arrive in: 18 min"
 ```
 [Restaurant prepares order]
 
-WPFoods: "Worker is 5 min away"
+Weats: "Worker is 5 min away"
 ```
 
 **4. Pickup**
 ```
-WPFoods: "✓ Order picked up by Carlos
+Weats: "✓ Order picked up by Carlos
 Delivery ETA: 15 min"
 ```
 
 **5. Delivery Complete**
 ```
-WPFoods: "✓ Delivered successfully
+Weats: "✓ Delivered successfully
 Customer rating: ★5
 Tip: $3,000 COP (100% to worker)
 
@@ -157,21 +157,21 @@ Weekly payout: Monday"
 ```
 Restaurant: "Add: Ajiaco Santafereño, $18,000, Soup, Traditional Colombian chicken soup"
 
-WPFoods: "✓ Added Ajiaco Santafereño to menu"
+Weats: "✓ Added Ajiaco Santafereño to menu"
 ```
 
 **Update Price:**
 ```
 Restaurant: "Update: Bandeja Paisa price $28,000"
 
-WPFoods: "✓ Updated Bandeja Paisa → $28,000"
+Weats: "✓ Updated Bandeja Paisa → $28,000"
 ```
 
 **Mark Out of Stock:**
 ```
 Restaurant: "Out of stock: Sancocho"
 
-WPFoods: "✓ Sancocho hidden from menu"
+Weats: "✓ Sancocho hidden from menu"
 ```
 
 ### Operating Hours
@@ -180,7 +180,7 @@ WPFoods: "✓ Sancocho hidden from menu"
 ```
 Restaurant: "Hours: Monday-Saturday 11am-10pm, Sunday closed"
 
-WPFoods: "✓ Hours updated
+Weats: "✓ Hours updated
 Auto on/off: 11am/10pm Mon-Sat"
 ```
 
@@ -188,7 +188,7 @@ Auto on/off: 11am/10pm Mon-Sat"
 ```
 Restaurant: "Closed today - maintenance"
 
-WPFoods: "✓ Paused orders until you reopen
+Weats: "✓ Paused orders until you reopen
 Reply OPEN to resume"
 ```
 
@@ -206,7 +206,7 @@ Reply OPEN to resume"
 
 **Example Payment Message:**
 ```
-WPFoods: "💰 Weekly Payment Summary
+Weats: "💰 Weekly Payment Summary
 
 Period: Oct 1-7, 2025
 Total orders: 120
@@ -247,7 +247,7 @@ Questions? Reply anytime"
 
 **Daily Summary (Auto-sent Every Day 10pm):**
 ```
-WPFoods: "📊 Today's Summary
+Weats: "📊 Today's Summary
 
 Orders: 18 (+20% vs. yesterday)
 Sales: $540,000 COP
@@ -268,7 +268,7 @@ Recommendation: Stock 30% more for tomorrow."
 
 **Menu Optimization:**
 ```
-WPFoods: "💡 Menu Insights
+Weats: "💡 Menu Insights
 
 Top performers:
   ★ Bandeja Paisa: 80 orders, ★4.8, $28K
@@ -285,7 +285,7 @@ Price analysis:
 
 **Demand Forecasting:**
 ```
-WPFoods: "📈 Forecast
+Weats: "📈 Forecast
 
 Tomorrow (Saturday):
   Expected orders: 45 (+150% vs. weekday)
@@ -348,7 +348,7 @@ If you do <$40M/month: Stick with free tier
 
 ## PROFITABILITY CALCULATOR
 
-### Restaurant Economics with WPFoods
+### Restaurant Economics with Weats
 
 **Example: Mid-Sized Restaurant**
 
@@ -373,7 +373,7 @@ Overhead (15%): -$2,250,000
 NET PROFIT: -$375,000 (LOSS 2.5%)
 ```
 
-**With WPFoods (6% commission + 1% processing):**
+**With Weats (6% commission + 1% processing):**
 ```
 Gross sales: $15,000,000
 Commission (6%): -$900,000
@@ -426,25 +426,25 @@ NET PROFIT: $3,450,000 (23% margin!)
 
 ### Case Study: "El Buen Sabor" (Traditional Colombian)
 
-**Before WPFoods (With Rappi):**
+**Before Weats (With Rappi):**
 - Monthly orders: 200
 - Gross sales: $10M COP
 - Net after fees: $6.5M COP (65%)
 - Profit margin: -5% (losing money)
 
-**After WPFoods (3 Months):**
+**After Weats (3 Months):**
 - Monthly orders: 350 (+75% due to lower prices)
 - Gross sales: $17.5M COP
 - Net after fees: $16.3M COP (93%)
 - Profit margin: +18% (profitable!)
 
-**Owner Quote:** "WPFoods saved my restaurant. With Rappi, delivery was killing us. Now we make more money per order AND get more orders because we can offer better prices."
+**Owner Quote:** "Weats saved my restaurant. With Rappi, delivery was killing us. Now we make more money per order AND get more orders because we can offer better prices."
 
 ---
 
-## CONCLUSION: IS WPFOODS RIGHT FOR YOUR RESTAURANT?
+## CONCLUSION: IS WEATS RIGHT FOR YOUR RESTAURANT?
 
-### Partner with WPFoods IF:
+### Partner with Weats IF:
 
 - ✓ You want to keep 92-95% of sales (vs. Rappi's 65-75%)
 - ✓ You're tired of complex dashboards and tablets
@@ -457,7 +457,7 @@ NET PROFIT: $3,450,000 (23% margin!)
 
 **Join in 30 seconds:**
 1. WhatsApp: +57 XXX XXX XXXX
-2. Send: "I want to join WPFoods"
+2. Send: "I want to join Weats"
 3. Follow prompts (name, address, menu, bank account)
 4. Start receiving orders within 24 hours
 
@@ -469,8 +469,8 @@ NET PROFIT: $3,450,000 (23% margin!)
 
 **Questions?**
 - WhatsApp: +57 XXX XXX XXXX (24/7)
-- Email: restaurants@wpfoods.co
-- Website: wpfoods.co/restaurants
+- Email: restaurants@weats.co
+- Website: weats.co/restaurants
 
 ---
 

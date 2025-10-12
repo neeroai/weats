@@ -352,35 +352,65 @@ const response = await agent.respond(
 - `lib/ai-providers.ts` - Provider selection logic
 - `lib/ai-processing-v2.ts` - Message processing pipeline
 
+## Phase 1 Implementation Docs
+
+**Location**: `docs/implementation/`
+
+**Master Documents**:
+- **ROADMAP.md** - Phase 1 master timeline (4 weeks, 250 engineering hours)
+- **PHASE-1-CHECKLIST.md** - 82 actionable tasks with owners, estimates, dependencies
+- **APPROVAL-GATES.md** - 4 mandatory approval gates (CRITICAL - enforce before progression)
+- **DELEGATION-PLAN.md** - Agent allocation per week (see table below)
+
+**Weekly Technical Specifications**:
+- **week-1-database-spec.md** - Complete DDL, PostGIS, pgvector, webhook handler
+- **week-2-ordering-spec.md** - Gemini agent, WhatsApp templates, BUG-P0-001 fix
+- **week-3-supply-spec.md** - Restaurant/worker onboarding, dispatch system
+- **week-4-payments-spec.md** - Stripe integration, cost tracking, launch plan
+
+**How to Use These Docs**:
+1. Start with ROADMAP.md for overview
+2. Use PHASE-1-CHECKLIST.md for task ownership
+3. Reference weekly specs for implementation details
+4. **ENFORCE approval gates** - NO progression without approval
+
+---
+
 ## WPFoods Implementation Priorities
 
 ### Phase 1: MVP (Weeks 1-4) - Bogotá Beachhead
 **Goal**: 50 restaurants, 20 workers, 500 customers
+**Status**: Ready for execution per `docs/implementation/ROADMAP.md`
 
-**Customer Features**:
-- [ ] Conversational ordering flow (discovery → menu → cart → payment)
-- [ ] WhatsApp interactive catalogs (restaurant browse)
-- [ ] Order confirmation and tracking
-- [ ] AI-powered customer support (Gemini)
+**Week 1: Foundation (Database + Webhook)** - `week-1-database-spec.md`
+- [ ] Supabase schema (10 tables + PostGIS + pgvector) - 48h supabase-expert
+- [ ] WhatsApp webhook handler (Edge Function) - 12h edge-functions-expert
+- [ ] Security audit (RLS policies) - 4h code-reviewer
+- [ ] Integration tests - 8h general-purpose
+- **Gate 1**: Technical Lead approval required
 
-**Restaurant Features**:
-- [ ] 30-second onboarding via WhatsApp
-- [ ] Conversational menu management (AI-powered)
-- [ ] Order notifications (accept/reject)
-- [ ] Mark order ready for pickup
+**Week 2: Customer Experience (Ordering Flow)** - `week-2-ordering-spec.md`
+- [ ] Gemini agent (Colombian Spanish, 5 tools) - 42h gemini-expert
+- [ ] **BUG-P0-001 FIX** (Gemini usage → Supabase) - P0 CRITICAL
+- [ ] Interactive WhatsApp messages (catalogs, buttons) - 28h whatsapp-api-expert
+- [ ] Unit economics validation ($0.86 profit/order) - 6h business-analyst
+- [ ] Ordering flow tests (15 test cases) - 12h general-purpose
+- **Gate 2**: PM + Tech Lead approval required
 
-**Worker Features**:
-- [ ] 30-second registration
-- [ ] Order assignment (AI dispatch)
-- [ ] Pickup confirmation (QR code)
-- [ ] Delivery confirmation
-- [ ] Real-time earnings tracking
+**Week 3: Supply Side (Restaurant/Worker)** - `week-3-supply-spec.md`
+- [ ] Restaurant onboarding (<30s target) - 32.5h whatsapp-api-expert
+- [ ] Worker dispatch system (PostGIS, <10ms) - 19.5h supabase-expert
+- [ ] Menu extraction (Gemini Vision) - 13h gemini-expert
+- [ ] Dispatch tests (10 scenarios) - 10h general-purpose
+- **Gate 3**: Operations Lead approval required
 
-**Infrastructure**:
-- [ ] Supabase database schema (10 tables)
-- [ ] WhatsApp webhook handler (Edge Function)
-- [ ] Gemini AI integration (FREE tier)
-- [ ] Payment processing (Stripe)
+**Week 4: Payments + Launch** - `week-4-payments-spec.md`
+- [ ] Stripe integration (WhatsApp Flows v3) - 33h backend-developer
+- [ ] Cost tracking dashboard (10 KPIs) - 22h business-analyst
+- [ ] Production readiness audit - 8h code-reviewer
+- [ ] Payment flow tests - 12h general-purpose
+- [ ] Launch 50 restaurants (Zona T + Chicó)
+- **Gate 4**: CEO + CFO GO/NO-GO decision
 
 ### Phase 2: Scale (Weeks 5-8) - Bogotá Expansion
 **Goal**: 500 restaurants, 200 workers, 10,000 customers
@@ -413,6 +443,67 @@ const response = await agent.respond(
 - [ ] Unit economics tracking
 - [ ] Cost optimization
 - [ ] Revenue diversification (premium features)
+
+## Approval Gates (MANDATORY - DO NOT SKIP)
+
+**Reference**: `docs/implementation/APPROVAL-GATES.md`
+
+### Gate 1: Week 1 End - Technical Lead Approval
+**Criteria**:
+- ✅ All tests pass (>95% success rate)
+- ✅ Performance targets met (webhook <100ms, PostGIS <10ms)
+- ✅ Security audit passed (RLS policies, signature validation)
+- ✅ Code review approved (no P0/P1 issues)
+
+**Rollback Plan**: Revert migrations, fix issues, retest
+
+**Decision**: GO = Proceed to Week 2 | NO-GO = Fix Week 1 blockers
+
+---
+
+### Gate 2: Week 2 End - PM + Technical Lead Approval
+**Criteria**:
+- ✅ 10 test orders completed successfully
+- ✅ BUG-P0-001 fixed (Gemini usage persistent)
+- ✅ Unit economics validated ($0.86 profit/order)
+- ✅ AI cost <$0.0005/order
+- ✅ WhatsApp cost <$0.03/order
+
+**Rollback Plan**: Disable Gemini (use GPT-4o-mini), optimize costs
+
+**Decision**: GO = Proceed to Week 3 | NO-GO = Fix economics
+
+---
+
+### Gate 3: Week 3 End - Operations Lead Approval
+**Criteria**:
+- ✅ 3 restaurants onboarded (<30s each)
+- ✅ Menu extraction >80% accuracy
+- ✅ 5 orders dispatched (<10ms each)
+- ✅ QR confirmation system working
+
+**Rollback Plan**: Manual dispatch fallback, menu upload via form
+
+**Decision**: GO = Proceed to Week 4 | NO-GO = Fix onboarding/dispatch
+
+---
+
+### Gate 4: Week 4 End - CEO + CFO GO/NO-GO Decision
+**Criteria**:
+- ✅ 20 real paid orders processed (>95% success)
+- ✅ Unit economics validated ($0.86 profit/order maintained)
+- ✅ 50 restaurants + 20 workers + 500 customers onboarded
+- ✅ 20-30 orders/day by Week 4 end
+- ✅ Production readiness audit passed
+
+**Launch Decision**:
+- **GO**: Public launch 2025-03-01 (Bogotá)
+- **DELAY**: Fix critical issues, revalidate economics
+- **PIVOT**: Adjust model based on learnings
+
+**CRITICAL**: This is a business-critical decision. All stakeholders must approve.
+
+---
 
 ## Known Issues & Solutions
 
@@ -502,6 +593,15 @@ wpfoods/
 │   │       ├── whatsapp-architecture.md
 │   │       ├── customer-flows.md
 │   │       └── implementation-summary.md
+│   ├── implementation/             # Phase 1 MVP Implementation Docs (NEW)
+│   │   ├── ROADMAP.md              # Master timeline (4 weeks, 250h)
+│   │   ├── PHASE-1-CHECKLIST.md    # 82 tasks with owners/estimates
+│   │   ├── APPROVAL-GATES.md       # 4 mandatory gates (CRITICAL)
+│   │   ├── DELEGATION-PLAN.md      # Agent allocation per week
+│   │   ├── week-1-database-spec.md # Database + Webhook (60h)
+│   │   ├── week-2-ordering-spec.md # Customer Ordering (70h)
+│   │   ├── week-3-supply-spec.md   # Supply Side (65h)
+│   │   └── week-4-payments-spec.md # Payments + Launch (55h)
 │   ├── platforms/                  # Platform-specific documentation
 │   │   ├── whatsapp/               # WhatsApp Business API v23.0
 │   │   ├── vercel/                 # Vercel Edge Functions
@@ -635,14 +735,19 @@ Monitor in `.claude/metrics.md`:
 ---
 
 **References**:
+- `docs/implementation/` - **Phase 1 MVP implementation docs (8 files, START HERE)**
+  - `ROADMAP.md` - Master timeline
+  - `PHASE-1-CHECKLIST.md` - 82 tasks
+  - `APPROVAL-GATES.md` - 4 mandatory gates
+  - `week-1-database-spec.md` through `week-4-payments-spec.md` - Weekly specs
 - `docs/wpfoods/` - Complete business documentation
 - `docs/wpfoods/technical/` - Technical architecture
 - `.claude/agents/delegation-matrix.md` - Detailed agent routing
 - `docs/README.md` - Documentation index
 
-**Version**: 4.0
-**Last Updated**: 2025-01-11
+**Version**: 4.1
+**Last Updated**: 2025-01-11 (Updated with Phase 1 implementation docs)
 **Project**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
-**Status**: Documentation complete, ready for MVP implementation
+**Status**: Phase 1 implementation ready - Week 1 starting (Database + Webhook)
 **Market**: Colombia, challenging Rappi's 64% dominance
 **Economics**: $0.86 profit/order (34% margin), $0 customer fees, 5-10% restaurant fees, 50-100% higher worker pay

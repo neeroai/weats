@@ -1,0 +1,71 @@
+┌─────────────────────────────────────────┐
+│ ← WPFoods                        🔍💬📞 │
+├─────────────────────────────────────────┤
+│                                          │
+│              Hoy 6:22 PM                 │
+│                                          │
+│   🔔 Actualización de tu pedido          │
+│                                          │
+│   📦 Orden #WPF-2845                     │
+│                                          │
+│   ✅ Pedido confirmado                   │
+│   ✅ Restaurante preparando              │
+│   ⏳ Domiciliario en camino              │
+│   ⬜ Entregado                           │
+│                                          │
+│   👨‍🍳 Tu pizza está lista!               │
+│   🚲 Carlos recogió tu pedido            │
+│                                          │
+│   🕒 Llegada estimada: 6:37 PM           │
+│      (15 minutos)                  6:22 ✓│
+│                                          │
+│              Hoy 6:25 PM                 │
+│                                          │
+│   🚲 Carlos está en camino               │
+│                                          │
+│   📍 A 1.2 km de tu ubicación            │
+│   🕒 ETA: 12 minutos (6:37 PM)           │
+│                                          │
+│   🗺️ Ver ubicación en vivo:             │
+│   wpfoods.co/live/WPF-2845               │
+│                                          │
+│   💬 Contactar domiciliario:             │
+│   +57 300 123 4567               6:25 ✓✓│
+│                                          │
+│              Hoy 6:35 PM                 │
+│                                          │
+│   🔔 ¡Atención!                          │
+│                                          │
+│   🚲 Carlos está llegando                │
+│   📍 A 2 cuadras de distancia            │
+│                                          │
+│   🕒 Llegada en 2 minutos        6:35 ✓✓│
+│                                          │
+│              Hoy 6:37 PM                 │
+│                                          │
+│   ✅ ¡Pedido entregado!                  │
+│                                          │
+│   📦 Orden #WPF-2845                     │
+│   🍕 2x Margherita Familiar              │
+│   💵 Pagado: $42.000                     │
+│                                          │
+│   ¡Buen provecho! 😋                     │
+│                                          │
+│   ⭐ ¿Cómo estuvo tu experiencia?        │
+│   Califica de 1 a 5 estrellas:          │
+│                                          │
+│   1⭐ 2⭐ 3⭐ 4⭐ 5⭐                        │
+│   Responde con un número         6:37 ✓✓│
+│                                          │
+│                                      5 ✓│
+│                                    6:38  │
+│                                          │
+│   🎉 ¡Gracias por tu calificación!       │
+│                                          │
+│   Tu opinión nos ayuda a seguir          │
+│   mejorando 💙                           │
+│                                          │
+│   🎁 Ganaste 50 puntos WPFoods           │
+│   Úsalos en tu próximo pedido    6:38 ✓✓│
+│                                          │
+└─────────────────────────────────────────┘

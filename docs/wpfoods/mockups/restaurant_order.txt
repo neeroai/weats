@@ -1,0 +1,73 @@
+┌─────────────────────────────────────────┐
+│ ← WPFoods Business               🔍💬📞 │
+├─────────────────────────────────────────┤
+│                                          │
+│              Hoy 6:17 PM                 │
+│                                          │
+│   🔔 NUEVO PEDIDO                        │
+│                                          │
+│   📦 Orden #WPF-2845                     │
+│   🕒 Hora: 6:17 PM                       │
+│                                          │
+│   👤 Cliente:                            │
+│   María González                         │
+│   📞 +57 312 456 7890                    │
+│                                          │
+│   🍽️ Items del pedido:                  │
+│   ➖➖➖➖➖➖➖➖➖➖➖                     │
+│   🍕 2x Margherita Familiar              │
+│      • Masa tradicional                  │
+│      • Extra queso                       │
+│      • Sin cebolla                       │
+│                                          │
+│   💰 Total: $38.000                      │
+│   💵 Método: Contraentrega               │
+│                                          │
+│   📍 Dirección de entrega:               │
+│   Calle 85 #15-32, Apto 501              │
+│   Bogotá - Chapinero                     │
+│   "Portón negro, timbre 501"             │
+│                                          │
+│   ⏱️ Tiempo estimado: 20 min             │
+│                                          │
+│   ⚡ Acepta respondiendo SI              │
+│   (Tienes 60 segundos)           6:17 ✓✓│
+│                                          │
+│                                     SI ✓│
+│                                    6:17  │
+│                                          │
+│   ✅ ¡Pedido aceptado!                   │
+│                                          │
+│   📋 Instrucciones:                      │
+│   • Prepara el pedido en 15 min          │
+│   • Domiciliario asignado:               │
+│     Carlos Méndez (+57 300 123 4567)     │
+│   • Recogerá en 15 minutos               │
+│                                          │
+│   🔔 Te notificaremos cuando             │
+│   llegue el domiciliario         6:18 ✓✓│
+│                                          │
+│              Hoy 6:32 PM                 │
+│                                          │
+│   🚲 Carlos llegó al restaurante         │
+│                                          │
+│   📦 Orden #WPF-2845                     │
+│                                          │
+│   Por favor entrega el pedido            │
+│   al domiciliario.                       │
+│                                          │
+│   Responde LISTO cuando hayas            │
+│   entregado el pedido            6:32 ✓✓│
+│                                          │
+│                                  LISTO ✓│
+│                                    6:33  │
+│                                          │
+│   ✅ ¡Perfecto!                          │
+│                                          │
+│   📦 Orden #WPF-2845 en camino           │
+│   al cliente                             │
+│                                          │
+│   💰 Recibirás $38.000 en tu             │
+│   próximo pago semanal           6:33 ✓✓│
+│                                          │
+└─────────────────────────────────────────┘

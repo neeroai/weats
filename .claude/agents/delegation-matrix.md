@@ -37,6 +37,137 @@
 
 ---
 
+## Phase 1 MVP: Week-by-Week Agent Allocation
+
+**Reference**: `docs/implementation/DELEGATION-PLAN.md`
+
+**Total**: 250 engineering hours over 4 weeks
+
+| Week | Primary Agent | Hours (%) | Secondary Agent | Hours (%) | Support Agents | Hours |
+|------|--------------|-----------|----------------|-----------|----------------|-------|
+| **Week 1: Foundation** | supabase-expert | 48h (80%) | edge-functions-expert | 12h (20%) | code-reviewer: 4h<br>general-purpose: 8h | **72h total** |
+| **Week 2: Ordering** | gemini-expert | 42h (60%) | whatsapp-api-expert | 28h (40%) | business-analyst: 6h<br>general-purpose: 12h | **88h total** |
+| **Week 3: Supply** | whatsapp-api-expert | 32.5h (50%) | supabase-expert | 19.5h (30%) | gemini-expert: 13h<br>general-purpose: 10h | **75h total** |
+| **Week 4: Launch** | backend-developer | 33h (60%) | business-analyst | 22h (40%) | code-reviewer: 8h<br>general-purpose: 12h | **75h total** |
+
+### Week 1: Foundation (Database + Webhook) - 72 hours
+
+**supabase-expert** (48h - 80%):
+- Database schema (10 tables) - 10h
+- PostGIS functions (3 functions) - 12h
+- pgvector setup + HNSW index - 8h
+- RLS policies (multi-tenant) - 8h
+- Migration files (8-10 migrations) - 10h
+
+**edge-functions-expert** (12h - 20%):
+- WhatsApp webhook handler - 8h
+- Signature validation + fire-and-forget - 4h
+
+**code-reviewer** (4h):
+- RLS policy review - 2h
+- Webhook security audit - 2h
+
+**general-purpose** (8h):
+- Database integration tests - 4h
+- Webhook integration tests - 4h
+
+**Gate 1**: Technical Lead approval required
+
+---
+
+### Week 2: Customer Experience (Ordering Flow) - 88 hours
+
+**gemini-expert** (42h - 60%):
+- Gemini API client wrapper - 8h
+- **BUG-P0-001 FIX** (Supabase tracking) - 4h **[CRITICAL]**
+- System prompt implementation - 6h
+- Context management - 6h
+- Gemini tools (5 tools) - 12h
+- Error handling + fallback - 6h
+
+**whatsapp-api-expert** (28h - 40%):
+- Interactive message templates - 12h
+- 24h window optimization - 8h
+- Restaurant order notifications - 8h
+
+**business-analyst** (6h):
+- Cost tracking per order - 3h
+- Unit economics validation - 3h
+
+**general-purpose** (12h):
+- Gemini agent unit tests - 8h
+- Ordering flow integration tests - 4h
+
+**Gate 2**: PM + Technical Lead approval required
+
+---
+
+### Week 3: Supply Side (Restaurant/Worker) - 75 hours
+
+**whatsapp-api-expert** (32.5h - 50%):
+- Restaurant onboarding flow - 12h
+- Worker notification design - 8h
+- Order acceptance/rejection logic - 6h
+- QR code system - 6.5h
+
+**supabase-expert** (19.5h - 30%):
+- Optimize find_best_worker query - 6h
+- Real-time worker assignment - 8h
+- Timeout + reassignment logic - 5.5h
+
+**gemini-expert** (13h - 20%):
+- Menu extraction (Gemini Vision) - 8h
+- Business info extraction - 5h
+
+**general-purpose** (10h):
+- Restaurant onboarding E2E tests - 4h
+- Dispatch algorithm unit tests - 6h
+
+**Gate 3**: Operations Lead approval required
+
+---
+
+### Week 4: Payments + Launch - 75 hours
+
+**backend-developer** (33h - 60%):
+- Stripe integration - 12h
+- WhatsApp Flows v3 checkout - 8h
+- Stripe webhook handler - 8h
+- Failed payment recovery - 5h
+
+**business-analyst** (22h - 40%):
+- Cost tracking dashboard design - 8h
+- Implement cost tracking queries - 6h
+- Gemini usage tracking dashboard - 4h
+- Launch execution planning - 4h
+
+**code-reviewer** (8h):
+- Security audit (production) - 4h
+- Performance review - 4h
+
+**general-purpose** (12h):
+- Payment flow E2E tests - 6h
+- Stripe webhook tests - 6h
+
+**Gate 4**: CEO + CFO GO/NO-GO decision
+
+---
+
+### Cross-Cutting Agents (All Weeks)
+
+**general-purpose** (20h continuous):
+- Test writing (unit + integration + E2E)
+- Documentation updates
+- Bug fixes (minor issues)
+- Code cleanup + refactoring
+
+**ui-visual-validator** (8h weekly reviews):
+- Week 2: WhatsApp message design validation
+- Week 3: Restaurant onboarding UX validation
+- Week 4: Dashboard UI validation
+
+---
+
 ## Task-Specific Delegation
 
 ### WPFoods Feature Development
@@ -716,8 +847,10 @@ Files:
 
 ---
 
+**Version**: 2.0 (Updated with Phase 1 MVP allocation)
 **Last Updated**: 2025-01-11
-**Next Review**: 2025-02-01
+**Next Review**: After each weekly approval gate
 **Owner**: claude-master
 **Project**: WPFoods - Disruptive WhatsApp AI Food Delivery Platform
 **Economics**: $0.86 profit/order (34% margin), validate in every delegation
+**Phase 1 Status**: Ready for Week 1 execution (Database + Webhook)

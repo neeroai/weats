@@ -1,0 +1,40 @@
+# Documentation (2.6M - NOT needed in deployment)
+docs/
+README.md
+CLAUDE.md
+AGENTS.md
+
+# Claude Code configuration (264K - NOT needed)
+.claude/
+
+# Prompts (96K - NOT used in runtime)
+prompts/
+
+# Development files
+tests/
+qa/
+monitoring/
+security/
+config/
+
+# Environment examples
+.env.example
+.mcp.json
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# CI/CD (if exists)
+.github/
+
+# Supabase local (migrations are version controlled, but not needed in deployment)
+supabase/
+
+# OS files
+.DS_Store
+Thumbs.db

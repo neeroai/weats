@@ -4,29 +4,6 @@
   "installCommand": "pnpm install",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "edge",
-      "memory": 128,
-      "maxDuration": 10
-    }
-  },
-  "env": {
-    "SUPABASE_URL": "@supabase-url",
-    "SUPABASE_ANON_KEY": "@supabase-anon-key",
-    "WHATSAPP_PHONE_ID": "@whatsapp-phone-id",
-    "WHATSAPP_TOKEN": "@whatsapp-token",
-    "GEMINI_API_KEY": "@gemini-api-key",
-    "STRIPE_PUBLISHABLE_KEY": "@stripe-publishable-key"
-  },
-  "build": {
-    "env": {
-      "SUPABASE_SERVICE_KEY": "@supabase-service-key",
-      "WHATSAPP_WEBHOOK_SECRET": "@whatsapp-webhook-secret",
-      "STRIPE_SECRET_KEY": "@stripe-secret-key",
-      "STRIPE_WEBHOOK_SECRET": "@stripe-webhook-secret"
-    }
-  },
   "headers": [
     {
       "source": "/api/(.*)",

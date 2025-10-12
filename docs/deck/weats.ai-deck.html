@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weats.ai — Deck de Inversión</title>
+
+    <style>
+        /* ==================== RESET Y BASE ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: #0f172a;
+            color: #1e293b;
+            overflow: hidden;
+        }
+
+        /* ==================== VARIABLES DE COLOR ==================== */
+        :root {
+            --primary: #14b8a6;
+            --primary-dark: #0d9488;
+            --secondary: #06b6d4;
+            --accent: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --text-white: #ffffff;
+        }
+
+        /* ==================== TIPOGRAFÍA RESPONSIVE ==================== */
+        h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 700; line-height: 1.1; }
+        h2 { font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 700; line-height: 1.2; }
+        h3 { font-size: clamp(1.25rem, 4vw, 1.875rem); font-weight: 600; line-height: 1.3; }
+        h4 { font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; line-height: 1.4; }
+        p { font-size: clamp(0.875rem, 2.5vw, 1.125rem); line-height: 1.6; }
+        .small { font-size: clamp(0.75rem, 2vw, 0.875rem); }
+        .large { font-size: clamp(1.125rem, 3vw, 1.5rem); }
+
+        /* ==================== LAYOUT DEL DECK ==================== */
+        .deck-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(1rem, 5vw, 4rem);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(20px);
+            transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+            z-index: 1;
+        }
+
+        .slide-content {
+            width: 100%;
+            max-width: 1400px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        /* ==================== NAVEGACIÓN ==================== */
+        .slide-nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: var(--text-white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.4);
+        }
+
+        .nav-btn:disabled {
+            background: #64748b;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(15, 23, 42, 0.8);
+            color: var(--text-white);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        /* Progress bar */
+        .progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(100, 116, 139, 0.2);
+            z-index: 100;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
+        }
+
+        /* Slide dots navigation */
+        .slide-dots {
+            position: fixed;
+            bottom: 6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .slide-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slide-dot.active {
+            background: var(--primary);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .slide-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ==================== COMPONENTES COMUNES ==================== */
+        .card {
+            background: white;
+            padding: clamp(1rem, 3vw, 2rem);
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-white);
+            padding: clamp(1rem, 3vw, 2rem);
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-value {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: clamp(0.875rem, 2.5vw, 1rem);
+            opacity: 0.9;
+        }
+
+        /* ==================== MOCKUPS DE WHATSAPP ==================== */
+        .whatsapp-container {
+            background: #e5ddd5;
+            border-radius: 1rem;
+            padding: 1rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-header {
+            background: #075e54;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: -1rem -1rem 1rem -1rem;
+        }
+
+        .whatsapp-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .whatsapp-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .chat-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            max-width: 85%;
+            position: relative;
+            word-wrap: break-word;
+        }
+
+        .chat-bubble-sent {
+            background: #dcf8c6;
+            margin-left: auto;
+            border-bottom-right-radius: 0.125rem;
+        }
+
+        .chat-bubble-received {
+            background: white;
+            margin-right: auto;
+            border-bottom-left-radius: 0.125rem;
+        }
+
+        .chat-time {
+            font-size: 0.75rem;
+            color: #667781;
+            margin-top: 0.25rem;
+            text-align: right;
+        }
+
+        .chat-checkmark {
+            display: inline-block;
+            color: #53bdeb;
+            font-weight: 700;
+            margin-left: 0.25rem;
+        }
+
+        .whatsapp-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* ==================== GRÁFICOS CSS ==================== */
+        .chart-container {
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .chart-bar-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .chart-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .chart-bar {
+            height: 48px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.5s ease;
+            box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+        }
+
+        .chart-bar.danger {
+            background: linear-gradient(90deg, var(--danger), #dc2626);
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Gráfico de pastel CSS */
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--danger) 0deg 158deg,
+                var(--warning) 158deg 284deg,
+                var(--secondary) 284deg 349deg,
+                var(--primary) 349deg 360deg
+            );
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .pie-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .pie-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pie-legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 0.25rem;
+        }
+
+        /* Gráfico de líneas CSS */
+        .line-chart {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            background: linear-gradient(to top, rgba(20, 184, 166, 0.1) 0%, transparent 100%);
+            border-radius: 0.5rem;
+        }
+
+        .line-chart-line {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            width: 80%;
+            height: 60%;
+            border-left: 3px solid var(--primary);
+            border-bottom: 3px solid var(--primary);
+            clip-path: polygon(0% 100%, 0% 60%, 33% 40%, 66% 20%, 100% 0%, 100% 100%);
+            background: linear-gradient(135deg, transparent 0%, var(--primary) 100%);
+            opacity: 0.7;
+        }
+
+        /* ==================== TABLAS ==================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        thead {
+            background: var(--primary);
+            color: white;
+        }
+
+        th, td {
+            padding: clamp(0.75rem, 2vw, 1.25rem);
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            font-weight: 600;
+            font-size: clamp(0.875rem, 2.5vw, 1rem);
+        }
+
+        td {
+            font-size: clamp(0.8rem, 2vw, 0.95rem);
+        }
+
+        tbody tr:hover {
+            background: #f1f5f9;
+        }
+
+        .table-highlight {
+            background: #ecfdf5;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* ==================== GRID LAYOUTS ==================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1rem, 2.5vw, 1.5rem);
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: clamp(0.75rem, 2vw, 1.25rem);
+        }
+
+        /* ==================== FLYWHEEL DIAGRAM ==================== */
+        .flywheel {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin: 2rem auto;
+        }
+
+        .flywheel-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            position: relative;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .flywheel-item {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .flywheel-item:nth-child(1) { top: -60px; left: 50%; transform: translateX(-50%); }
+        .flywheel-item:nth-child(2) { top: 50%; right: -60px; transform: translateY(-50%); }
+        .flywheel-item:nth-child(3) { bottom: -60px; left: 50%; transform: translateX(-50%); }
+        .flywheel-item:nth-child(4) { top: 50%; left: -60px; transform: translateY(-50%); }
+
+        .flywheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4);
+        }
+
+        /* ==================== BACKGROUNDS POR SLIDE ==================== */
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text-white);
+        }
+
+        .bg-gradient-light {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--text-dark);
+        }
+
+        .bg-white {
+            background: white;
+            color: var(--text-dark);
+        }
+
+        /* ==================== HIGHLIGHTS Y BADGES ==================== */
+        .highlight {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.375rem 0.875rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .badge-danger {
+            background: var(--danger);
+        }
+
+        /* ==================== ANIMACIONES ==================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .animate-slide-right {
+            animation: slideInRight 0.6s ease forwards;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .animate-scale {
+            animation: scaleIn 0.6s ease forwards;
+        }
+
+        /* Stagger delays for list items */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+
+        /* Hover animations */
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(20, 184, 166, 0.3);
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(20, 184, 166, 0.4);
+        }
+
+        /* Typing indicator animation */
+        @keyframes typingDot {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-10px);
+                opacity: 1;
+            }
+        }
+
+        .typing-indicator {
+            display: inline-flex;
+            gap: 4px;
+            padding: 8px 12px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            margin: 8px 0;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #9ca3af;
+            animation: typingDot 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .slide-nav {
+                bottom: 1rem;
+                gap: 0.5rem;
+            }
+
+            .nav-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .slide-counter {
+                top: 1rem;
+                right: 1rem;
+                padding: 0.375rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .slide-dots {
+                bottom: 4.5rem;
+                gap: 0.375rem;
+            }
+
+            .slide-dot {
+                width: 6px;
+                height: 6px;
+            }
+
+            .slide-dot.active {
+                width: 18px;
+            }
+
+            .whatsapp-container {
+                max-width: 100%;
+            }
+
+            .pie-chart {
+                width: 200px;
+                height: 200px;
+            }
+
+            .flywheel {
+                width: 300px;
+                height: 300px;
+            }
+
+            .flywheel-item {
+                width: 90px;
+                height: 90px;
+                font-size: 0.75rem;
+            }
+
+            .flywheel-center {
+                width: 120px;
+                height: 120px;
+                font-size: 1rem;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.75rem; }
+            h2 { font-size: 1.5rem; }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== TOUCH TARGETS ==================== */
+        button, a, .clickable {
+            min-width: 44px;
+            min-height: 44px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ==================== UTILIDADES ==================== */
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .gap-1 { gap: 0.5rem; }
+        .gap-2 { gap: 1rem; }
+        .gap-3 { gap: 1.5rem; }
+    </style>
+</head>
+<body>
+    <!-- Progress bar -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="deck-container">
+        <!-- ==================== SLIDE 1: COVER ==================== -->
+        <section class="slide active bg-gradient-primary" id="slide-1">
+            <div class="slide-content text-center">
+                <h1 class="animate-in" style="animation-delay: 0.1s;">Weats.ai</h1>
+                <h2 class="animate-in" style="animation-delay: 0.3s; opacity: 0.9;">El Delivery Que No Te Cobra Para Ordenar</h2>
+                <p class="large animate-in" style="animation-delay: 0.5s; opacity: 0.8; max-width: 800px; margin: 2rem auto;">
+                    La primera <span class="highlight">IA conversacional</span> que rompe el monopolio de Rappi con <span class="highlight">91% menos costos</span>
+                </p>
+                <div class="grid-3 animate-in" style="animation-delay: 0.7s; margin-top: 3rem;">
+                    <div class="metric-card">
+                        <div class="metric-value">91%</div>
+                        <div class="metric-label">Costos más bajos que Rappi</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$0.86</div>
+                        <div class="metric-label">Profit por pedido (34% margin)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">3-5×</div>
+                        <div class="metric-label">Más barato para restaurantes</div>
+                    </div>
+                </div>
+                <p class="mt-3" style="opacity: 0.9; font-weight: 600; font-size: 1.125rem;">
+                    Pide por WhatsApp. Paga justo. Libera el delivery.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 2: EL PROBLEMA ==================== -->
+        <section class="slide bg-gradient-light" id="slide-2">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">El Monopolio Invisible: Rappi Se Queda con el 44%</h2>
+                <p class="text-center large mb-2" style="color: var(--danger); font-weight: 600;">Un mercado de $3.17B diseñado para extraer valor<sup style="font-size: 0.75rem;">1</sup></p>
+
+                <div class="grid-2">
+                    <div>
+                        <h3 class="mb-2">Distribución del Valor en Rappi</h3>
+                        <div class="pie-chart"></div>
+                        <div class="pie-legend">
+                            <div class="pie-legend-item">
+                                <div class="pie-legend-color" style="background: var(--danger);"></div>
+                                <span><strong>44%</strong> Plataforma (Rappi)</span>
+                            </div>
+                            <div class="pie-legend-item">
+                                <div class="pie-legend-color" style="background: var(--warning);"></div>
+                                <span><strong>35%</strong> Costos al cliente</span>
+                            </div>
+                            <div class="pie-legend-item">
+                                <div class="pie-legend-color" style="background: var(--secondary);"></div>
+                                <span><strong>18%</strong> Margen restaurante</span>
+                            </div>
+                            <div class="pie-legend-item">
+                                <div class="pie-legend-color" style="background: var(--primary);"></div>
+                                <span><strong>3%</strong> Pago repartidor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-2">El Modelo Extractivo</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="mb-2">
+                                <span class="badge-danger badge">❌</span>
+                                <strong style="margin-left: 0.5rem;">Rappi: 44% de comisión</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge-danger badge">❌</span>
+                                <strong style="margin-left: 0.5rem;">Clientes: +35% sobrecosto oculto</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge-danger badge">❌</span>
+                                <strong style="margin-left: 0.5rem;">Restaurantes: -25-35% margen</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge-danger badge">❌</span>
+                                <strong style="margin-left: 0.5rem;">Repartidores: bajo salario mínimo</strong>
+                            </li>
+                        </ul>
+
+                        <div class="card mt-3" style="background: #fef2f2; border-left: 4px solid var(--danger);">
+                            <p><strong>Insight Crítico:</strong> Los altos costos operativos (24–30% del GMV) hacen que Rappi no pueda reducir comisiones sin perder rentabilidad.<sup style="font-size: 0.75rem;">2</sup></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: absolute; bottom: 1rem; left: 2rem; right: 2rem; font-size: 0.75rem; color: var(--text-light); line-height: 1.4;">
+                    <p><sup>1</sup> Euromonitor International, "Food Delivery Market Colombia 2024"; Statista "Online Food Delivery Colombia 2024"</p>
+                    <p><sup>2</sup> Rappi S1 Filing (2023); Restaurant partner interviews (n=15, Bogotá, Dec 2024)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 3: LA SOLUCIÓN ==================== -->
+        <section class="slide bg-white" id="slide-3">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">La Solución: WhatsApp + IA Nativa</h2>
+                <h3 class="text-center mb-3" style="color: var(--primary);">Arquitectura de Costos 91% Más Baja</h3>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2">🚀 Tres Pilares</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                            <div>
+                                <h4 style="color: var(--primary);">1. Distribución sin fricción</h4>
+                                <p class="text-light">WhatsApp: 90% penetración en Colombia, onboarding en 30 segundos</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">2. Automatización por IA</h4>
+                                <p class="text-light">90% de procesos (soporte, ruteo, pagos) gestionados por bots</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">3. Alineación de valor</h4>
+                                <p class="text-light">El ahorro se redistribuye entre usuarios, creando crecimiento viral</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; position: relative;">
+                        <div style="width: 400px; height: 400px; position: relative;">
+                            <!-- Centro: Weats -->
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4); z-index: 3;">
+                                Weats.ai
+                            </div>
+
+                            <!-- Clientes -->
+                            <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; background: white; border: 3px solid var(--primary); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                                <div style="font-size: 2rem; margin-bottom: 0.25rem;">👤</div>
+                                <div style="font-weight: 600; font-size: 0.875rem;">Clientes</div>
+                            </div>
+
+                            <!-- Restaurantes -->
+                            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 120px; height: 120px; background: white; border: 3px solid var(--primary); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                                <div style="font-size: 2rem; margin-bottom: 0.25rem;">🍽️</div>
+                                <div style="font-weight: 600; font-size: 0.875rem;">Restaurantes</div>
+                            </div>
+
+                            <!-- Repartidores -->
+                            <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; background: white; border: 3px solid var(--primary); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                                <div style="font-size: 2rem; margin-bottom: 0.25rem;">🏍️</div>
+                                <div style="font-weight: 600; font-size: 0.875rem;">Repartidores</div>
+                            </div>
+
+                            <!-- Líneas de conexión -->
+                            <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" viewBox="0 0 400 400">
+                                <line x1="200" y1="60" x2="200" y2="140" stroke="#14b8a6" stroke-width="3" stroke-dasharray="5,5"/>
+                                <line x1="340" y1="200" x2="260" y2="200" stroke="#14b8a6" stroke-width="3" stroke-dasharray="5,5"/>
+                                <line x1="200" y1="340" x2="200" y2="260" stroke="#14b8a6" stroke-width="3" stroke-dasharray="5,5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 4: EXPERIENCIA DEL CLIENTE ==================== -->
+        <section class="slide bg-gradient-light" id="slide-4">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Experiencia del Cliente: Pedido en 30 Segundos</h2>
+
+                <div class="grid-2">
+                    <div class="whatsapp-container">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar">W</div>
+                            <div class="whatsapp-name">Weats.ai</div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-sent">
+                            Quiero tacos para dos, máximo $20 mil
+                            <div class="chat-time">12:34 <span class="chat-checkmark">✓✓</span></div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received">
+                            Encontré 3 opciones cerca:<br><br>
+                            🌮 <strong>La Taquería</strong><br>
+                            $18K • 20 min<br><br>
+                            🌮 <strong>El Buen Sabor</strong><br>
+                            $19K • 25 min<br><br>
+                            🌮 <strong>Tacos Locos</strong><br>
+                            $17K • 30 min<br><br>
+                            ¿Cuál prefieres?
+                            <div class="chat-time">12:34</div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-sent">
+                            La 1, pago con mi tarjeta terminada en 4567
+                            <div class="chat-time">12:35 <span class="chat-checkmark">✓✓</span></div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received">
+                            ✅ <strong>Orden confirmada</strong><br><br>
+                            Tu domiciliario (María) llega en 20 min<br><br>
+                            <strong>$0 tarifas de servicio</strong> 🎉
+                            <div class="chat-time">12:35</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-2">🎯 Ventajas del Flujo Conversacional</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">Habla normal. IA entiende.</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">Pedido: 30 segundos total</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">$0 tarifas. Cero ocultos.</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">Solo WhatsApp. Sin apps.</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">Tracking: tiempo real GPS</strong>
+                            </li>
+                            <li class="mb-2">
+                                <span class="badge">✓</span>
+                                <strong style="margin-left: 0.5rem;">Pago: 1 clic guardado</strong>
+                            </li>
+                        </ul>
+
+                        <div class="card mt-3" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
+                            <p style="text-align: center; font-weight: 600; font-size: 1.125rem; margin-bottom: 1rem;">
+                                "El delivery más simple que existe"
+                            </p>
+                            <div class="whatsapp-button" style="background: white; color: var(--primary); font-size: 1rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                                📱 Ordena ahora: wa.me/573114242222
+                            </div>
+                            <p style="text-align: center; font-size: 0.875rem; margin-top: 0.75rem; opacity: 0.9;">
+                                ⚡ Disponible en Zona T y Chicó — Solo 50 cupos Q1 2025
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 5: EXPERIENCIA DEL RESTAURANTE ==================== -->
+        <section class="slide bg-white" id="slide-5">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Experiencia del Restaurante: Inteligencia Operativa</h2>
+
+                <div class="grid-2">
+                    <div class="whatsapp-container">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar" style="background: var(--warning);">W</div>
+                            <div class="whatsapp-name">Weats.Restaurant</div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received">
+                            📊 <strong>Reporte Diario</strong><br><br>
+                            28 pedidos • $540k ingresos<br><br>
+                            🔥 <strong>Top:</strong> Tacos DF (12 órdenes)<br>
+                            📈 <strong>Hora pico:</strong> 1:00 PM - 2:30 PM<br>
+                            ⭐ <strong>Rating:</strong> 4.8/5.0
+                            <div class="chat-time">8:00 PM</div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received">
+                            💡 <strong>Recomendación IA</strong><br><br>
+                            Combo "Tacos + Bebida" podría aumentar ticket promedio 23%<br><br>
+                            ¿Quieres que lo active?
+                            <div class="chat-time">8:01 PM</div>
+                        </div>
+
+                        <div class="whatsapp-button">
+                            ✓ Activar combo recomendado
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-2">🤖 IA al Servicio del Restaurante</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                            <div>
+                                <h4 style="color: var(--primary);">📱 Todo por WhatsApp conversacional</h4>
+                                <p class="text-light">Pedidos, inventario: chat fácil</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">📊 Reportes: diarios automáticos IA</h4>
+                                <p class="text-light">Ventas, top, tendencias: automáticos</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">💡 IA recomienda: combos, precios</h4>
+                                <p class="text-light">Combos, precios: IA optimiza</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">💰 Pago: diario automático transparente</h4>
+                                <p class="text-light">Transferencias: diarias sin esperas</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">📞 Soporte IA: <2s respuesta</h4>
+                                <p class="text-light">24/7, respuestas: 2 segundos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 6: EXPERIENCIA DEL REPARTIDOR ==================== -->
+        <section class="slide bg-gradient-light" id="slide-6">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Experiencia del Repartidor: Economía Justa</h2>
+
+                <div class="grid-2">
+                    <div class="whatsapp-container">
+                        <div class="whatsapp-header">
+                            <div class="whatsapp-avatar" style="background: var(--secondary);">W</div>
+                            <div class="whatsapp-name">Weats.Runner</div>
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received">
+                            🛵 <strong>Nuevo pedido disponible</strong><br><br>
+                            📍 Restaurante: La Taquería (500m)<br>
+                            📍 Cliente: Calle 85 #15-20 (1.2km)<br><br>
+                            💰 <strong>$3,500 COP pago neto</strong><br>
+                            (Base $3K + Bonus $500)<br>
+                            ⏱️ Distancia total: 1.7km<br><br>
+                            ¿Aceptar?
+                            <div class="chat-time">12:36</div>
+                        </div>
+
+                        <div class="whatsapp-button">
+                            ✓ Aceptar pedido
+                        </div>
+
+                        <div class="chat-bubble chat-bubble-received" style="margin-top: 1rem;">
+                            📊 <strong>Resumen Semanal</strong><br><br>
+                            42 entregas completadas<br>
+                            💰 <strong>$147,000 COP ganados</strong><br>
+                            ⭐ Rating: 4.9/5.0<br>
+                            🎯 Tasa de éxito: 98%<br><br>
+                            🎉 ¡Eres un rapitendero estrella!
+                            <div class="chat-time">Domingo 8:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card mb-2">
+                            <h3 class="mb-2">💪 Economía Justa para Rapitenderos</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem;">
+                                <div>
+                                    <h4 style="color: var(--primary);">🚀 Registro: 30 segundos inicio</h4>
+                                    <p class="text-light">Verificación rápida: trabaja hoy</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">🎯 Dispatch: 10× más rápido</h4>
+                                    <p class="text-light">Distancia + zona: optimizado</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">💰 Pago: 2-3× mejor Rappi</h4>
+                                    <p class="text-light">$3.5K vs $1.2K Rappi</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">⛽ Gasolina: subsidio incluido siempre</h4>
+                                    <p class="text-light">Subsidio: proporcional al pago</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">🛡️ Seguros: básicos + upgrades</h4>
+                                    <p class="text-light">Básico gratis + upgrades</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-3">
+                            <div class="metric-card">
+                                <div class="metric-value">$3.5K</div>
+                                <div class="metric-label">Pago promedio</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">2-3×</div>
+                                <div class="metric-label">vs Rappi</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">30s</div>
+                                <div class="metric-label">Registro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 7: FOSO ESTRUCTURAL ==================== -->
+        <section class="slide bg-white" id="slide-7">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">El Foso Estructural: Rappi No Puede Competir</h2>
+
+                <div class="card">
+                    <h3 class="mb-2 text-center">Comparación de Costos Operacionales</h3>
+
+                    <table class="mt-2">
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Rappi</th>
+                                <th>Weats</th>
+                                <th>Reducción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-highlight">
+                                <td><strong>Soporte al Cliente</strong></td>
+                                <td>$2–5 USD/orden</td>
+                                <td><strong>$0.02 USD</strong> ($100 COP)</td>
+                                <td><span class="badge">99%+ ahorro</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Costo Operacional</strong></td>
+                                <td>24–30%</td>
+                                <td><strong>9.5%</strong></td>
+                                <td><span class="badge">60–68%</span></td>
+                            </tr>
+                            <tr class="table-highlight">
+                                <td><strong>Infraestructura</strong></td>
+                                <td>Alta (apps nativas)</td>
+                                <td><strong>Cero (WhatsApp)</strong></td>
+                                <td><span class="badge">100%</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tiempo Respuesta</strong></td>
+                                <td>2–5 min</td>
+                                <td><strong>&lt;2s</strong></td>
+                                <td><span class="badge">30× más rápido</span></td>
+                            </tr>
+                            <tr class="table-highlight">
+                                <td><strong>Comisión Restaurante</strong></td>
+                                <td>28–44%</td>
+                                <td><strong>5–10%</strong></td>
+                                <td><span class="badge">70–89%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="chart-container mt-3">
+                    <h3 class="mb-2 text-center">Costos como % del GMV</h3>
+                    <div class="chart-bar-group">
+                        <div class="chart-label">Rappi — Costo Operacional Total</div>
+                        <div class="chart-bar danger" style="width: 100%;">30%</div>
+                    </div>
+                    <div class="chart-bar-group">
+                        <div class="chart-label">Weats — Costo Operacional Total</div>
+                        <div class="chart-bar" style="width: 31.67%;">9.5%</div>
+                    </div>
+                </div>
+
+                <div class="card mt-3" style="background: #ecfdf5; border-left: 4px solid var(--primary);">
+                    <p style="text-align: center; font-weight: 600; font-size: 1.125rem;">
+                        <strong>Conclusión:</strong> Rappi no puede reducir costos sin perder rentabilidad. Weats opera con 1/3 de sus costos y aún así es más rentable.
+                    </p>
+                </div>
+
+                <div style="position: absolute; bottom: 1rem; left: 2rem; right: 2rem; font-size: 0.75rem; color: var(--text-light); line-height: 1.4;">
+                    <p><sup>3</sup> Support cost benchmarks: Rappi (Zendesk estimate $2-5/ticket); Weats (WhatsApp Business Messaging pricing + GPT-4o costs)</p>
+                    <p><sup>4</sup> Operational cost analysis: Rappi S1 Filing 2023 vs. Weats financial model (AWS, Vercel, Supabase, WhatsApp API)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 8: MERCADO Y GTM ==================== -->
+        <section class="slide bg-gradient-light" id="slide-8">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Mercado y Expansión (GTM)</h2>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2">📊 Tamaño del Mercado</h3>
+                        <div class="grid-3 mt-2">
+                            <div class="metric-card">
+                                <div class="metric-value">$3.17B<sup style="font-size: 0.75rem;">5</sup></div>
+                                <div class="metric-label">TAM Colombia</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$15B<sup style="font-size: 0.75rem;">6</sup></div>
+                                <div class="metric-label">TAM LATAM</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">12–15%<sup style="font-size: 0.75rem;">7</sup></div>
+                                <div class="metric-label">CAGR</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <h4 class="mb-2">Market Sizing Breakdown (Colombia)</h4>
+                            <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0;">
+                                    <span style="font-weight: 600;">TAM — Total Addressable Market</span>
+                                    <span style="font-weight: 700; color: var(--primary);">$3.17B</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px solid #e2e8f0; padding-left: 1rem;">
+                                    <span style="font-weight: 600;">SAM — Serviceable (Top 6 cities)</span>
+                                    <span style="font-weight: 700; color: var(--secondary);">$1.3B (41%)</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; padding-left: 2rem;">
+                                    <span style="font-weight: 600;">SOM — Obtainable Year 3</span>
+                                    <span style="font-weight: 700; color: var(--accent);">$130M (10% SAM)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <h4 class="mb-2">Dominancia de Rappi en Colombia<sup style="font-size: 0.75rem;">8</sup></h4>
+                            <div class="chart-bar-group">
+                                <div class="chart-label">Rappi</div>
+                                <div class="chart-bar danger" style="width: 64%;">64%</div>
+                            </div>
+                            <div class="chart-bar-group">
+                                <div class="chart-label">Otros (Uber Eats, Didi, etc.)</div>
+                                <div class="chart-bar" style="width: 36%; background: #94a3b8;">36%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-2">🎯 Estrategia de Expansión</h3>
+                        <table class="mt-2">
+                            <thead>
+                                <tr>
+                                    <th>Año</th>
+                                    <th>Estrategia</th>
+                                    <th>GMV</th>
+                                    <th>Market Share</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table-highlight">
+                                    <td><strong>1</strong></td>
+                                    <td>Bogotá (Zona T, Chicó)</td>
+                                    <td><strong>$5M</strong></td>
+                                    <td>0.5%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2</strong></td>
+                                    <td>Medellín + Cali</td>
+                                    <td><strong>$30M</strong></td>
+                                    <td>3%</td>
+                                </tr>
+                                <tr class="table-highlight">
+                                    <td><strong>3</strong></td>
+                                    <td>10+ Ciudades Colombia</td>
+                                    <td><strong>$100M</strong></td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4-5</strong></td>
+                                    <td>Expansión LATAM</td>
+                                    <td><strong>$500M+</strong></td>
+                                    <td>3-5% LATAM</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="mt-3" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 1.5rem; border-radius: 0.5rem; text-align: center;">
+                            <p style="font-size: 1.125rem; font-weight: 600;">
+                                🎯 Target Año 1: 50 restaurantes • 20 repartidores • 500 clientes
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: absolute; bottom: 1rem; left: 2rem; right: 2rem; font-size: 0.75rem; color: var(--text-light); line-height: 1.4;">
+                    <p><sup>5</sup> Euromonitor International "Food Delivery Colombia 2024" | <sup>6</sup> Statista "Online Food Delivery LATAM 2024"</p>
+                    <p><sup>7</sup> Mordor Intelligence "Food Delivery LATAM Growth Rate 2024-2029" | <sup>8</sup> SimilarWeb + company reports (Q3 2024)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 9: MODELO DE NEGOCIO ==================== -->
+        <section class="slide bg-white" id="slide-9">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Modelo de Negocio — Take Rate 10%</h2>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2">💰 Fuentes de Ingreso</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem;">
+                            <div>
+                                <h4 style="color: var(--primary);">1. Comisión Restaurantes (5–10%)</h4>
+                                <p class="text-light">Take rate más bajo de la industria, basado en volumen</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">2. Insights Premium</h4>
+                                <p class="text-light">Analytics avanzados, recomendaciones IA personalizadas</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">3. WeatsPay (Fintech)</h4>
+                                <p class="text-light">Microcréditos para restaurantes y repartidores</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">4. B2B Catering</h4>
+                                <p class="text-light">Soluciones corporativas para oficinas</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">5. Publicidad Ética</h4>
+                                <p class="text-light">Promociones orgánicas, sin saturar la experiencia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card mb-2">
+                            <h3 class="mb-2 text-center">Unit Economics</h3>
+                            <p class="text-center small mb-2" style="color: var(--text-light);">AOV: $30 USD ($124,000 COP) | Take Rate: 8.4%</p>
+                            <div style="margin-top: 1.5rem;">
+                                <div class="chart-bar-group">
+                                    <div class="chart-label">AOV (Valor Promedio de Orden)</div>
+                                    <div class="chart-bar" style="width: 100%; background: #94a3b8;">$30.00 USD</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-label">Revenue a Weats (6% comisión + $0.73 data/premium)</div>
+                                    <div class="chart-bar" style="width: 8.4%; background: var(--secondary);">$2.53</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-label">Costos Operacionales (delivery, tech, support, etc.)</div>
+                                    <div class="chart-bar danger" style="width: 5.6%;">$1.67</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="chart-label">Profit Neto por Pedido (34% margin)</div>
+                                    <div class="chart-bar" style="width: 2.9%;">$0.86</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-3">
+                            <div class="metric-card">
+                                <div class="metric-value">34%</div>
+                                <div class="metric-label">Profit Margin</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$0.86</div>
+                                <div class="metric-label">Profit/pedido</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">8.4%</div>
+                                <div class="metric-label">Take Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 10: VENTAJA COMPETITIVA FLYWHEEL ==================== -->
+        <section class="slide bg-gradient-light" id="slide-10">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Ventaja Competitiva: Flywheel de Crecimiento Ético</h2>
+
+                <div class="flywheel">
+                    <div class="flywheel-circle">
+                        <div class="flywheel-item">
+                            $0 tarifas al cliente<br>→ Viralidad orgánica
+                        </div>
+                        <div class="flywheel-item">
+                            Más usuarios<br>→ Más datos
+                        </div>
+                        <div class="flywheel-item">
+                            Mejor IA<br>→ Mejor experiencia
+                        </div>
+                        <div class="flywheel-item">
+                            Comisión 5-10%<br>→ Lealtad restaurantes
+                        </div>
+                    </div>
+                    <div class="flywheel-center">
+                        Crecimiento<br>Sostenible
+                    </div>
+                </div>
+
+                <div class="grid-3 mt-3">
+                    <div class="card text-center">
+                        <h3 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem;">👤</h3>
+                        <h4 class="mb-1">Clientes</h4>
+                        <p class="text-light small">$0 tarifas → NPS 70+ → Boca a boca</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem;">🍽️</h3>
+                        <h4 class="mb-1">Restaurantes</h4>
+                        <p class="text-light small">5-10% comisión → 85%+ retención</p>
+                    </div>
+                    <div class="card text-center">
+                        <h3 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 0.5rem;">🏍️</h3>
+                        <h4 class="mb-1">Repartidores</h4>
+                        <p class="text-light small">2-3× mejor pago → Baja rotación</p>
+                    </div>
+                </div>
+
+                <div class="card mt-3" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
+                    <p style="text-align: center; font-weight: 600; font-size: 1.25rem;">
+                        "Cuantos más usuarios, mejor el servicio. Cuanto mejor el servicio, más usuarios."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 11: DIFERENCIACIÓN IA ==================== -->
+        <section class="slide bg-white" id="slide-11">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Diferenciación IA: El Cerebro de Weats</h2>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2 text-center">🧠 AI Core</h3>
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="display: inline-block; position: relative;">
+                                <!-- Centro: AI Core -->
+                                <div style="width: 160px; height: 160px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.25rem; box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4); position: relative; z-index: 2; margin: 0 auto;">
+                                    Gemini 2.5<br>Flash FREE
+                                </div>
+
+                                <!-- Tres círculos alrededor -->
+                                <div style="position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 120px; height: 120px; background: white; border: 3px solid var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 600; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 0.5rem;">
+                                    Ruteo<br>Inteligente
+                                </div>
+
+                                <div style="position: absolute; top: 20px; right: -130px; width: 120px; height: 120px; background: white; border: 3px solid var(--warning); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 600; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 0.5rem;">
+                                    Pricing<br>Dinámico
+                                </div>
+
+                                <div style="position: absolute; top: 20px; left: -130px; width: 120px; height: 120px; background: white; border: 3px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 600; font-size: 0.875rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 0.5rem;">
+                                    Demand<br>Forecasting
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="card mb-2">
+                            <h3 class="mb-2">🚀 Capacidades de IA</h3>
+                            <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem;">
+                                <div>
+                                    <h4 style="color: var(--primary);">Despacho Predictivo</h4>
+                                    <p class="text-light">Asignación 10× más rápida que Rappi, usando PostGIS + IA</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">Precios Dinámicos</h4>
+                                    <p class="text-light">Optimización en tiempo real según demanda y disponibilidad</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">Personalización de Menús</h4>
+                                    <p class="text-light">Recomendaciones basadas en historial y preferencias</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">Forecasting de Demanda</h4>
+                                    <p class="text-light">Predicción de picos, ayuda a restaurantes con inventario</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--primary);">Soporte 24/7</h4>
+                                    <p class="text-light">Respuestas en <2s, 90% de consultas resueltas automáticamente</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-3">
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;2s</div>
+                                <div class="metric-label">Tiempo respuesta</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">90%</div>
+                                <div class="metric-label">Automatización</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$0</div>
+                                <div class="metric-label">Costo IA*</div>
+                            </div>
+                        </div>
+                        <p class="text-center small mt-1" style="color: var(--text-light);">*Gemini 2.5 Flash FREE tier (1,400 req/día)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 12: FINANZAS ==================== -->
+        <section class="slide bg-gradient-light" id="slide-12">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Finanzas y Proyecciones (3 Años)</h2>
+
+                <div class="card mb-2">
+                    <h3 class="mb-2 text-center">Proyecciones Financieras</h3>
+                    <p class="text-center small mb-2" style="color: var(--primary); font-weight: 600;">Break-even: Q4 Año 2 | Profitable: Año 3</p>
+                    <table class="mt-2">
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>GMV</th>
+                                <th>Ingresos (10%)</th>
+                                <th>Costos</th>
+                                <th>Utilidad Neta</th>
+                                <th>Margen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1</strong></td>
+                                <td>$5M</td>
+                                <td><strong>$0.5M</strong></td>
+                                <td>$0.8M</td>
+                                <td class="danger">-$0.3M</td>
+                                <td>-60%</td>
+                            </tr>
+                            <tr class="table-highlight">
+                                <td><strong>2</strong></td>
+                                <td>$30M</td>
+                                <td><strong>$3.8M</strong></td>
+                                <td>$3.9M</td>
+                                <td style="color: var(--danger); font-weight: 700;">-$0.1M</td>
+                                <td>-3%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3</strong></td>
+                                <td>$100M</td>
+                                <td><strong>$10M</strong></td>
+                                <td>$9.1M</td>
+                                <td style="color: var(--accent); font-weight: 700;">+$0.9M</td>
+                                <td>9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2">📈 Crecimiento GMV</h3>
+                        <div class="line-chart"></div>
+                        <p class="text-center mt-2 text-light">Año 1: $5M → Año 2: $30M (6×) → Año 3: $100M (3.3×)</p>
+                    </div>
+
+                    <div>
+                        <div class="card mb-2">
+                            <h3 class="mb-2">🎯 Escenario de Salida</h3>
+                            <div class="grid-3 mt-2">
+                                <div class="metric-card">
+                                    <div class="metric-value">$150M</div>
+                                    <div class="metric-label">Valoración Año 3</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">15×</div>
+                                    <div class="metric-label">Múltiplo GMV</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">30×</div>
+                                    <div class="metric-label">ROI Inversionistas</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
+                            <h4 class="mb-2">Compradores Potenciales</h4>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li class="mb-1">• Rappi (defensa estratégica)</li>
+                                <li class="mb-1">• Uber Eats (expansión LATAM)</li>
+                                <li class="mb-1">• DoorDash (entrada a Colombia)</li>
+                                <li class="mb-1">• Meta/WhatsApp (integración nativa)</li>
+                                <li class="mb-1">• Privates equity (consolidación)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: absolute; bottom: 1rem; left: 2rem; right: 2rem; font-size: 0.75rem; color: var(--text-light); line-height: 1.4;">
+                    <p><sup>9</sup> Financial projections based on: Unit economics model ($0.86 profit/order), GTM strategy (50→500→5000 restaurants), and comparable exit multiples (DoorDash 15× GMV, Delivery Hero 12× GMV at IPO)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 13: EQUIPO ==================== -->
+        <section class="slide bg-white" id="slide-13">
+            <div class="slide-content">
+                <h2 class="text-center mb-3">Equipo y Cultura AI-First</h2>
+
+                <div class="card mb-3" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; text-align: center;">
+                    <h3 class="mb-2">🚀 AI-First Leadership</h3>
+                    <p class="large" style="opacity: 0.9;">Expertos en Tecnología, IA y Logística LATAM</p>
+                </div>
+
+                <div class="grid-3 mb-3">
+                    <div class="card text-center">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700;">
+                            F1
+                        </div>
+                        <h4 class="mb-1">Fundador 1</h4>
+                        <p class="text-light small">Tech Lead</p>
+                        <p class="text-light small">10+ años en sistemas distribuidos</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--secondary), #0e7490); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700;">
+                            F2
+                        </div>
+                        <h4 class="mb-1">Fundador 2</h4>
+                        <p class="text-light small">AI Lead</p>
+                        <p class="text-light small">Experto en NLP y conversational AI</p>
+                    </div>
+                    <div class="card text-center">
+                        <div style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--accent), #059669); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700;">
+                            F3
+                        </div>
+                        <h4 class="mb-1">Fundador 3</h4>
+                        <p class="text-light small">Operations Lead</p>
+                        <p class="text-light small">8+ años en logística LATAM</p>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="mb-2">👥 Estructura Lean</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Tecnología & Producto</span>
+                                <span class="badge">6 personas</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Operaciones & Logística</span>
+                                <span class="badge">4 personas</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Marketing & Growth</span>
+                                <span class="badge">3 personas</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-weight: 600;">Legal & Compliance</span>
+                                <span class="badge">2 personas</span>
+                            </div>
+                        </div>
+                        <div class="mt-3" style="background: #ecfdf5; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid var(--primary);">
+                            <p style="text-align: center; font-weight: 600;">
+                                <strong>15 personas + IA</strong> → 91% menos costos que Rappi
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="mb-2">🎓 Asesores</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.5rem;">
+                            <div>
+                                <h4 style="color: var(--primary);">Fintech & Pagos</h4>
+                                <p class="text-light">Ex-Stripe LATAM, experto en microcréditos</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">Operaciones Logísticas</h4>
+                                <p class="text-light">Ex-COO de startup de delivery en México</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">Cumplimiento & Legal</h4>
+                                <p class="text-light">Especialista en regulación LATAM (food safety, labor)</p>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--primary);">Growth & Marketing</h4>
+                                <p class="text-light">Ex-VP Marketing de unicornio colombiano</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 14: SOLICITUD DE INVERSIÓN ==================== -->
+        <section class="slide bg-gradient-primary" id="slide-14">
+            <div class="slide-content text-center">
+                <h2 class="mb-3">Solicitud de Inversión</h2>
+
+                <div class="grid-3 mb-3">
+                    <div class="metric-card" style="background: white; color: var(--text-dark);">
+                        <div class="metric-value" style="color: var(--primary);">$500K</div>
+                        <div class="metric-label" style="color: var(--text-dark);">Ronda Seed</div>
+                    </div>
+                    <div class="metric-card" style="background: white; color: var(--text-dark);">
+                        <div class="metric-value" style="color: var(--primary);">$3M</div>
+                        <div class="metric-label" style="color: var(--text-dark);">Valoración Pre-Money</div>
+                    </div>
+                    <div class="metric-card" style="background: white; color: var(--text-dark);">
+                        <div class="metric-value" style="color: var(--primary);">16.7%</div>
+                        <div class="metric-label" style="color: var(--text-dark);">Equity Ofrecido</div>
+                    </div>
+                </div>
+
+                <div class="card mb-3" style="text-align: left;">
+                    <h3 class="mb-2 text-center">Uso de Fondos</h3>
+                    <div class="chart-container mt-2">
+                        <div class="chart-bar-group">
+                            <div class="chart-label">Tecnología e IA (infraestructura + modelo predictivo)</div>
+                            <div class="chart-bar" style="width: 100%;">30% — $150K</div>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-label">Marketing (guerrilla + referidos + PR)</div>
+                            <div class="chart-bar" style="width: 100%; background: linear-gradient(90deg, var(--secondary), #0e7490); box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);">30% — $150K</div>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-label">Operaciones (onboarding restaurantes + repartidores)</div>
+                            <div class="chart-bar" style="width: 66.67%; background: linear-gradient(90deg, var(--accent), #059669); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);">20% — $100K</div>
+                        </div>
+                        <div class="chart-bar-group">
+                            <div class="chart-label">Capital de trabajo (primer mes operaciones)</div>
+                            <div class="chart-bar" style="width: 66.67%; background: linear-gradient(90deg, var(--warning), #d97706); box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);">20% — $100K</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card" style="text-align: left;">
+                        <h3 class="mb-2">🎯 Hitos Año 1</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="mb-1">✓ Lanzamiento Bogotá (Zona T + Chicó)</li>
+                            <li class="mb-1">✓ 50 restaurantes activos</li>
+                            <li class="mb-1">✓ 20 repartidores en red</li>
+                            <li class="mb-1">✓ 500 clientes registrados</li>
+                            <li class="mb-1">✓ 20-30 pedidos/día</li>
+                            <li class="mb-1">✓ Validar unit economics ($0.86/pedido)</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="text-align: left;">
+                        <h3 class="mb-2">🚀 Preparación Serie A</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li class="mb-1">✓ Demostrar tracción (5M GMV)</li>
+                            <li class="mb-1">✓ Validar modelo de 3 IAs</li>
+                            <li class="mb-1">✓ NPS >70 en todos los stakeholders</li>
+                            <li class="mb-1">✓ Retención restaurantes >85%</li>
+                            <li class="mb-1">✓ Preparar expansión Medellín/Cali</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 15: CONCLUSIÓN ==================== -->
+        <section class="slide bg-gradient-primary" id="slide-15">
+            <div class="slide-content text-center">
+                <h1 class="mb-3">Delivery Sin Aplicaciones. Sin Comisiones. Sin Explotación.</h1>
+
+                <div class="card mb-3" style="max-width: 900px; margin: 0 auto;">
+                    <h3 class="mb-2">Weats no es una app de delivery.</h3>
+                    <h3 class="mb-3" style="color: var(--primary);">Es el fin del monopolio de Rappi.</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left; margin-top: 2rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="min-width: 60px; height: 60px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">1</div>
+                            <div>
+                                <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Restaurantes Ganan 3-5× Más</h4>
+                                <p class="text-light">Comisión: 44% → 5-10%. Sobreviven. Crecen.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="min-width: 60px; height: 60px; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">2</div>
+                            <div>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Repartidores Ganan 3× Más</h4>
+                                <p class="text-light">Pago: $1.2K → $3.5K. Dignidad. Futuro.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <div style="min-width: 60px; height: 60px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">3</div>
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Clientes Pagan $0 Extra</h4>
+                                <p class="text-light">Sin tarifas ocultas. Delivery justo. Para todos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: white; max-width: 800px; margin: 0 auto; padding: 2rem;">
+                    <p style="font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 700; color: var(--primary); margin-bottom: 1.5rem;">
+                        "Colombia tiene un monopolio de $3.17B."
+                    </p>
+                    <p style="font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 600; color: var(--text-dark);">
+                        <span style="color: var(--danger);">Y tienes 6 meses para romperlo</span> antes que otro lo haga.
+                    </p>
+                </div>
+
+                <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 255, 255, 0.1); border-radius: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; border: 2px solid rgba(239, 68, 68, 0.5);">
+                    <p style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--danger);">⏰ Ventana de 6 Meses</p>
+                    <p style="font-size: 1rem; margin-bottom: 1.5rem; opacity: 0.95;">Rappi tardará 12-18 meses en replicar. Tú decides si lideras o sigues.</p>
+                    <p style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Agenda Call Hoy (Solo 5 cupos disponibles)</p>
+                    <p style="font-size: 1.125rem; opacity: 0.9;">📧 hola@weats.ai</p>
+                    <p style="font-size: 1.125rem; opacity: 0.9;">📱 +57 311 424 2222</p>
+                    <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.8;">Ronda Seed cierra 31 marzo 2025</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navegación -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">15</span>
+    </div>
+
+    <!-- Slide dots -->
+    <div class="slide-dots" id="slide-dots"></div>
+
+    <nav class="slide-nav">
+        <button class="nav-btn" id="prev-btn" onclick="previousSlide()">◀ Anterior</button>
+        <button class="nav-btn" id="next-btn" onclick="nextSlide()">Siguiente ▶</button>
+    </nav>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 15;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+
+            if (n > totalSlides) currentSlide = totalSlides;
+            if (n < 1) currentSlide = 1;
+
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            slides[currentSlide - 1].classList.add('active');
+
+            document.getElementById('current-slide').textContent = currentSlide;
+
+            // Update progress bar
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+
+            // Update dots
+            const dots = document.querySelectorAll('.slide-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide - 1) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            // Deshabilitar botones en los extremos
+            document.getElementById('prev-btn').disabled = currentSlide === 1;
+            document.getElementById('next-btn').disabled = currentSlide === totalSlides;
+        }
+
+        function goToSlide(slideNumber) {
+            currentSlide = slideNumber;
+            showSlide(currentSlide);
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                currentSlide = 1;
+                showSlide(currentSlide);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                currentSlide = totalSlides;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Navegación con swipe en móvil
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                nextSlide();
+            }
+            if (touchEndX > touchStartX + 50) {
+                previousSlide();
+            }
+        }
+
+        // Inicializar
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        // Create slide dots
+        const dotsContainer = document.getElementById('slide-dots');
+        for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'slide-dot';
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        showSlide(currentSlide);
+
+        // Actualizar estado de botones inicial
+        document.getElementById('prev-btn').disabled = true;
+    </script>
+</body>
+</html>

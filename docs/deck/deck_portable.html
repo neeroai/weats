@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird.com + Telefónica: Alianza Estratégica</title>
+    <style>
+        /* ==================== RESET & BASE ====================  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* System fonts fallback + Inter */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f172a;
+            color: #1f2937;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ==================== CSS VARIABLES ==================== */
+        :root {
+            --blue-primary: #2563eb;
+            --blue-dark: #1d4ed8;
+            --teal: #14b8a6;
+            --teal-dark: #0d9488;
+            --gray-900: #1f2937;
+            --gray-600: #6b7280;
+            --gray-100: #f9fafb;
+            --white: #ffffff;
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==================== DECK CONTAINER ==================== */
+        .deck-container {
+            width: 100%;
+            max-width: 100vw;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ==================== SLIDE BASE ==================== */
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(1.5rem, 5vw, 4rem);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideIn 0.8s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== SLIDE 1: PORTADA ==================== */
+        .slide-1 {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .logos-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            flex-wrap: wrap;
+        }
+
+        .logo-bird, .logo-telefonica {
+            height: clamp(3rem, 10vw, 5rem);
+            width: auto;
+        }
+
+        .logo-separator {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            opacity: 0.8;
+        }
+
+        .slide-1 h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: clamp(1rem, 3vw, 2rem);
+            line-height: 1.2;
+        }
+
+        .slide-1 .subtitle {
+            font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 0.75rem;
+        }
+
+        .slide-1 .tagline {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .slide-1 .date {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            opacity: 0.7;
+        }
+
+        .neero-badge {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            width: clamp(3rem, 8vw, 4rem);
+            height: clamp(3rem, 8vw, 4rem);
+            background: #1f2937;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+
+        /* ==================== SLIDE 2-10: CONTENT SLIDES ==================== */
+        .content-slide {
+            background: var(--white);
+            padding: clamp(2rem, 5vw, 4rem);
+        }
+
+        .content-slide .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .slide-header {
+            margin-bottom: clamp(2rem, 5vw, 3rem);
+        }
+
+        .slide-header .subtitle {
+            color: var(--blue-primary);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-header h2 {
+            font-size: clamp(1.75rem, 6vw, 2.5rem);
+            font-weight: 700;
+            color: var(--gray-900);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .slide-header .description {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ==================== CONVERGENCE CARDS (Slide 2) ==================== */
+        .convergence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 2rem;
+        }
+
+        .convergence-card {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .convergence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--teal));
+        }
+
+        .convergence-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--blue-primary);
+        }
+
+        .convergence-card h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .convergence-card ul {
+            list-style: none;
+            space: 0.75rem;
+        }
+
+        .convergence-card li {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .convergence-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--blue-primary);
+            font-weight: 700;
+        }
+
+        .metric-highlight {
+            color: var(--blue-primary);
+            font-weight: 700;
+        }
+
+        /* ==================== FEATURE CARDS (Slide 3, 4, 5) ==================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            border-radius: 1rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card h3 {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p, .feature-card li {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .feature-card li {
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .feature-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        /* ==================== ENGAGEMENT METRICS (Slide 4) ==================== */
+        .engagement-chart {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .chart-bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .chart-bar-label {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .chart-bar-container {
+            background: #e5e7eb;
+            border-radius: 0.5rem;
+            height: clamp(2.5rem, 5vw, 3rem);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal), var(--teal-dark));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: var(--white);
+            font-weight: 700;
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ==================== AI METRICS (Slide 5) ==================== */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            color: var(--white);
+            border-radius: 1rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .metric-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .metric-value {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* ==================== USE CASES (Slide 7) ==================== */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .use-case-card {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            transition: var(--transition);
+        }
+
+        .use-case-card:hover {
+            border-color: var(--teal);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .use-case-card h3 {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+
+        .use-case-card .impact {
+            background: #f0fdf4;
+            border-left: 4px solid var(--teal);
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .use-case-card .impact strong {
+            color: var(--teal-dark);
+        }
+
+        /* ==================== COMPARISON TABLE (Slide 9) ==================== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--blue-primary), var(--blue-dark));
+            color: var(--white);
+            padding: clamp(0.75rem, 2vw, 1rem);
+            text-align: left;
+            font-weight: 600;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .comparison-table td {
+            padding: clamp(0.75rem, 2vw, 1rem);
+            border-bottom: 1px solid #e5e7eb;
+            font-size: clamp(0.875rem, 2vw, 0.9375rem);
+            color: var(--gray-600);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--gray-100);
+        }
+
+        .comparison-table .highlight {
+            background: #f0fdf4;
+            color: var(--teal-dark);
+            font-weight: 600;
+        }
+
+        /* ==================== TIMELINE (Slide 10) ==================== */
+        .timeline {
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            border-left: 4px solid var(--blue-primary);
+            padding: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+            padding-left: clamp(2rem, 4vw, 3rem);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--blue-primary);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        .timeline-item h4 {
+            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-item p {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .deck-nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-dot:hover {
+            background: #9ca3af;
+        }
+
+        .nav-dot.active {
+            background: var(--blue-primary);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 640px) {
+            .slide {
+                padding: 1.5rem 1rem;
+            }
+
+            .convergence-grid,
+            .features-grid,
+            .use-cases-grid,
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deck-nav {
+                bottom: 1rem;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .nav-dot.active {
+                width: 24px;
+            }
+
+            .slide-counter {
+                top: 1rem;
+                right: 1rem;
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .content-slide .container {
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="deck-container" id="deckContainer">
+        <!-- ==================== SLIDE 1: PORTADA ==================== -->
+        <section class="slide slide-1">
+            <div class="logos-container">
+                <div style="font-size: clamp(3rem, 8vw, 4rem); font-weight: 700; letter-spacing: -0.02em;">Telefónica</div>
+                <span class="logo-separator">+</span>
+                <div style="font-size: clamp(3rem, 8vw, 4rem); font-weight: 700; letter-spacing: -0.01em;">Bird.com</div>
+            </div>
+            <h1>RCS + IA Impulsa el Comercio Conversacional</h1>
+            <h2>Transformando la Experiencia Empresarial</h2>
+            <span class="date">Octubre, 2025</span>
+        </section>
+
+        <!-- ==================== SLIDE 2: RESUMEN EJECUTIVO ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">Resumen Ejecutivo</p>
+                    <h2>La Convergencia Perfecta</h2>
+                    <p class="description">Tres Fuerzas Estratégicas se Alinean en 2025</p>
+                </div>
+                <div class="convergence-grid">
+                    <div class="convergence-card">
+                        <h3>1. Transformación Digital de Telefónica</h3>
+                        <ul>
+                            <li>Evolución de telco tradicional a habilitador digital empresarial</li>
+                            <li>Infraestructura global con confiabilidad carrier-grade <span class="metric-highlight">(99.9% uptime)</span></li>
+                            <li>Soluciones avanzadas de IA y redes de próxima generación (5G, Fibra)</li>
+                        </ul>
+                    </div>
+                    <div class="convergence-card">
+                        <h3>2. RCS como Estándar Empresarial</h3>
+                        <ul>
+                            <li>Mercado proyectado a alcanzar <span class="metric-highlight">$19.48 mil millones para 2028</span></li>
+                            <li>Soporte iOS de Apple en 2025 habilita <span class="metric-highlight">3 mil millones de dispositivos globalmente</span></li>
+                            <li><span class="metric-highlight">74%</span> de usuarios más propensos a interactuar vía RCS vs SMS tradicional</li>
+                        </ul>
+                    </div>
+                    <div class="convergence-card">
+                        <h3>3. Madurez de la IA Conversacional</h3>
+                        <ul>
+                            <li><span class="metric-highlight">83%</span> de tasas de resolución autónoma con agentes de IA empresariales</li>
+                            <li><span class="metric-highlight">340%</span> de mejora en tasas de conversión para e-commerce</li>
+                            <li><span class="metric-highlight">50%</span> de reducción en tiempos de resolución, 30% de ahorro en costos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--blue-dark); font-weight: 600;">
+                        <strong>La Oportunidad:</strong> Establecer a Bird.com + Telefónica como el estándar global para comercio conversacional verificado e impulsado por IA.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 3: BIRD.COM PLATFORM ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">La Plataforma</p>
+                    <h2>Bird — CRM con IA para Empresas</h2>
+                    <p class="description">Plataforma Integral para Adquirir, Convertir y Retener Clientes</p>
+                    <p class="description" style="font-style: italic; font-size: 0.9rem; margin-top: 0.5rem;">Con la confianza de más de 50,000 negocios a nivel global</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🔗 CRM Unificado para Marketing, Servicio y Pagos</h3>
+                        <ul>
+                            <li>Vista única del cliente: Email, SMS, WhatsApp, RCS y Voz</li>
+                            <li>IA que adapta cada journey en tiempo real</li>
+                            <li>AI Hub con conectores para OpenAI, Claude, Gemini o tu propio modelo</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 Rendimiento Comprobado</h3>
+                        <ul>
+                            <li><strong>161% mejora</strong> en tasas de apertura vs canales tradicionales</li>
+                            <li><strong>340% incremento</strong> en conversión con personalización por IA</li>
+                            <li><strong>&lt;2.5 segundos</strong> de entrega para el 95% de mensajes SMS</li>
+                            <li><strong>40–90% más económico</strong> que Twilio y Sinch (benchmark público)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌐 Infraestructura Global Escalable</h3>
+                        <ul>
+                            <li>Presencia en <strong>140+ países</strong>, cobertura carrier-native</li>
+                            <li><strong>SLA 99.9% uptime</strong> con despliegue multi-región</li>
+                            <li><strong>Integraciones nativas</strong>: Salesforce, HubSpot, Shopify, SAP</li>
+                            <li><strong>63+ casos de éxito</strong> enterprise documentados</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        El CRM preparado para la nueva era de las comunicaciones empresariales
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 4: RCS MARKET OPPORTUNITY ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">El Canal</p>
+                    <h2>La Oportunidad RCS — El Mercado de $19.4B</h2>
+                    <p class="description">El timing perfecto para monetizar la infraestructura de Telefónica</p>
+                    <p class="description" style="font-style: italic; font-size: 0.9rem; margin-top: 0.5rem;">Revenue-share con agregadores CPaaS (modelo flexible)</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>📈 Explosión del Mercado RCS (2026-2030)</h3>
+                        <ul>
+                            <li>Mercado crece de <strong>$19.4B (2025) → $60.5B (2030)</strong> — CAGR 25.5%</li>
+                            <li>Ingresos operadores: <strong>$1B+ (2026)</strong> — crecimiento significativo impulsado por adopción iOS</li>
+                            <li><strong>75 mil millones</strong> de mensajes RCS empresariales en 2026 (vs 50B en 2025)</li>
+                            <li><strong>18%</strong> de ingresos de mensajería empresarial serán RCS para 2029</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🍎 Apple iOS = Punto de Inflexión (2025)</h3>
+                        <ul>
+                            <li><strong>+900 millones</strong> usuarios activos nuevos en RCS con iOS 18</li>
+                            <li><strong>+1 mil millones</strong> usuarios iOS con RCS para verano 2025</li>
+                            <li><strong>3.9 mil millones</strong> dispositivos RCS globalmente para fin de 2025</li>
+                            <li>Elimina barrera #1 de adopción enterprise: fragmentación iOS/Android</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏢 Adopción Enterprise Acelerada</h3>
+                        <ul>
+                            <li><strong>Fintech:</strong> 49% ya usa RCS, 45% planea implementar en 2025</li>
+                            <li><strong>Tech:</strong> 39% usa RCS, 42% adoptará próximamente</li>
+                            <li><strong>Healthcare:</strong> 36% usa RCS, 45% invertirá en 2025</li>
+                            <li><strong>Retail:</strong> 26% usa RCS, 35% planea inversión en 2025</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        <strong>Telefónica</strong> tiene la red. <strong>Bird</strong> tiene la tecnología. El momento para liderar el mercado RCS global es ahora.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 5: AI EMPLOYEES ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">IA Conversacional</p>
+                    <h2>Agentes IA — Tu Empresa en Modo Autopilot</h2>
+                    <p class="description">Recluta equipos IA que completan tareas sin intervención humana</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🤖 AI Hub Empresarial — Sin Código, Sin Fricción</h3>
+                        <ul>
+                            <li>Conecta cualquier LLM: OpenAI, Claude, Gemini o tu modelo privado</li>
+                            <li>Crea Agentes IA para Servicio al Cliente, Marketing o Ventas</li>
+                            <li>Bases de conocimiento entrenadas con datos de tu empresa</li>
+                            <li>Despliegue automático en RCS, WhatsApp, SMS, Email y Web</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Capacidades de Automatización</h3>
+                        <ul>
+                            <li>80%+ de resolución sin escalamiento</li>
+                            <li>Segmentación dinámica y personalización sin escribir código</li>
+                            <li>Conversaciones que entienden contexto, intención y emoción</li>
+                            <li>Escala a humanos solo cuando es necesario</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📊 Resultados Comprobados</h3>
+                        <ul>
+                            <li>+300% eficiencia operativa (onboarding, entregabilidad, tasas de apertura)</li>
+                            <li>30% reducción en costos de servicio al cliente</li>
+                            <li>Escala 10× sin aumentar el equipo</li>
+                            <li>Mensajes correctos, consistentes y siempre a tiempo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        La IA, por fin, se convierte en productividad real: equipos virtuales que trabajan 24/7, sin fricción, sin headcount.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 6: TELEFÓNICA ADVANTAGE ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">La Ventaja Estratégica</p>
+                    <h2>Telefónica + Bird</h2>
+                    <p class="description">Por qué Bird.com es el socio ideal para Telefónica</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🏗️ Infraestructura Global Carrier-Grade</h3>
+                        <ul>
+                            <li>Integración directa de RCS con el núcleo de la red móvil</li>
+                            <li>SLA de 99.9% uptime con arquitectura global redundante</li>
+                            <li>Lanzamientos RCS gestionados por operador para despliegue más rápido</li>
+                            <li>Confiabilidad de red nativa vs proveedores CPaaS pure-play</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚀 Posición de Liderazgo en RCS</h3>
+                        <ul>
+                            <li>Asociación directa con el ecosistema Google RBM</li>
+                            <li>Verificación de operador para autenticación de remitente de marca</li>
+                            <li>Enrutamiento prioritario y garantías de calidad de servicio</li>
+                            <li>Ventaja de first-mover en mensajería empresarial verificada</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌍 Alcance Global con Experiencia Local</h3>
+                        <ul>
+                            <li>Operaciones en Europa, Américas y mercados estratégicos</li>
+                            <li>Comprensión de requisitos regulatorios locales</li>
+                            <li>Soporte multiidioma y adaptación cultural</li>
+                            <li>Relaciones con operadores locales para enrutamiento óptimo de mensajes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        Las capacidades a nivel de red de Telefónica crean barreras que los proveedores CPaaS pure-play (Twilio, Sinch, Infobip) no pueden replicar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 7: USE CASES ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">Casos de Uso</p>
+                    <h2>Impacto Empresarial</h2>
+                    <p class="description">Transformando el Engagement del Cliente</p>
+                </div>
+                <div class="use-cases-grid">
+                    <div class="use-case-card">
+                        <h3>💰 Fintech y Banca</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Transacciones Verificadas:</strong> Verificación de identidad a nivel de operador</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Soporte Impulsado por IA:</strong> 83% de resolución autónoma de consultas</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Pagos Conversacionales:</strong> Flujos de pago integrados dentro del chat RCS</li>
+                        </ul>
+                        <div class="impact">
+                            <strong>Impacto:</strong> Apertura de cuenta en 2 minutos (vs 3 días), costo de €0.01 (vs €2.50), tasa de finalización del 90% (vs 50%)
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <h3>🛍️ E-commerce y Retail</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Recuperación de Carritos:</strong> Mensajes personalizados con 340% de mejora en conversión</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Catálogos Interactivos:</strong> Carruseles de productos con botones de compra instantánea</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Seguimiento de Pedidos:</strong> Notificaciones con actualizaciones de entrega en tiempo real</li>
+                        </ul>
+                        <div class="impact">
+                            <strong>Impacto:</strong> 80% de tasas de conversión, 161% mayor apertura, 17x engagement vs SMS
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <h3>🏥 Salud y Bienestar</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Gestión de Citas:</strong> Recordatorios interactivos con confirmación de un toque</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Telemedicina:</strong> Triaje IA con enrutamiento a especialistas</li>
+                            <li style="margin-bottom: 0.5rem;">✓ <strong>Recordatorios de Recetas:</strong> Programas automatizados con asistencia de resurtido</li>
+                        </ul>
+                        <div class="impact">
+                            <strong>Impacto:</strong> 95% de asistencia a citas, 60% de reducción en overhead administrativo
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        La inteligencia artificial conversacional ya está transformando industrias — con resultados medibles, escalables y listos para implementar desde Telefónica.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 8: CUSTOMER JOURNEY ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">Caso Fintech</p>
+                    <h2>Transformación del Customer Journey</h2>
+                    <p class="description">Antes y Después: Apertura de una Cuenta Bancaria</p>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div style="background: #fef2f2; border: 2px solid #dc2626; border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="color: #dc2626; margin-bottom: 1rem; font-size: clamp(1.125rem, 2.5vw, 1.375rem);">❌ ANTES - Proceso Tradicional</h3>
+                        <ol style="margin-left: 1.25rem; color: var(--gray-600); line-height: 1.8; font-size: clamp(0.875rem, 2vw, 1rem);">
+                            <li>Cliente descarga app bancaria (fricción)</li>
+                            <li>Espera código SMS de verificación</li>
+                            <li>Sube fotos de ID y selfie (25% abandono)</li>
+                            <li>Verificación manual (24-48 horas)</li>
+                            <li>Recibe notificación de aprobación</li>
+                            <li>Regresa a la app para activar cuenta</li>
+                        </ol>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: clamp(0.875rem, 2vw, 0.9375rem);">
+                                <div><strong>Tiempo:</strong> 3 días</div>
+                                <div><strong>Costo:</strong> €2.50</div>
+                                <div><strong>Finalización:</strong> 50%</div>
+                                <div><strong>Esfuerzo:</strong> Alto</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: #f0fdf4; border: 2px solid #16a34a; border-radius: 1rem; padding: 1.5rem;">
+                        <h3 style="color: #16a34a; margin-bottom: 1rem; font-size: clamp(1.125rem, 2.5vw, 1.375rem);">✓ DESPUÉS - Bird.com + Telefónica</h3>
+                        <ol style="margin-left: 1.25rem; color: var(--gray-600); line-height: 1.8; font-size: clamp(0.875rem, 2vw, 1rem);">
+                            <li>Cliente: "Quiero abrir una cuenta" vía RCS</li>
+                            <li>AI Agent responde instantáneamente (2 seg)</li>
+                            <li>Verificación automática a nivel de operador</li>
+                            <li>Cliente envía foto ID vía chat RCS seguro</li>
+                            <li>IA valida documento en tiempo real (10 seg)</li>
+                            <li>Cuenta aprobada, todo en misma conversación</li>
+                        </ol>
+                        <div style="margin-top: 1.5rem; padding: 1rem; background: white; border-radius: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: clamp(0.875rem, 2vw, 0.9375rem);">
+                                <div><strong>Tiempo:</strong> 2 minutos</div>
+                                <div><strong>Costo:</strong> €0.01</div>
+                                <div><strong>Finalización:</strong> 90%</div>
+                                <div><strong>Esfuerzo:</strong> Mínimo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="metrics-grid" style="margin-top: 2rem;">
+                    <div class="metric-card" style="background: linear-gradient(135deg, var(--teal), var(--teal-dark));">
+                        <div class="metric-value">125x</div>
+                        <div class="metric-label">Más Rápido</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, var(--teal), var(--teal-dark));">
+                        <div class="metric-value">250x</div>
+                        <div class="metric-label">Menor Costo</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, var(--teal), var(--teal-dark));">
+                        <div class="metric-value">80%</div>
+                        <div class="metric-label">Mejora Finalización</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, var(--teal), var(--teal-dark));">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Satisfacción</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 9: COMPETITIVE ADVANTAGE ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">Ventaja Competitiva</p>
+                    <h2>¿Por qué esta Alianza?</h2>
+                    <p class="description">Diferenciadores Estratégicos</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>1. Ventaja de alianza con el Operador</h3>
+                        <ul>
+                            <li>Integración directa con infraestructura de red móvil</li>
+                            <li>Enrutamiento prioritario de mensajes y calidad de servicio</li>
+                            <li>Verificación nativa imposible para proveedores de terceros</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>2. Plataforma IA Nativa</h3>
+                        <ul>
+                            <li>83% de resolución autónoma vs 40-60% de la industria</li>
+                            <li>340% de mejora en conversión</li>
+                            <li>Conectores LLM integrados (OpenAI, Azure, Google Vertex)</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>3. Realidad Omnicanal</h3>
+                        <ul>
+                            <li>Verdadero hilo de conversación unificado en todos los canales</li>
+                            <li>20,000+ clientes empresariales comprobados</li>
+                            <li>450,000+ desarrolladores en el ecosistema</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem; text-align: center;">
+                    <p style="font-size: clamp(1rem, 2.5vw, 1.125rem); color: var(--blue-dark); font-weight: 600;">
+                        Una alianza única que combina lo mejor de dos mundos: la infraestructura de red de Telefónica y la inteligencia artificial de Bird, lista para liderar el futuro de las comunicaciones empresariales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SLIDE 10: WHY NOW ==================== -->
+        <section class="slide content-slide">
+            <div class="container">
+                <div class="slide-header">
+                    <p class="subtitle">Timing Estratégico</p>
+                    <h2>¿Por qué el momento es ahora?</h2>
+                    <p class="description">Tres Catalizadores Convergen en 2025 - Ventana de Oportunidad</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>1. Consolidación de RCS</h4>
+                        <p><strong>Impacto:</strong> Se convierte en Estándar de mensajería elimina fragmentación, habilitando estrategias RCS empresariales por primera vez.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>2. La IA alcanza madurez para Implementación Real</h4>
+                        <p><strong>Impacto:</strong> La IA transita de experimental a infraestructura empresarial mission-critical.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>3. Transformación Digital de Telefónica</h4>
+                        <p><strong>Impacto:</strong> Alineación perfecta de objetivos estratégicos de Telefónica para el 2026.</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: linear-gradient(135deg, #dbeafe, #e0f2fe); border-radius: 1rem;">
+                    <p style="font-size: clamp(1.125rem, 2.5vw, 1.5rem); color: var(--blue-dark); font-weight: 600; font-style: italic;">
+                        Telefónica + Bird.com: Liderando la Nueva Era de las Comunicaciones Empresariales
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <div class="slide-counter" id="slideCounter">1 / 10</div>
+    <nav class="deck-nav" id="deckNav">
+        <span class="nav-dot active" data-slide="0"></span>
+        <span class="nav-dot" data-slide="1"></span>
+        <span class="nav-dot" data-slide="2"></span>
+        <span class="nav-dot" data-slide="3"></span>
+        <span class="nav-dot" data-slide="4"></span>
+        <span class="nav-dot" data-slide="5"></span>
+        <span class="nav-dot" data-slide="6"></span>
+        <span class="nav-dot" data-slide="7"></span>
+        <span class="nav-dot" data-slide="8"></span>
+        <span class="nav-dot" data-slide="9"></span>
+    </nav>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // State
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const navDots = document.querySelectorAll('.nav-dot');
+        const slideCounter = document.getElementById('slideCounter');
+        const totalSlides = slides.length;
+
+        // Initialize
+        function init() {
+            updateSlide(0);
+            attachEventListeners();
+            animateCharts();
+        }
+
+        // Update slide
+        function updateSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+
+            currentSlide = index;
+
+            // Scroll to slide
+            slides[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Update navigation dots
+            navDots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+
+            // Update counter
+            slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        }
+
+        // Navigation
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                updateSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                updateSlide(currentSlide - 1);
+            }
+        }
+
+        // Event listeners
+        function attachEventListeners() {
+            // Dot navigation
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => updateSlide(index));
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    prevSlide();
+                }
+            });
+
+            // Touch/swipe navigation
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartY = e.changedTouches[0].screenY;
+            });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartY - touchEndY;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+            }
+
+            // Scroll detection (optional enhancement)
+            let isScrolling;
+            window.addEventListener('scroll', () => {
+                clearTimeout(isScrolling);
+                isScrolling = setTimeout(() => {
+                    detectCurrentSlide();
+                }, 100);
+            });
+        }
+
+        // Detect current slide from scroll position
+        function detectCurrentSlide() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            slides.forEach((slide, index) => {
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
+
+                if (scrollPosition >= slideTop && scrollPosition < slideBottom) {
+                    if (currentSlide !== index) {
+                        currentSlide = index;
+                        navDots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === currentSlide);
+                        });
+                        slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+                    }
+                }
+            });
+        }
+
+        // Animate charts on load
+        function animateCharts() {
+            const chartBars = document.querySelectorAll('.chart-bar');
+            chartBars.forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.width = bar.style.width || '0%';
+                }, index * 200);
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Log for debugging
+        console.log('Bird.com + Telefónica Deck loaded successfully');
+        console.log('Total slides:', totalSlides);
+        console.log('Use arrow keys or swipe to navigate');
+    </script>
+</body>
+</html>
